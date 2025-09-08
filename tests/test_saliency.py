@@ -11,7 +11,7 @@ from src.docsaf.saliency import (
     multi_scale_saliency,
     saliency_stats,
 )
-from src.docsaf.surrogates import CLIPEmbedder
+from src.docsaf.surrogates import CLIPAligner
 
 
 class MockEmbedder:
@@ -254,13 +254,13 @@ class TestCLIPSaliencyIntegration:
     def test_clip_alignment_saliency(self):
         """Test CLIP alignment and saliency (requires OpenCLIP)."""
         try:
-            from src.docsaf.surrogates import CLIPEmbedder
+            from src.docsaf.surrogates import CLIPAligner
         except ImportError:
             pytest.skip("OpenCLIP not available")
 
         try:
             # Try to create CLIP embedder
-            clip_model = CLIPEmbedder(device="cpu")
+            clip_model = CLIPAligner(device="cpu")
         except Exception:
             pytest.skip("CLIP model loading failed")
 
