@@ -51,10 +51,24 @@ class CLIPEmbedder:
         self.model.eval()
 
     def image_embed(self, image: torch.Tensor) -> torch.Tensor:
-        """Encode preprocessed image tensor."""
-        with torch.no_grad():
-            features = self.model.encode_image(image.to(self.device))
-            return F.normalize(features, dim=-1)
+        """Encode image tensor (applies preprocessing if needed)."""
+        # If image is not the expected size, we need to preprocess it
+        # CLIP expects 224x224 for ViT-L-14
+        if image.shape[-2:] != (224, 224):
+            # Use differentiable resize and normalization to preserve gradients
+            import torch.nn.functional as F_interp
+            
+            # Resize to 224x224 preserving gradients
+            image = F_interp.interpolate(image, size=(224, 224), mode='bicubic', align_corners=False)
+            
+            # Apply CLIP normalization (mean and std from preprocessing)
+            mean = torch.tensor([0.48145466, 0.4578275, 0.40821073], device=image.device).view(1, 3, 1, 1)
+            std = torch.tensor([0.26862954, 0.26130258, 0.27577711], device=image.device).view(1, 3, 1, 1)
+            image = (image - mean) / std
+        
+        # Remove no_grad since we need gradients for saliency computation
+        features = self.model.encode_image(image.to(self.device))
+        return F.normalize(features, dim=-1)
 
     def text_embed(self, texts: List[str]) -> torch.Tensor:
         """Encode text strings."""
