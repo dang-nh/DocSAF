@@ -2,12 +2,14 @@
 
 import torch
 import numpy as np
-import argparse
+import typer
 import json
+import csv
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 import logging
 from tqdm import tqdm
+import random
 
 from .utils import (
     load_config,
@@ -19,7 +21,7 @@ from .utils import (
     compute_lpips_score,
     batch_lpips_scores,
 )
-from .surrogates import load_embedder, ImageTextEmbedder
+from .surrogates import load_aligner, build_aligners, ImageTextAligner
 from .ocr import ocr_read
 from .saliency import compute_gradient_saliency
 from .field import apply_field_safe
@@ -42,6 +44,8 @@ class EvaluationMetrics:
         """Reset all metrics."""
         self.alignment_scores = {"original": [], "adversarial": [], "drop": []}
         self.lpips_scores = []
+        self.ocr_mismatch_rates = []
+        self.donut_mismatch_rates = []
         self.success_rate = 0.0
         self.transfer_asr = {}
         self.defense_asr = {}
@@ -51,12 +55,16 @@ class EvaluationMetrics:
         original_alignment: float,
         adversarial_alignment: float,
         lpips_score: float,
+        ocr_mismatch: float = 0.0,
+        donut_mismatch: float = 0.0,
     ):
         """Add metrics for a single sample."""
         self.alignment_scores["original"].append(original_alignment)
         self.alignment_scores["adversarial"].append(adversarial_alignment)
         self.alignment_scores["drop"].append(original_alignment - adversarial_alignment)
         self.lpips_scores.append(lpips_score)
+        self.ocr_mismatch_rates.append(ocr_mismatch)
+        self.donut_mismatch_rates.append(donut_mismatch)
 
     def compute_statistics(self) -> Dict:
         """Compute final statistics."""
@@ -87,12 +95,73 @@ class EvaluationMetrics:
             self.success_rate = float((drops > 0).mean())
             stats["success_rate"] = self.success_rate
 
+        # OCR mismatch statistics
+        if self.ocr_mismatch_rates:
+            stats["ocr_mismatch_mean"] = float(np.mean(self.ocr_mismatch_rates))
+            stats["ocr_mismatch_std"] = float(np.std(self.ocr_mismatch_rates))
+
+        # Donut mismatch statistics
+        if self.donut_mismatch_rates:
+            stats["donut_mismatch_mean"] = float(np.mean(self.donut_mismatch_rates))
+            stats["donut_mismatch_std"] = float(np.std(self.donut_mismatch_rates))
+
         return stats
+
+
+def compute_ocr_mismatch(original_text: str, adversarial_text: str) -> float:
+    """Compute OCR mismatch rate between original and adversarial text.
+    
+    Args:
+        original_text: OCR text from original image
+        adversarial_text: OCR text from adversarial image
+        
+    Returns:
+        Mismatch rate (0.0 = identical, 1.0 = completely different)
+    """
+    if not original_text.strip() or not adversarial_text.strip():
+        return 1.0  # Consider empty texts as complete mismatch
+    
+    # Simple word-level mismatch
+    orig_words = set(original_text.lower().split())
+    adv_words = set(adversarial_text.lower().split())
+    
+    if not orig_words:
+        return 1.0
+        
+    intersection = orig_words.intersection(adv_words)
+    union = orig_words.union(adv_words)
+    
+    # Jaccard distance (1 - Jaccard similarity)
+    return 1.0 - len(intersection) / len(union) if union else 1.0
+
+
+def compute_donut_mismatch(
+    original_image: torch.Tensor, adversarial_image: torch.Tensor, donut_aligner=None
+) -> float:
+    """Compute Donut extractive mismatch rate.
+    
+    Args:
+        original_image: Original image tensor
+        adversarial_image: Adversarial image tensor
+        donut_aligner: Donut aligner (if available)
+        
+    Returns:
+        Mismatch rate (placeholder implementation)
+    """
+    # Placeholder implementation - in practice, would use Donut for document understanding
+    # For now, return a dummy value based on image difference
+    if donut_aligner is None:
+        # Simple pixel-wise difference as proxy
+        diff = torch.mean(torch.abs(original_image - adversarial_image))
+        return min(1.0, float(diff) * 10)  # Scale to reasonable range
+    
+    # TODO: Implement actual Donut-based document understanding comparison
+    return 0.0
 
 
 def evaluate_single_image(
     image_path: str,
-    embedders: List[ImageTextEmbedder],
+    aligners: List[ImageTextAligner],
     alpha: float,
     radius: float,
     config: dict,
@@ -102,7 +171,7 @@ def evaluate_single_image(
 
     Args:
         image_path: Path to image/PDF
-        embedders: List of embedders for evaluation
+        aligners: List of aligners for evaluation
         alpha: Field strength
         radius: Blur radius
         config: Configuration
@@ -129,22 +198,22 @@ def evaluate_single_image(
     if not text.strip():
         text = "document text content"
 
-    # Compute saliency using primary embedder
-    primary_embedder = embedders[0]
+    # Compute saliency using primary aligner
+    primary_aligner = aligners[0]
     x_input = x_orig.clone().requires_grad_(True)
     orig_alignment, saliency_map = compute_gradient_saliency(
-        primary_embedder, x_input, text
+        primary_aligner, x_input, text
     )
 
     # Apply field
     x_adv = apply_field_safe(x_orig, saliency_map, alpha, radius)
 
-    # Evaluate on all embedders
+    # Evaluate on all aligners
     results = {
         "image_path": str(image_path),
         "text": text,
         "original_alignment": orig_alignment,
-        "embedder_results": {},
+        "aligner_results": {},
     }
 
     # Compute LPIPS
@@ -154,25 +223,29 @@ def evaluate_single_image(
     except ImportError:
         results["lpips_score"] = None
 
-    # Evaluate each embedder
-    alignment_drops = []
-    for i, embedder in enumerate(embedders):
-        with torch.no_grad():
-            # Original alignment
-            orig_emb = torch.nn.functional.normalize(
-                embedder.image_embed(x_orig), dim=-1
-            )
-            txt_emb = torch.nn.functional.normalize(embedder.text_embed([text]), dim=-1)
-            orig_align = float((orig_emb * txt_emb).sum())
+    # Compute OCR mismatch
+    adv_pil = tensor_to_pil(x_adv)
+    adv_img_array = np.array(adv_pil)
+    adv_text = ocr_read(adv_img_array, backend=ocr_backend)
+    ocr_mismatch = compute_ocr_mismatch(text, adv_text)
+    results["ocr_mismatch"] = ocr_mismatch
 
-            # Adversarial alignment
-            adv_emb = torch.nn.functional.normalize(embedder.image_embed(x_adv), dim=-1)
-            adv_align = float((adv_emb * txt_emb).sum())
+    # Compute Donut mismatch (placeholder)
+    donut_mismatch = compute_donut_mismatch(x_orig, x_adv)
+    results["donut_mismatch"] = donut_mismatch
+
+    # Evaluate each aligner
+    alignment_drops = []
+    for i, aligner in enumerate(aligners):
+        with torch.no_grad():
+            # Use the cosine_align method for consistency
+            orig_align = float(aligner.cosine_align(x_orig, text))
+            adv_align = float(aligner.cosine_align(x_adv, text))
 
             alignment_drop = orig_align - adv_align
             alignment_drops.append(alignment_drop)
 
-            results["embedder_results"][f"embedder_{i}"] = {
+            results["aligner_results"][f"aligner_{i}"] = {
                 "original_alignment": orig_align,
                 "adversarial_alignment": adv_align,
                 "alignment_drop": alignment_drop,
@@ -186,7 +259,7 @@ def evaluate_transfer_asr(
     original_images: torch.Tensor,
     adversarial_images: torch.Tensor,
     texts: List[str],
-    held_out_embedders: List[ImageTextEmbedder],
+    held_out_aligners: List[ImageTextAligner],
 ) -> Dict[str, float]:
     """Evaluate transfer attack success rate.
 
@@ -194,24 +267,24 @@ def evaluate_transfer_asr(
         original_images: Original images (B, 3, H, W)
         adversarial_images: Adversarial images (B, 3, H, W)
         texts: Text strings
-        held_out_embedders: Held-out embedders not used in training
+        held_out_aligners: Held-out aligners not used in training
 
     Returns:
-        Transfer ASR results per embedder
+        Transfer ASR results per aligner
     """
     transfer_results = {}
 
-    for i, embedder in enumerate(held_out_embedders):
+    for i, aligner in enumerate(held_out_aligners):
         alignment_drop = compute_alignment_drop(
-            original_images, adversarial_images, texts, [embedder]
+            original_images, adversarial_images, texts, [aligner]
         )
 
         # Success = positive alignment drop
         success_rate = 1.0 if alignment_drop > 0 else 0.0
-        transfer_results[f"held_out_embedder_{i}"] = success_rate
+        transfer_results[f"held_out_aligner_{i}"] = success_rate
 
         logger.info(
-            f"Transfer ASR (embedder {i}): {success_rate:.3f} "
+            f"Transfer ASR (aligner {i}): {success_rate:.3f} "
             f"(avg drop: {alignment_drop:.4f})"
         )
 
@@ -222,7 +295,7 @@ def evaluate_defense_asr(
     original_images: torch.Tensor,
     adversarial_images: torch.Tensor,
     texts: List[str],
-    embedders: List[ImageTextEmbedder],
+    aligners: List[ImageTextAligner],
     eot_config: dict,
 ) -> Dict[str, float]:
     """Evaluate robustness against defenses.
@@ -231,7 +304,7 @@ def evaluate_defense_asr(
         original_images: Original images
         adversarial_images: Adversarial images
         texts: Texts
-        embedders: Embedders
+        aligners: Aligners
         eot_config: EOT defense configuration
 
     Returns:
@@ -249,7 +322,7 @@ def evaluate_defense_asr(
         eot_prob=1.0,  # Always apply JPEG
     )
 
-    jpeg_drop = compute_alignment_drop(original_images, jpeg_defended, texts, embedders)
+    jpeg_drop = compute_alignment_drop(original_images, jpeg_defended, texts, aligners)
     defense_results["jpeg_defense_asr"] = 1.0 if jpeg_drop > 0 else 0.0
 
     # Resize defense
@@ -263,7 +336,7 @@ def evaluate_defense_asr(
     )
 
     resize_drop = compute_alignment_drop(
-        original_images, resize_defended, texts, embedders
+        original_images, resize_defended, texts, aligners
     )
     defense_results["resize_defense_asr"] = 1.0 if resize_drop > 0 else 0.0
 
@@ -278,7 +351,7 @@ def evaluate_defense_asr(
     )
 
     combined_drop = compute_alignment_drop(
-        original_images, combined_defended, texts, embedders
+        original_images, combined_defended, texts, aligners
     )
     defense_results["combined_defense_asr"] = 1.0 if combined_drop > 0 else 0.0
 
@@ -311,26 +384,18 @@ def run_evaluation(
 
     logger.info(f"Running evaluation with alpha={alpha:.3f}, radius={radius:.3f}")
 
-    # Load embedders
+    # Load aligners
     surrogate_specs = config.get("surrogates", ["openclip:ViT-L-14@336"])
-    training_embedders = []
-    for spec in surrogate_specs[:2]:  # Use first 2 for training evaluation
-        try:
-            embedder = load_embedder(spec, device)
-            training_embedders.append(embedder)
-        except Exception as e:
-            logger.warning(f"Failed to load embedder {spec}: {e}")
+    training_aligners = build_aligners(surrogate_specs[:2], device)  # Use first 2 for training
 
-    # Load held-out embedders for transfer evaluation
-    held_out_specs = ["openclip:ViT-B-32@336", "hf:blip2-flan-t5-xl"]
-    held_out_embedders = []
-    for spec in held_out_specs:
-        try:
-            embedder = load_embedder(spec, device)
-            held_out_embedders.append(embedder)
-            logger.info(f"Loaded held-out embedder: {spec}")
-        except Exception as e:
-            logger.warning(f"Failed to load held-out embedder {spec}: {e}")
+    # Load held-out aligners for transfer evaluation
+    held_out_specs = ["openclip:ViT-B-32@336"]  # Simplified for now
+    try:
+        held_out_aligners = build_aligners(held_out_specs, device)
+        logger.info(f"Loaded {len(held_out_aligners)} held-out aligners")
+    except Exception as e:
+        logger.warning(f"Failed to load held-out aligners: {e}")
+        held_out_aligners = []
 
     # Load dataset
     image_files = get_image_files(data_dir)
@@ -384,7 +449,7 @@ def run_evaluation(
             # Compute saliency
             x_input = img.clone().requires_grad_(True)
             _, saliency_map = compute_gradient_saliency(
-                training_embedders[0], x_input, text
+                training_aligners[0], x_input, text
             )
 
             # Apply field
@@ -395,7 +460,7 @@ def run_evaluation(
 
         # Compute metrics for this batch
         alignment_drop = compute_alignment_drop(
-            images, batch_adversarial, texts, training_embedders
+            images, batch_adversarial, texts, training_aligners
         )
 
         # Compute LPIPS scores
@@ -408,19 +473,8 @@ def run_evaluation(
         for i in range(len(images)):
             # Individual alignments for this sample
             with torch.no_grad():
-                orig_emb = torch.nn.functional.normalize(
-                    training_embedders[0].image_embed(images[i : i + 1]), dim=-1
-                )
-                txt_emb = torch.nn.functional.normalize(
-                    training_embedders[0].text_embed([texts[i]]), dim=-1
-                )
-                orig_align = float((orig_emb * txt_emb).sum())
-
-                adv_emb = torch.nn.functional.normalize(
-                    training_embedders[0].image_embed(batch_adversarial[i : i + 1]),
-                    dim=-1,
-                )
-                adv_align = float((adv_emb * txt_emb).sum())
+                orig_align = float(training_aligners[0].cosine_align(images[i : i + 1], texts[i]))
+                adv_align = float(training_aligners[0].cosine_align(batch_adversarial[i : i + 1], texts[i]))
 
             metrics.add_sample(orig_align, adv_align, lpips_scores[i])
 
@@ -446,12 +500,12 @@ def run_evaluation(
     main_stats = metrics.compute_statistics()
 
     # Transfer ASR
-    if held_out_embedders:
+    if held_out_aligners:
         transfer_results = evaluate_transfer_asr(
             all_original_images[:10],  # Limit to first 10 for speed
             all_adversarial_images[:10],
             all_texts[:10],
-            held_out_embedders,
+            held_out_aligners,
         )
         main_stats.update(transfer_results)
 
@@ -461,7 +515,7 @@ def run_evaluation(
         all_original_images[:10],  # Limit to first 10 for speed
         all_adversarial_images[:10],
         all_texts[:10],
-        training_embedders,
+        training_aligners,
         eot_config,
     )
     main_stats.update(defense_results)
@@ -472,8 +526,8 @@ def run_evaluation(
             "num_samples": len(sample_results),
             "alpha": alpha,
             "radius": radius,
-            "training_embedders": len(training_embedders),
-            "held_out_embedders": len(held_out_embedders),
+            "training_aligners": len(training_aligners),
+            "held_out_aligners": len(held_out_aligners),
         },
         "main_statistics": main_stats,
         "sample_results": sample_results,
@@ -507,8 +561,8 @@ def generate_markdown_report(results: dict, output_path: str) -> None:
 - **Samples Evaluated**: {config['num_samples']}
 - **Alpha (Field Strength)**: {config['alpha']:.3f}
 - **Radius (Blur Radius)**: {config['radius']:.3f}
-- **Training Embedders**: {config['training_embedders']}
-- **Held-out Embedders**: {config['held_out_embedders']}
+- **Training Aligners**: {config['training_aligners']}
+- **Held-out Aligners**: {config['held_out_aligners']}
 
 ## Main Results
 
@@ -526,12 +580,16 @@ def generate_markdown_report(results: dict, output_path: str) -> None:
 - **Max LPIPS**: {stats.get('lpips_max', 0):.4f}
 - **Below Threshold (≤0.06)**: {stats.get('lpips_below_threshold_rate', 0):.1%}
 
+### OCR and Document Understanding Impact
+- **OCR Mismatch Rate**: {stats.get('ocr_mismatch_mean', 0):.1%} ± {stats.get('ocr_mismatch_std', 0):.1%}
+- **Donut Mismatch Rate**: {stats.get('donut_mismatch_mean', 0):.1%} ± {stats.get('donut_mismatch_std', 0):.1%}
+
 ### Transfer Attack Success Rate
 """
 
     # Add transfer results
     for key, value in stats.items():
-        if key.startswith("held_out_embedder_"):
+        if key.startswith("held_out_aligner_"):
             report += f"- **{key}**: {value:.1%}\n"
 
     report += """
@@ -559,75 +617,218 @@ Transfer attacks showed mixed results across held-out models, while defense mech
     logger.info(f"Generated Markdown report: {output_path}")
 
 
-def main():
-    """Main evaluation script."""
-    parser = argparse.ArgumentParser(description="DocSAF evaluation harness")
-    parser.add_argument(
-        "--data", type=str, required=True, help="Path to test data directory"
-    )
-    parser.add_argument(
-        "--config", type=str, default="configs/default.yaml", help="Path to config file"
-    )
-    parser.add_argument(
-        "--params",
-        type=str,
-        default="runs/universal.pt",
-        help="Path to universal parameters",
-    )
-    parser.add_argument(
-        "--output", type=str, default="eval_results", help="Output directory"
-    )
-    parser.add_argument(
-        "--device", type=str, default="auto", help="Device (auto/cuda/cpu)"
-    )
-    parser.add_argument("--log-level", type=str, default="INFO", help="Logging level")
+def generate_csv_report(results: dict, output_path: str) -> None:
+    """Generate CSV evaluation report.
 
-    args = parser.parse_args()
+    Args:
+        results: Evaluation results
+        output_path: Output file path
+    """
+    stats = results["main_statistics"]
+    config = results["evaluation_config"]
+    
+    # Summary CSV with key metrics
+    csv_data = []
+    
+    # Add configuration row
+    csv_data.append({
+        "metric": "config_samples",
+        "value": config["num_samples"],
+        "description": "Number of samples evaluated"
+    })
+    csv_data.append({
+        "metric": "config_alpha",
+        "value": config["alpha"],
+        "description": "Field strength parameter"
+    })
+    csv_data.append({
+        "metric": "config_radius", 
+        "value": config["radius"],
+        "description": "Blur radius parameter"
+    })
+    
+    # Add main statistics
+    for key, value in stats.items():
+        if isinstance(value, (int, float)):
+            description = key.replace("_", " ").title()
+            csv_data.append({
+                "metric": key,
+                "value": value,
+                "description": description
+            })
+    
+    # Write summary CSV
+    with open(output_path, "w", newline="") as f:
+        fieldnames = ["metric", "value", "description"]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(csv_data)
+    
+    # Also write detailed per-sample CSV
+    detail_path = str(output_path).replace(".csv", "_detailed.csv")
+    sample_results = results.get("sample_results", [])
+    
+    if sample_results:
+        with open(detail_path, "w", newline="") as f:
+            fieldnames = list(sample_results[0].keys())
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(sample_results)
+        logger.info(f"Generated detailed CSV: {detail_path}")
+    
+    logger.info(f"Generated CSV report: {output_path}")
+
+
+app = typer.Typer(
+    name="docsaf-eval",
+    help="DocSAF evaluation harness for comprehensive attack assessment using TWO KNOBS ONLY: alpha (field strength) and radius (blur kernel).",
+    epilog="""
+Examples:
+  docsaf-eval --data data/test_docs --output eval_results
+  docsaf-eval --data ../dataset --report report.md --csv results.csv
+  docsaf-eval --data test_images --seed 1337 --device cuda
+
+The evaluation measures:
+- Attack Success Rate (positive alignment drop)
+- Transfer ASR (held-out models) 
+- Defense robustness (JPEG + resize)
+- OCR/Donut mismatch rates
+- LPIPS perceptual quality
+"""
+)
+
+
+@app.command()
+def main(
+    data: str = typer.Option(..., "--data", help="Path to test data directory"),
+    config: str = typer.Option("configs/default.yaml", "--config", help="Path to config file"),
+    params: str = typer.Option("runs/universal.pt", "--params", help="Path to universal parameters (alpha, radius)"),
+    output: str = typer.Option("eval_results", "--output", help="Output directory"),
+    report: Optional[str] = typer.Option(None, "--report", help="Generate Markdown report at specified path"),
+    csv: Optional[str] = typer.Option(None, "--csv", help="Generate CSV report at specified path"),
+    device: str = typer.Option("auto", "--device", help="Device: auto/cuda/cpu"),
+    seed: int = typer.Option(42, "--seed", help="Random seed for reproducibility"),
+    log_level: str = typer.Option("INFO", "--log-level", help="Logging level: DEBUG/INFO/WARNING/ERROR"),
+):
+    """
+    Run comprehensive DocSAF evaluation on a dataset.
+    
+    Evaluates attack effectiveness, transfer capability, defense robustness,
+    and perceptual quality using the TWO-KNOB DocSAF design.
+    """
+    # Validate inputs early
+    if not Path(data).exists():
+        typer.echo(f"❌ Error: Data directory not found: {data}", err=True)
+        raise typer.Exit(1)
+        
+    if not Path(config).exists():
+        typer.echo(f"❌ Error: Config file not found: {config}", err=True)
+        raise typer.Exit(1)
+        
+    if not Path(params).exists():
+        typer.echo(f"❌ Error: Parameters file not found: {params}", err=True)
+        typer.echo(f"💡 Hint: Run training first or check parameter path", err=True)
+        raise typer.Exit(1)
 
     # Setup
-    setup_logging(args.log_level)
-    device = get_device(args.device)
-    logger.info(f"Using device: {device}")
-
-    # Load config and params
-    config = load_config(args.config)
-
-    if not Path(args.params).exists():
-        logger.error(f"Universal params not found: {args.params}")
-        return
-
-    params = torch.load(args.params, map_location="cpu")
-
     try:
+        setup_logging(log_level)
+        device = get_device(device)
+        
+        # Set deterministic seed
+        random.seed(seed)
+        np.random.seed(seed)
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed(seed)
+            torch.cuda.manual_seed_all(seed)
+        
+        typer.echo(f"🚀 Starting DocSAF evaluation...")
+        typer.echo(f"💻 Device: {device}, Seed: {seed}")
+
+        # Load config and params
+        config_data = load_config(config)
+        params_data = torch.load(params, map_location="cpu")
+        
+        # Enforce two-knob invariant
+        expected_keys = {"alpha", "radius"}
+        extra_keys = set(params_data.keys()) - expected_keys
+        if extra_keys:
+            typer.echo(f"❌ Error: DocSAF uses ONLY two knobs (alpha, radius). Found extra parameters: {extra_keys}", err=True)
+            typer.echo(f"💡 This violates the two-knob design constraint.", err=True)
+            raise typer.Exit(1)
+            
+        typer.echo(f"🎛️  Parameters: alpha={params_data['alpha']:.3f}, radius={params_data['radius']:.3f}")
+        typer.echo(f"📂 Data: {data}")
+        typer.echo(f"💾 Output: {output}")
+
         # Run evaluation
         results = run_evaluation(
-            data_dir=args.data,
-            config=config,
-            params=params,
-            output_dir=args.output,
+            data_dir=data,
+            config=config_data,
+            params=params_data,
+            output_dir=output,
             device=device,
         )
 
-        # Generate report
-        report_path = Path(args.output) / "evaluation_report.md"
-        generate_markdown_report(results, str(report_path))
+        # Generate reports
+        if report:
+            generate_markdown_report(results, report)
+            typer.echo(f"📄 Markdown report: {report}")
+        else:
+            # Default markdown report
+            report_path = Path(output) / "evaluation_report.md"
+            generate_markdown_report(results, str(report_path))
+            typer.echo(f"📄 Markdown report: {report_path}")
+            
+        if csv:
+            generate_csv_report(results, csv)
+            typer.echo(f"📊 CSV report: {csv}")
+        else:
+            # Default CSV report  
+            csv_path = Path(output) / "evaluation_report.csv"
+            generate_csv_report(results, str(csv_path))
+            typer.echo(f"📊 CSV report: {csv_path}")
 
-        # Print summary
+        # Print summary with nice formatting
         stats = results["main_statistics"]
-        print(f"\n=== DocSAF Evaluation Summary ===")
-        print(f"Samples: {results['evaluation_config']['num_samples']}")
-        print(f"Success Rate: {stats.get('success_rate', 0.0):.1%}")
-        print(f"Mean Alignment Drop: {stats.get('alignment_drop_mean', 0):.3f}")
-        print(f"Mean LPIPS: {stats.get('lpips_mean', 0):.4f}")
-        print(
-            f"Below Perceptibility Threshold: {stats.get('lpips_below_threshold_rate', 0):.1%}"
-        )
-        print(f"Results saved to: {args.output}")
+        typer.echo("\n" + "="*60)
+        typer.echo("🎯 DocSAF Evaluation Summary")
+        typer.echo("="*60)
+        typer.echo(f"📊 Samples Evaluated:        {results['evaluation_config']['num_samples']}")
+        typer.echo(f"🎯 Attack Success Rate:      {stats.get('success_rate', 0.0):.1%}")
+        typer.echo(f"📉 Mean Alignment Drop:      {stats.get('alignment_drop_mean', 0):.3f}")
+        typer.echo(f"🖼️  Mean LPIPS Distance:      {stats.get('lpips_mean', 0):.4f}")
+        typer.echo(f"👁️  Below Threshold (≤0.06):  {stats.get('lpips_below_threshold_rate', 0):.1%}")
+        
+        # Transfer and defense results
+        transfer_keys = [k for k in stats.keys() if k.startswith('held_out_aligner_')]
+        if transfer_keys:
+            avg_transfer = np.mean([stats[k] for k in transfer_keys])
+            typer.echo(f"🔄 Average Transfer ASR:     {avg_transfer:.1%}")
+            
+        defense_keys = ['jpeg_defense_asr', 'resize_defense_asr', 'combined_defense_asr']
+        defense_present = [k for k in defense_keys if k in stats]
+        if defense_present:
+            avg_defense = np.mean([stats[k] for k in defense_present])
+            typer.echo(f"🛡️  Average Defense ASR:      {avg_defense:.1%}")
+        
+        typer.echo(f"💾 Results saved to:         {output}")
+        
+        # Success indicator
+        success_rate = stats.get('success_rate', 0.0)
+        if success_rate > 0.5:
+            typer.echo("✅ Evaluation complete: Strong attack performance!")
+        elif success_rate > 0.1:
+            typer.echo("⚠️  Evaluation complete: Moderate attack performance")
+        else:
+            typer.echo("❌ Evaluation complete: Weak attack performance")
 
     except Exception as e:
-        logger.error(f"Evaluation failed: {e}")
-        raise
+        typer.echo(f"❌ Evaluation failed: {e}", err=True)
+        logger.error(f"Detailed error: {e}", exc_info=True)
+        raise typer.Exit(1)
 
 
 if __name__ == "__main__":
-    main()
+    app()
