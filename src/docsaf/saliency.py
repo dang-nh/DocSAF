@@ -6,7 +6,7 @@ from PIL import Image
 from typing import Tuple, Optional
 import logging
 
-from .surrogates import ImageTextEmbedder, CLIPEmbedder
+from .surrogates import ImageTextEmbedder, CLIPAligner
 
 logger = logging.getLogger(__name__)
 
@@ -69,12 +69,12 @@ def compute_gradient_saliency(
 
 
 def clip_alignment_and_saliency(
-    model: CLIPEmbedder, pil_image: Image.Image, text: str, device: str = "cuda"
+    model: CLIPAligner, pil_image: Image.Image, text: str, device: str = "cuda"
 ) -> Tuple[float, torch.Tensor]:
     """Convenient wrapper for CLIP gradient saliency.
 
     Args:
-        model: CLIPEmbedder instance
+        model: CLIPAligner instance
         pil_image: PIL Image
         text: Text string
         device: Target device
