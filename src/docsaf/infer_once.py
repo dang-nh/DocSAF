@@ -123,9 +123,12 @@ def infer_single_image(
     logger.info("Applying attenuation field...")
     x_adv = apply_field_safe(x_orig, saliency_map, alpha, radius)
 
-    # Compute adversarial alignment
+    # Compute adversarial alignment (no gradients needed for evaluation)
     with torch.no_grad():
-        adv_alignment, _ = compute_gradient_saliency(embedder, x_adv, text)
+        # Get embeddings directly since we don't need gradients for evaluation
+        adv_img_emb = embedder.image_embed(x_adv)
+        adv_txt_emb = embedder.text_embed([text])
+        adv_alignment = float((adv_img_emb * adv_txt_emb).sum(dim=-1).mean())
     logger.info(f"Adversarial alignment score: {adv_alignment:.4f}")
 
     # Compute LPIPS
