@@ -12,8 +12,9 @@ saliency_target: "clip" # CLIP text-image cosine similarity
 # Surrogate models for ensemble attack
 surrogates:
   - "openclip:ViT-L-14@336"
-  - "hf:blip2-opt-2.7b"
-  - "hf:naver-clova-ix/donut-base"
+  # Note: BLIP-2 and Donut implementations need additional work
+  # - "hf:blip2-opt-2.7b"
+  # - "hf:naver-clova-ix/donut-base"
 
 # OCR backend
 ocr: "easyocr"   # ["easyocr", "paddleocr"]
