@@ -1,0 +1,43 @@
+# DocSAF Configuration for FUNSD Dataset
+# FUNSD: Form Understanding in Noisy Scanned Documents
+
+# Core parameters
+alpha: 1.2
+radius: 7
+
+# Saliency computation
+saliency: "gradients"
+saliency_target: "clip"
+
+# Surrogate models
+surrogates:
+  - "openclip:ViT-L-14@336"
+
+# OCR backend (not used for FUNSD as it has pre-extracted text)
+ocr: "easyocr"
+
+# Dataset-specific configuration
+dataset:
+  line_level: true
+  is_normalize: true
+  max_size: [1024, 1024]
+
+# Training parameters - optimized for FUNSD
+training:
+  steps: 5000      # FUNSD is smaller dataset
+  batch_size: 4    # Smaller batch for memory efficiency
+  lr: 0.01
+  tv_lambda: 1.0e-3
+
+# EOT-light transforms
+eot:
+  jpeg_q_min: 50
+  jpeg_q_max: 90
+  resize_min: 0.9
+  resize_max: 1.1
+  eot_prob: 0.3    # Lower EOT probability for structured forms
+
+# Device and misc
+device: "auto"
+random_seed: 42
+lpips_threshold: 0.06

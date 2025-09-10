@@ -8,76 +8,68 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def apply_field(
-    x: torch.Tensor, S: torch.Tensor, alpha: float, radius: float
-) -> torch.Tensor:
-    """Apply attenuation field to input image.
+def _gauss1d(sigma, K=21):
+    if sigma.ndim == 0:
+        sigma = sigma[None]
+    B = sigma.shape[0]
+    x = torch.arange(K, device=sigma.device, dtype=sigma.dtype) - (K - 1) / 2
+    s = torch.clamp(sigma, min=0.5, max=10.0)
+    g = torch.exp(-0.5 * (x[None, :] / s[:, None]) ** 2)  # (B, K)
+    g = g / (g.sum(dim=-1, keepdim=True) + 1e-8)
+    return g
 
-    The field performs local defocus blending:
-    A_θ(x) = σ(alpha * (Gaussian(radius) * S(x)))
-    x' = (1 - A) ⊙ x + A ⊙ blur(x)
 
-    Args:
-        x: Input image tensor (B, 3, H, W) in [0, 1]
-        S: Saliency map (B, 1, H, W) in [0, 1]
-        alpha: Field strength parameter
-        radius: Gaussian blur radius (pixels)
+def _gauss2d_kernel(sigma, K=21, C=1):
+    g1 = _gauss1d(sigma, K)      # (B, K)
+    g2 = g1[:, :, None] * g1[:, None, :]  # (B, K, K)
+    kernel = g2[:, None, :, :].repeat(1, C, 1, 1)  # (B, C, K, K)
+    return kernel
 
-    Returns:
-        Adversarial image (B, 3, H, W) with same range as input
 
-    Raises:
-        ValueError: If input dimensions are invalid
+def _depthwise_conv2d(x, kernel):
+    B, C, H, W = x.shape
+    K = kernel.shape[-1]
+    pad = K // 2
+    weight = kernel.view(B * C, 1, K, K)
+    y = F.conv2d(x.view(1, B * C, H, W), weight=weight, padding=pad, groups=B * C)
+    return y.view(B, C, H, W)
+
+
+def apply_field(images, saliency_maps, alpha, radius_sigma, K=21):
     """
-    if x.dim() != 4 or S.dim() != 4:
-        raise ValueError(f"Expected 4D tensors, got x: {x.shape}, S: {S.shape}")
+    images: (B,3,H,W), saliency_maps: (B,1,H,W) in [0,1]
+    alpha, radius_sigma: scalar tensors (requires_grad=True)
+    returns: x_adv, A
+    """
+    B, C, H, W = images.shape
+    sigma = (radius_sigma.reshape(1) + 1e-3).expand(B)  # keep differentiable
 
-    if x.shape[0] != S.shape[0] or x.shape[2:] != S.shape[2:]:
-        raise ValueError(
-            f"Batch/spatial dimensions mismatch: x: {x.shape}, S: {S.shape}"
-        )
+    # Smooth saliency
+    k_s = _gauss2d_kernel(sigma, K=K, C=1)
+    S_smooth = _depthwise_conv2d(saliency_maps, k_s)  # (B, 1, H, W)
 
-    # Handle extreme cases early
-    if alpha == 0.0:
-        return x.clamp(0.0, 1.0)
+    # Center & scale to avoid sigmoid saturation
+    S_centered = S_smooth - S_smooth.mean(dim=(2, 3), keepdim=True)
+    S_norm = S_centered / (S_centered.std(dim=(2, 3), keepdim=True) + 1e-6)
 
-    # Handle zero saliency case (should return original image)
-    if torch.allclose(S, torch.zeros_like(S), atol=1e-6):
-        return x.clamp(0.0, 1.0)
+    # Mask (depends on alpha)
+    A = torch.sigmoid(alpha * S_norm)  # (B, 1, H, W)
 
-    try:
-        import kornia.filters
-    except ImportError:
-        raise ImportError("Kornia not installed. Run: pip install kornia")
+    # Blur image (depends on sigma)
+    k_x = _gauss2d_kernel(sigma, K=K, C=C)
+    x_blur = _depthwise_conv2d(images, k_x)  # (B, 3, H, W)
 
-    # Compute blur parameters with bounds checking
-    H, W = x.shape[-2:]
-    max_kernel_size = (
-        min(H, W) // 2 * 2 - 1
-    )  # Largest odd kernel that won't cause padding issues
-    max_kernel_size = max(3, max_kernel_size)  # At least 3
+    # Compose
+    x_adv = (1 - A) * images + A * x_blur
+    return x_adv, A
 
-    kernel_size = int(max(3, 2 * int(radius) + 1))
-    if kernel_size % 2 == 0:
-        kernel_size += 1  # Ensure odd kernel size
 
-    # Limit kernel size to prevent padding errors
-    kernel_size = min(kernel_size, max_kernel_size)
-
-    sigma = max(0.5, radius / 3.0)
-
-    # Apply Gaussian blur
-    x_blur = kornia.filters.gaussian_blur2d(
-        x, kernel_size=(kernel_size, kernel_size), sigma=(sigma, sigma)
-    )
-
-    # Compute attenuation mask (gamma = 1.0 fixed)
-    A = torch.sigmoid(alpha * S)  # (B, 1, H, W)
-
-    # Blend original and blurred images
-    x_adv = (1 - A) * x + A * x_blur
-
-    return x_adv
+def compute_tv_loss(x, reduction="mean"):
+    dx = x[..., :, 1:] - x[..., :, :-1]
+    dy = x[..., 1:, :] - x[..., :-1, :]
+    if reduction == "mean":
+        return dx.abs().mean() + dy.abs().mean()
+    return dx.abs().sum() + dy.abs().sum()
 
 
 def field_with_smoothing(
@@ -86,7 +78,7 @@ def field_with_smoothing(
     alpha: float,
     radius: float,
     smooth_radius: float = 2.0,
-) -> torch.Tensor:
+) -> Tuple[torch.Tensor, torch.Tensor]:
     """Apply field with additional saliency smoothing.
 
     Args:
@@ -97,7 +89,7 @@ def field_with_smoothing(
         smooth_radius: Additional smoothing radius for saliency
 
     Returns:
-        Adversarial image with smoothed saliency field
+        Tuple of (adversarial image, mask A)
     """
     try:
         import kornia.filters
@@ -123,35 +115,6 @@ def field_with_smoothing(
 
     # Apply field with smoothed saliency
     return apply_field(x, S_smooth, alpha, radius)
-
-
-def compute_tv_loss(field_mask: torch.Tensor, reduction: str = "mean") -> torch.Tensor:
-    """Compute total variation loss for field regularization.
-
-    Args:
-        field_mask: Attenuation mask (B, 1, H, W)
-        reduction: Loss reduction ("mean", "sum", "none")
-
-    Returns:
-        TV loss scalar or per-batch tensor
-    """
-    if field_mask.dim() != 4:
-        raise ValueError(f"Expected 4D tensor, got shape: {field_mask.shape}")
-
-    # Compute TV via finite differences
-    diff_h = torch.abs(field_mask[:, :, 1:, :] - field_mask[:, :, :-1, :])
-    diff_w = torch.abs(field_mask[:, :, :, 1:] - field_mask[:, :, :, :-1])
-
-    tv_loss = diff_h.mean() + diff_w.mean()
-
-    if reduction == "mean":
-        return tv_loss
-    elif reduction == "sum":
-        return tv_loss * field_mask.shape[0]
-    elif reduction == "none":
-        return tv_loss.expand(field_mask.shape[0])
-    else:
-        raise ValueError(f"Invalid reduction: {reduction}")
 
 
 def field_stats(x_orig: torch.Tensor, x_adv: torch.Tensor) -> dict:
@@ -185,28 +148,38 @@ def validate_field_params(alpha: float, radius: float) -> None:
     Raises:
         ValueError: If parameters are out of valid range
     """
-    if not isinstance(alpha, (int, float)):
-        raise ValueError(f"Alpha must be numeric, got: {type(alpha)}")
+    if not isinstance(alpha, (int, float, torch.Tensor)):
+        raise ValueError(f"Alpha must be numeric or tensor, got: {type(alpha)}")
 
-    if not isinstance(radius, (int, float)):
-        raise ValueError(f"Radius must be numeric, got: {type(radius)}")
+    if not isinstance(radius, (int, float, torch.Tensor)):
+        raise ValueError(f"Radius must be numeric or tensor, got: {type(radius)}")
 
-    if alpha < 0:
-        raise ValueError(f"Alpha must be non-negative, got: {alpha}")
+    if isinstance(alpha, torch.Tensor):
+        alpha_val = alpha.item() if alpha.numel() == 1 else alpha.min().item()
+    else:
+        alpha_val = alpha
 
-    if radius <= 0:
-        raise ValueError(f"Radius must be positive, got: {radius}")
+    if isinstance(radius, torch.Tensor):
+        radius_val = radius.item() if radius.numel() == 1 else radius.min().item()
+    else:
+        radius_val = radius
 
-    if alpha > 10:
-        logger.warning(f"Large alpha value ({alpha}) may cause severe distortion")
+    if alpha_val < 0:
+        raise ValueError(f"Alpha must be non-negative, got: {alpha_val}")
 
-    if radius > 20:
-        logger.warning(f"Large radius value ({radius}) may cause excessive blur")
+    if radius_val <= 0:
+        raise ValueError(f"Radius must be positive, got: {radius_val}")
+
+    if alpha_val > 10:
+        logger.warning(f"Large alpha value ({alpha_val}) may cause severe distortion")
+
+    if radius_val > 20:
+        logger.warning(f"Large radius value ({radius_val}) may cause excessive blur")
 
 
 def apply_field_safe(
-    x: torch.Tensor, S: torch.Tensor, alpha: float, radius: float
-) -> torch.Tensor:
+    x: torch.Tensor, S: torch.Tensor, alpha: torch.Tensor, radius: torch.Tensor
+) -> Tuple[torch.Tensor, torch.Tensor]:
     """Safe wrapper for apply_field with parameter validation.
 
     Args:
@@ -216,7 +189,7 @@ def apply_field_safe(
         radius: Blur radius
 
     Returns:
-        Adversarial image tensor
+        Tuple of (adversarial image, mask A)
 
     Raises:
         ValueError: If parameters or inputs are invalid

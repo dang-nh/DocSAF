@@ -6,7 +6,7 @@ alpha: 1.2         # attenuation field strength
 radius: 7          # Gaussian kernel radius (px at ~300dpi)
 
 # Saliency computation
-saliency: "gradients"   # ["gradients", "gradcam"]
+saliency: "gradcam"   # ["gradients", "gradcam"]
 saliency_target: "clip" # CLIP text-image cosine similarity
 
 # Surrogate models for ensemble attack
@@ -18,6 +18,13 @@ surrogates:
 
 # OCR backend
 ocr: "easyocr"   # ["easyocr", "paddleocr"]
+
+
+# Dataset configuration
+dataset:
+  line_level: true
+  is_normalize: true
+  max_size: [1024, 1024]
 
 # Training parameters
 training:

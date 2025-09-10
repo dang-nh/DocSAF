@@ -1,0 +1,43 @@
+# DocSAF Configuration for DocVQA Dataset
+# DocVQA: Document Visual Question Answering
+
+# Core parameters
+alpha: 1.1        # Lower alpha for VQA tasks
+radius: 6         # Smaller radius for precise targeting
+
+# Saliency computation
+saliency: "gradients"
+saliency_target: "clip"
+
+# Surrogate models
+surrogates:
+  - "openclip:ViT-L-14@336"
+
+# OCR backend
+ocr: "easyocr"
+
+# Dataset-specific configuration
+dataset:
+  line_level: true
+  is_normalize: true
+  max_size: [1024, 1024]
+
+# Training parameters - optimized for DocVQA
+training:
+  steps: 12000     # DocVQA is large dataset
+  batch_size: 4    # Smaller batch due to question+context text
+  lr: 0.005        # Lower LR for question-answering stability
+  tv_lambda: 1.0e-3
+
+# EOT-light transforms - careful with VQA
+eot:
+  jpeg_q_min: 60
+  jpeg_q_max: 95
+  resize_min: 0.95
+  resize_max: 1.05
+  eot_prob: 0.2    # Conservative EOT for VQA
+
+# Device and misc
+device: "auto"
+random_seed: 42
+lpips_threshold: 0.05    # Stricter threshold for VQA

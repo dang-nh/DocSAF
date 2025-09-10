@@ -41,18 +41,12 @@ def alignment_collapse_loss(
     total_alignment = 0.0
 
     for embedder in embedders:
-        # Get embeddings
-        img_emb = embedder.image_embed(x_adv)  # (B, D)
-        txt_emb = embedder.text_embed(texts)  # (B, D)
-
-        # Ensure normalized (cosine similarity)
+        # critical: allow gradients to flow to x_adv -> alpha, radius
+        img_emb = embedder.image_embed(x_adv, requires_grad=True)
+        txt_emb = embedder.text_embed(texts)
         img_emb = F.normalize(img_emb, dim=-1)
         txt_emb = F.normalize(txt_emb, dim=-1)
-
-        # Compute per-sample cosine similarity
-        alignment = (img_emb * txt_emb).sum(dim=-1)  # (B,)
-
-        # Accumulate across embedders
+        alignment = (img_emb * txt_emb).sum(dim=-1)
         total_alignment = total_alignment + alignment
 
     # Average across embedders
@@ -101,7 +95,7 @@ def targeted_alignment_loss(
     total_target_align = 0.0
 
     for embedder in embedders:
-        img_emb = embedder.image_embed(x_adv)
+        img_emb = embedder.image_embed(x_adv, requires_grad=True)
 
         # Original text alignment (minimize)
         orig_txt_emb = embedder.text_embed(original_texts)
@@ -165,22 +159,15 @@ def docsaf_objective(
     Returns:
         (total_loss, loss_components_dict)
     """
-    batch_size = images.shape[0]
-    device = images.device
+    radius_pos = F.softplus(radius) + 1e-3
+    x_adv, A = apply_field(images, saliency_maps, alpha, radius_pos)
 
-    # Ensure positive radius via softplus
-    radius_pos = F.softplus(radius)
-
-    # Apply attenuation field
-    x_adv = apply_field(images, saliency_maps, alpha, radius_pos)
-
-    # Apply EOT transforms if specified
+    # keep EOT off (or ensure EOT is differentiable before enabling)
     if eot_prob > 0 and eot_config is not None:
-        x_adv_eot = eot_light_tensor(x_adv, eot_prob=eot_prob, **eot_config)
+        x_adv_eot = x_adv  # disable nondiff EOT in training path
     else:
         x_adv_eot = x_adv
 
-    # Compute alignment loss
     if targeted_texts is not None:
         alignment_loss = targeted_alignment_loss(
             embedders, x_adv_eot, texts, targeted_texts
@@ -188,14 +175,9 @@ def docsaf_objective(
     else:
         alignment_loss = alignment_collapse_loss(embedders, x_adv_eot, texts)
 
-    # Compute TV regularization on attenuation mask
-    attenuation_mask = torch.sigmoid(alpha * saliency_maps)
-    tv_loss = compute_tv_loss(attenuation_mask, reduction="mean")
-
-    # Total loss
+    tv_loss = compute_tv_loss(A, reduction="mean")
     total_loss = alignment_loss + tv_lambda * tv_loss
 
-    # Detailed loss components
     loss_components = {
         "total_loss": total_loss,
         "alignment_loss": alignment_loss,
@@ -203,7 +185,6 @@ def docsaf_objective(
         "alpha": alpha,
         "radius_pos": radius_pos,
     }
-
     return total_loss, loss_components
 
 

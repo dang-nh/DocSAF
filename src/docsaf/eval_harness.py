@@ -11,7 +11,7 @@ import logging
 from tqdm import tqdm
 import random
 
-from .utils import (
+from .utils.utils import (
     load_config,
     setup_logging,
     get_device,
