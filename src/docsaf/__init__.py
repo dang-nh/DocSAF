@@ -9,7 +9,7 @@ from .saliency import compute_gradient_saliency
 from .surrogates import load_clip_embedder
 from .ocr import ocr_read
 from .objective import docsaf_objective, DocSAFObjective
-from .utils import load_config, setup_logging
+from .utils.utils import load_config, setup_logging
 
 __all__ = [
     "apply_field",

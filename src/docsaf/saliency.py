@@ -29,41 +29,36 @@ def compute_gradient_saliency(
 
     Raises:
         ValueError: If image doesn't require gradients
+        RuntimeError: If gradient computation fails
     """
     if not image.requires_grad:
         raise ValueError("Input image must require gradients for saliency computation")
 
-    # Get embeddings
-    img_emb = embedder.image_embed(image)  # (B, D)
-    txt_emb = embedder.text_embed([text])  # (1, D)
+    # Ensure image can retain gradients
+    image.retain_grad()
 
-    # Ensure normalized (cosine similarity)
+    img_emb = embedder.image_embed(image, requires_grad=True)  # <-- critical
+    txt_emb = embedder.text_embed([text])
+
     img_emb = F.normalize(img_emb, dim=-1)
     txt_emb = F.normalize(txt_emb, dim=-1)
 
-    # Compute alignment (cosine similarity)
-    alignment = (img_emb * txt_emb).sum(dim=-1).mean()  # Scalar for backprop
+    alignment = (img_emb * txt_emb).sum(dim=-1).mean()  # scalar
+    alignment.backward()  # no retain_graph unless needed elsewhere
 
-    # Backpropagate to get gradients
-    alignment.backward(retain_graph=True)
-
-    # Extract gradients and compute saliency
     if image.grad is None:
-        # If no gradients, create zero gradients as fallback
-        grads = torch.zeros_like(image)
-    else:
-        grads = image.grad.detach()  # (B, 3, H, W)
-    saliency = grads.abs().mean(dim=1, keepdim=True)  # (B, 1, H, W)
+        raise RuntimeError("Saliency backprop failed: image.grad is None. Check no_grad in image_embed.")
 
+    grads = image.grad.detach()  # (B, 3, H, W)
+    # grads = torch.autograd.grad(alignment, image, retain_graph=False, create_graph=False)[0].detach()
+    saliency = grads.abs().mean(dim=1, keepdim=True)  # (B, 1, H, W)
     if normalize:
-        # Normalize to [0, 1] per batch item
-        for i in range(saliency.shape[0]):
+        # per-sample min-max normalize
+        B = saliency.shape[0]
+        for i in range(B):
             s = saliency[i]
             s_min, s_max = s.min(), s.max()
-            if s_max > s_min:
-                saliency[i] = (s - s_min) / (s_max - s_min)
-            else:
-                saliency[i] = torch.zeros_like(s)
+            saliency[i] = (s - s_min) / (s_max - s_min + 1e-8)
 
     return float(alignment.item()), saliency
 

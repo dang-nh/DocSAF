@@ -7,7 +7,7 @@ from PIL import Image
 import logging
 from typing import Optional
 
-from .utils import (
+from .utils.utils import (
     load_config,
     setup_logging,
     get_device,

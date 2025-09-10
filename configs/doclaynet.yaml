@@ -1,0 +1,43 @@
+# DocSAF Configuration for DocLayNet Dataset
+# DocLayNet: Document Layout Analysis
+
+# Core parameters
+alpha: 1.4        # Higher alpha for layout disruption
+radius: 9         # Larger radius for layout elements
+
+# Saliency computation
+saliency: "gradients"
+saliency_target: "clip"
+
+# Surrogate models
+surrogates:
+  - "openclip:ViT-L-14@336"
+
+# OCR backend
+ocr: "easyocr"
+
+# Dataset-specific configuration
+dataset:
+  line_level: false   # DocLayNet is more element-focused
+  is_normalize: true
+  max_size: [1024, 1024]
+
+# Training parameters - optimized for DocLayNet
+training:
+  steps: 10000
+  batch_size: 4
+  lr: 0.01
+  tv_lambda: 1.0e-3
+
+# EOT-light transforms
+eot:
+  jpeg_q_min: 50
+  jpeg_q_max: 90
+  resize_min: 0.9
+  resize_max: 1.1
+  eot_prob: 0.4
+
+# Device and misc
+device: "auto"
+random_seed: 42
+lpips_threshold: 0.07
