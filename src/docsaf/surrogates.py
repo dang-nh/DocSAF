@@ -62,6 +62,34 @@ class ImageTextEmbedder(Protocol):
         ...
 
 
+class ImageTextEmbedder:
+    """Universal image-text embedder wrapper with gradient control."""
+    
+    def __init__(self, model, preprocess=None, tokenizer=None, device="cuda"):
+        self.model = model
+        self.preprocess = preprocess  # must be PyTorch ops (no PIL/NumPy) if used here
+        self.tokenizer = tokenizer
+        self.device = device
+        self.model.eval()  # eval is fine; just do not wrap forward in no_grad
+    
+    def image_embed(self, x: torch.Tensor, requires_grad: bool = True) -> torch.Tensor:
+        # x is already a tensor on device, preprocessed outside or here by torch ops
+        x_in = x
+        # If you require preprocessing, ensure it is differentiable and inside PyTorch graph.
+        # Example (if you had mean/std norm): x_in = (x - mean)/std
+        if requires_grad:
+            return self.model.encode_image(x_in)  # NO no_grad here
+        else:
+            with torch.no_grad():
+                return self.model.encode_image(x_in)
+    
+    def text_embed(self, texts: list[str]) -> torch.Tensor:
+        with torch.no_grad():
+            # tokenize must not detach the graph for image path (text has no gradients anyway)
+            tokenized = self.tokenizer(texts).to(self.device) if self.tokenizer else texts
+            return self.model.encode_text(tokenized)
+
+
 class CLIPAligner:
     """OpenCLIP wrapper implementing ImageTextAligner protocol."""
 
@@ -85,6 +113,10 @@ class CLIPAligner:
 
     def encode_image(self, x: torch.Tensor) -> torch.Tensor:
         """Encode image tensor (applies preprocessing if needed)."""
+        # Ensure tensor is in (B, C, H, W) format
+        if x.dim() == 3:
+            x = x.unsqueeze(0)  # Add batch dimension
+        
         # If image is not the expected size, we need to preprocess it
         # CLIP expects 224x224 for ViT-L-14
         if x.shape[-2:] != (224, 224):
@@ -117,7 +149,7 @@ class CLIPAligner:
         return (img_emb * txt_emb).sum(dim=-1)  # (B,)
 
     # Legacy methods for backward compatibility
-    def image_embed(self, image: torch.Tensor) -> torch.Tensor:
+    def image_embed(self, image: torch.Tensor, requires_grad: bool = True) -> torch.Tensor:
         """Legacy method - use encode_image instead."""
         return self.encode_image(image)
 
@@ -167,19 +199,19 @@ class BLIP2Aligner:
             inputs = self.processor(images=pil_image, return_tensors="pt").to(
                 self.model.device
             )
-            with torch.no_grad():
-                # Use the vision model directly to get pooled features
-                pixel_values = inputs.pixel_values
-                vision_outputs = self.model.vision_model(pixel_values)
-                
-                # Use pooled output if available, otherwise pool the last hidden state
-                if hasattr(vision_outputs, 'pooler_output') and vision_outputs.pooler_output is not None:
-                    image_features = vision_outputs.pooler_output
-                else:
-                    # Pool the last hidden state
-                    image_features = vision_outputs.last_hidden_state.mean(dim=1)
-                
-                features_list.append(F.normalize(image_features, dim=-1))
+            # Removed torch.no_grad() to allow gradient flow
+            # Use the vision model directly to get pooled features
+            pixel_values = inputs.pixel_values
+            vision_outputs = self.model.vision_model(pixel_values)
+            
+            # Use pooled output if available, otherwise pool the last hidden state
+            if hasattr(vision_outputs, 'pooler_output') and vision_outputs.pooler_output is not None:
+                image_features = vision_outputs.pooler_output
+            else:
+                # Pool the last hidden state
+                image_features = vision_outputs.last_hidden_state.mean(dim=1)
+            
+            features_list.append(F.normalize(image_features, dim=-1))
         
         return torch.cat(features_list, dim=0)
 
@@ -224,7 +256,7 @@ class BLIP2Aligner:
         return (img_emb * txt_emb).sum(dim=-1)  # (B,)
 
     # Legacy methods for backward compatibility
-    def image_embed(self, image: torch.Tensor) -> torch.Tensor:
+    def image_embed(self, image: torch.Tensor, requires_grad: bool = True) -> torch.Tensor:
         """Legacy method - use encode_image instead."""
         return self.encode_image(image)
 
@@ -277,12 +309,12 @@ class DonutAligner:
                 self.model.device
             )
             
-            with torch.no_grad():
-                # Get encoder features (vision encoder output)
-                encoder_outputs = self.model.encoder(pixel_values)
-                # Pool the encoder features (mean pooling over spatial dimensions)
-                encoder_features = encoder_outputs.last_hidden_state.mean(dim=1)  # (1, D)
-                features_list.append(F.normalize(encoder_features, dim=-1))
+            # Removed torch.no_grad() to allow gradient flow
+            # Get encoder features (vision encoder output)
+            encoder_outputs = self.model.encoder(pixel_values)
+            # Pool the encoder features (mean pooling over spatial dimensions)
+            encoder_features = encoder_outputs.last_hidden_state.mean(dim=1)  # (1, D)
+            features_list.append(F.normalize(encoder_features, dim=-1))
         
         return torch.cat(features_list, dim=0)
 
@@ -324,7 +356,7 @@ class DonutAligner:
         return (img_emb * txt_emb).sum(dim=-1)  # (B,)
 
     # Legacy methods for backward compatibility
-    def image_embed(self, image: torch.Tensor) -> torch.Tensor:
+    def image_embed(self, image: torch.Tensor, requires_grad: bool = True) -> torch.Tensor:
         """Legacy method - use encode_image instead."""
         return self.encode_image(image)
 
