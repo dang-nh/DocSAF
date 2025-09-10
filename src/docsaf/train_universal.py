@@ -523,7 +523,7 @@ def train_universal_parameters(
 
     # Training loop
     logger.info(f"Starting training for {steps} steps...")
-    logger.info(f"Initial alpha={alpha.item():.3f}, radius={radius.item():.3f}")
+    logger.info(f"Initial alpha_raw={alpha_raw.item():.3f}, radius_raw={radius_raw.item():.3f}")
 
     history = {
         "steps": [],
