@@ -1,0 +1,244 @@
+{
+    "dontcare": [],
+    "valid_line": [
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 268,
+                        "y3": 345,
+                        "x3": 267,
+                        "y4": 336,
+                        "x1": 34,
+                        "y1": 310,
+                        "x4": 33,
+                        "y2": 318
+                    },
+                    "is_key": 0,
+                    "row_id": 2222038,
+                    "text": "Masker Bengkuang"
+                }
+            ],
+            "category": "menu.nm",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 284,
+                        "y3": 342,
+                        "x3": 284,
+                        "y4": 342,
+                        "x1": 270,
+                        "y1": 318,
+                        "x4": 270,
+                        "y2": 318
+                    },
+                    "is_key": 0,
+                    "row_id": 2222038,
+                    "text": "1"
+                }
+            ],
+            "category": "menu.cnt",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 112,
+                        "y3": 368,
+                        "x3": 112,
+                        "y4": 368,
+                        "x1": 36,
+                        "y1": 342,
+                        "x4": 36,
+                        "y2": 342
+                    },
+                    "is_key": 0,
+                    "row_id": 2222039,
+                    "text": "11000"
+                }
+            ],
+            "category": "menu.unitprice",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 394,
+                        "y3": 356,
+                        "x3": 394,
+                        "y4": 356,
+                        "x1": 324,
+                        "y1": 332,
+                        "x4": 324,
+                        "y2": 332
+                    },
+                    "is_key": 0,
+                    "row_id": 2222038,
+                    "text": "11000"
+                }
+            ],
+            "category": "menu.price",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 102,
+                        "y3": 540,
+                        "x3": 102,
+                        "y4": 540,
+                        "x1": 30,
+                        "y1": 514,
+                        "x4": 30,
+                        "y2": 514
+                    },
+                    "is_key": 1,
+                    "row_id": 2222044,
+                    "text": "Tunai"
+                },
+                {
+                    "quad": {
+                        "x2": 398,
+                        "y3": 554,
+                        "x3": 398,
+                        "y4": 554,
+                        "x1": 326,
+                        "y1": 528,
+                        "x4": 326,
+                        "y2": 528
+                    },
+                    "is_key": 0,
+                    "row_id": 2222044,
+                    "text": "11000"
+                }
+            ],
+            "category": "total.cashprice",
+            "group_id": 4
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 162,
+                        "y3": 614,
+                        "x3": 162,
+                        "y4": 614,
+                        "x1": 32,
+                        "y1": 590,
+                        "x4": 32,
+                        "y2": 590
+                    },
+                    "is_key": 1,
+                    "row_id": 2222045,
+                    "text": "Kembalian"
+                },
+                {
+                    "quad": {
+                        "x2": 398,
+                        "y3": 614,
+                        "x3": 398,
+                        "y4": 614,
+                        "x1": 380,
+                        "y1": 590,
+                        "x4": 380,
+                        "y2": 590
+                    },
+                    "is_key": 0,
+                    "row_id": 2222045,
+                    "text": "0"
+                }
+            ],
+            "category": "total.changeprice",
+            "group_id": 4
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 84,
+                        "y3": 444,
+                        "x3": 84,
+                        "y4": 444,
+                        "x1": 30,
+                        "y1": 418,
+                        "x4": 30,
+                        "y2": 418
+                    },
+                    "is_key": 1,
+                    "row_id": 2222041,
+                    "text": "Sub"
+                },
+                {
+                    "quad": {
+                        "x2": 150,
+                        "y3": 444,
+                        "x3": 150,
+                        "y4": 444,
+                        "x1": 88,
+                        "y1": 418,
+                        "x4": 88,
+                        "y2": 418
+                    },
+                    "is_key": 1,
+                    "row_id": 2222041,
+                    "text": "Total"
+                },
+                {
+                    "quad": {
+                        "x2": 396,
+                        "y3": 462,
+                        "x3": 396,
+                        "y4": 462,
+                        "x1": 326,
+                        "y1": 434,
+                        "x4": 326,
+                        "y2": 434
+                    },
+                    "is_key": 0,
+                    "row_id": 2222041,
+                    "text": "11000"
+                }
+            ],
+            "category": "sub_total.subtotal_price",
+            "group_id": 5
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 210,
+                        "y3": 496,
+                        "x3": 210,
+                        "y4": 496,
+                        "x1": 28,
+                        "y1": 466,
+                        "x4": 28,
+                        "y2": 466
+                    },
+                    "is_key": 1,
+                    "row_id": 2222042,
+                    "text": "Discount (0%)"
+                }
+            ],
+            "category": "sub_total.discount_price",
+            "group_id": 5
+        }
+    ],
+    "meta": {
+        "version": "v0.1",
+        "split": "train",
+        "image_id": 460,
+        "image_size": {
+            "width": 576,
+            "height": 864
+        }
+    },
+    "roi": {},
+    "repeating_symbol": []
+}

@@ -77,6 +77,61 @@ x_adversarial = (1 - sigmoid(alpha * S)) ⊙ x_original + sigmoid(alpha * S) ⊙
 
 The method selectively blurs semantically important regions (text, logos, key visual elements) while preserving overall document structure.
 
+## 🏃 How to Run
+
+### Training (CORD Dataset Example)
+
+Train universal parameters on the CORD dataset:
+
+```bash
+# Train on CORD dataset
+python scripts/train_docsaf.py \
+  --data data/cord --dataset cord --split train \
+  --config configs/cord.yaml --output runs --device auto
+
+# With dump intermediates for visualization
+python scripts/train_docsaf.py \
+  --data data/cord --dataset cord --split train \
+  --config configs/cord.yaml --output runs --device auto \
+  --dump-intermediates
+```
+
+### Evaluation
+
+Evaluate alignment drop and task metrics:
+
+```bash
+# Evaluate on CORD test set
+python scripts/test_docsaf.py \
+  --data data/cord --dataset cord --split test \
+  --params runs/train_cord_*/universal.pt --output runs/eval \
+  --device auto
+```
+
+### Other Datasets
+
+```bash
+# Train on FUNSD
+python scripts/train_docsaf.py \
+  --data data/funsd --dataset funsd --split train \
+  --config configs/funsd.yaml --output runs --device auto
+
+# Train on DocVQA
+python scripts/train_docsaf.py \
+  --data data/docvqa --dataset docvqa --split train \
+  --config configs/docvqa.yaml --output runs --device auto
+
+# Train on SROIE
+python scripts/train_docsaf.py \
+  --data data/sroie --dataset sroie --split train \
+  --config configs/sroie.yaml --output runs --device auto
+
+# Train on simple image directory
+python scripts/train_docsaf.py \
+  --data data/test_docs \
+  --config configs/default.yaml --output runs --device auto
+```
+
 ## 🛠️ CLI Commands
 
 ### `docsaf-infer` - Single Image Attack

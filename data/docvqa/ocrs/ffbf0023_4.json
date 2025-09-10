@@ -1,0 +1,7603 @@
+{
+  "status": "Succeeded",
+  "recognitionResults": [
+    {
+      "page": 1,
+      "clockwiseOrientation": 359.96,
+      "width": 1692,
+      "height": 2245,
+      "unit": "pixel",
+      "lines": [
+        {
+          "boundingBox": [
+            622,
+            138,
+            1137,
+            136,
+            1138,
+            167,
+            622,
+            168
+          ],
+          "text": "R. J. REYNOLDS TOBACCO COMPANY",
+          "words": [
+            {
+              "boundingBox": [
+                622,
+                138,
+                655,
+                139,
+                656,
+                168,
+                624,
+                167
+              ],
+              "text": "R."
+            },
+            {
+              "boundingBox": [
+                661,
+                139,
+                685,
+                140,
+                687,
+                168,
+                662,
+                168
+              ],
+              "text": "J."
+            },
+            {
+              "boundingBox": [
+                691,
+                140,
+                847,
+                141,
+                849,
+                168,
+                692,
+                168
+              ],
+              "text": "REYNOLDS"
+            },
+            {
+              "boundingBox": [
+                855,
+                141,
+                988,
+                140,
+                991,
+                167,
+                857,
+                168
+              ],
+              "text": "TOBACCO"
+            },
+            {
+              "boundingBox": [
+                998,
+                140,
+                1135,
+                137,
+                1138,
+                165,
+                1000,
+                167
+              ],
+              "text": "COMPANY"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            534,
+            170,
+            1216,
+            168,
+            1217,
+            202,
+            535,
+            203
+          ],
+          "text": "RETAIL PARTNERS MARKETING PLAN CONTRACT",
+          "words": [
+            {
+              "boundingBox": [
+                539,
+                171,
+                643,
+                174,
+                645,
+                203,
+                541,
+                202
+              ],
+              "text": "RETAIL"
+            },
+            {
+              "boundingBox": [
+                649,
+                174,
+                801,
+                175,
+                803,
+                203,
+                651,
+                203
+              ],
+              "text": "PARTNERS"
+            },
+            {
+              "boundingBox": [
+                808,
+                175,
+                974,
+                174,
+                977,
+                203,
+                810,
+                203
+              ],
+              "text": "MARKETING"
+            },
+            {
+              "boundingBox": [
+                980,
+                174,
+                1053,
+                173,
+                1056,
+                203,
+                983,
+                203
+              ],
+              "text": "PLAN"
+            },
+            {
+              "boundingBox": [
+                1062,
+                173,
+                1214,
+                169,
+                1217,
+                201,
+                1064,
+                203
+              ],
+              "text": "CONTRACT"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            594,
+            203,
+            1156,
+            204,
+            1155,
+            235,
+            593,
+            234
+          ],
+          "text": "SELF-SERVICE PACK OUTLET - LEVEL 1/2",
+          "words": [
+            {
+              "boundingBox": [
+                600,
+                205,
+                801,
+                206,
+                802,
+                235,
+                600,
+                233
+              ],
+              "text": "SELF-SERVICE"
+            },
+            {
+              "boundingBox": [
+                808,
+                206,
+                885,
+                206,
+                886,
+                235,
+                809,
+                235
+              ],
+              "text": "PACK"
+            },
+            {
+              "boundingBox": [
+                894,
+                206,
+                1004,
+                206,
+                1005,
+                235,
+                895,
+                235
+              ],
+              "text": "OUTLET"
+            },
+            {
+              "boundingBox": [
+                1009,
+                206,
+                1020,
+                205,
+                1022,
+                235,
+                1011,
+                235
+              ],
+              "text": "-"
+            },
+            {
+              "boundingBox": [
+                1026,
+                205,
+                1114,
+                204,
+                1116,
+                234,
+                1028,
+                235
+              ],
+              "text": "LEVEL"
+            },
+            {
+              "boundingBox": [
+                1121,
+                204,
+                1154,
+                204,
+                1156,
+                233,
+                1123,
+                234
+              ],
+              "text": "1/2"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            255,
+            796,
+            254,
+            797,
+            281,
+            144,
+            282
+          ],
+          "text": "Request For Taxpayer Identification Number and Certification",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                256,
+                234,
+                256,
+                234,
+                282,
+                144,
+                281
+              ],
+              "text": "Request"
+            },
+            {
+              "boundingBox": [
+                239,
+                256,
+                278,
+                257,
+                277,
+                282,
+                239,
+                282
+              ],
+              "text": "For"
+            },
+            {
+              "boundingBox": [
+                283,
+                257,
+                376,
+                257,
+                376,
+                282,
+                282,
+                282
+              ],
+              "text": "Taxpayer"
+            },
+            {
+              "boundingBox": [
+                381,
+                257,
+                520,
+                256,
+                519,
+                282,
+                381,
+                282
+              ],
+              "text": "Identification"
+            },
+            {
+              "boundingBox": [
+                525,
+                256,
+                613,
+                256,
+                613,
+                282,
+                524,
+                282
+              ],
+              "text": "Number"
+            },
+            {
+              "boundingBox": [
+                618,
+                256,
+                658,
+                256,
+                658,
+                281,
+                618,
+                282
+              ],
+              "text": "and"
+            },
+            {
+              "boundingBox": [
+                663,
+                256,
+                797,
+                254,
+                796,
+                281,
+                663,
+                281
+              ],
+              "text": "Certification",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            144,
+            282,
+            1597,
+            281,
+            1598,
+            309,
+            145,
+            309
+          ],
+          "text": "R. J. Reynolds Tobacco Company must withhold tax at the rate of 31% from payee in conformity with Internal Revenue Service backup withholding",
+          "words": [
+            {
+              "boundingBox": [
+                145,
+                284,
+                171,
+                283,
+                171,
+                308,
+                145,
+                308
+              ],
+              "text": "R."
+            },
+            {
+              "boundingBox": [
+                176,
+                283,
+                193,
+                283,
+                193,
+                308,
+                175,
+                308
+              ],
+              "text": "J."
+            },
+            {
+              "boundingBox": [
+                198,
+                283,
+                297,
+                283,
+                297,
+                308,
+                198,
+                308
+              ],
+              "text": "Reynolds",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                302,
+                283,
+                387,
+                283,
+                387,
+                308,
+                302,
+                308
+              ],
+              "text": "Tobacco"
+            },
+            {
+              "boundingBox": [
+                392,
+                283,
+                488,
+                283,
+                488,
+                308,
+                392,
+                308
+              ],
+              "text": "Company"
+            },
+            {
+              "boundingBox": [
+                493,
+                283,
+                544,
+                283,
+                544,
+                308,
+                493,
+                308
+              ],
+              "text": "must"
+            },
+            {
+              "boundingBox": [
+                549,
+                283,
+                637,
+                283,
+                637,
+                308,
+                549,
+                308
+              ],
+              "text": "withhold"
+            },
+            {
+              "boundingBox": [
+                642,
+                283,
+                674,
+                283,
+                674,
+                308,
+                642,
+                308
+              ],
+              "text": "tax"
+            },
+            {
+              "boundingBox": [
+                679,
+                283,
+                700,
+                283,
+                699,
+                308,
+                679,
+                308
+              ],
+              "text": "at"
+            },
+            {
+              "boundingBox": [
+                704,
+                283,
+                736,
+                283,
+                736,
+                308,
+                704,
+                308
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                741,
+                283,
+                783,
+                283,
+                783,
+                308,
+                741,
+                308
+              ],
+              "text": "rate"
+            },
+            {
+              "boundingBox": [
+                788,
+                283,
+                809,
+                283,
+                808,
+                308,
+                788,
+                308
+              ],
+              "text": "of"
+            },
+            {
+              "boundingBox": [
+                813,
+                283,
+                858,
+                283,
+                858,
+                308,
+                813,
+                308
+              ],
+              "text": "31%",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                863,
+                283,
+                906,
+                283,
+                906,
+                308,
+                863,
+                308
+              ],
+              "text": "from"
+            },
+            {
+              "boundingBox": [
+                913,
+                283,
+                974,
+                283,
+                974,
+                308,
+                913,
+                308
+              ],
+              "text": "payee",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                978,
+                283,
+                999,
+                283,
+                999,
+                309,
+                978,
+                308
+              ],
+              "text": "in"
+            },
+            {
+              "boundingBox": [
+                1004,
+                283,
+                1106,
+                283,
+                1107,
+                309,
+                1004,
+                309
+              ],
+              "text": "conformity"
+            },
+            {
+              "boundingBox": [
+                1111,
+                283,
+                1151,
+                283,
+                1151,
+                309,
+                1111,
+                309
+              ],
+              "text": "with"
+            },
+            {
+              "boundingBox": [
+                1156,
+                283,
+                1231,
+                283,
+                1232,
+                309,
+                1156,
+                309
+              ],
+              "text": "Internal"
+            },
+            {
+              "boundingBox": [
+                1236,
+                283,
+                1328,
+                283,
+                1328,
+                309,
+                1236,
+                309
+              ],
+              "text": "Revenue"
+            },
+            {
+              "boundingBox": [
+                1332,
+                283,
+                1404,
+                283,
+                1405,
+                309,
+                1332,
+                309
+              ],
+              "text": "Service"
+            },
+            {
+              "boundingBox": [
+                1409,
+                283,
+                1480,
+                282,
+                1480,
+                309,
+                1409,
+                309
+              ],
+              "text": "backup"
+            },
+            {
+              "boundingBox": [
+                1485,
+                282,
+                1597,
+                282,
+                1597,
+                309,
+                1485,
+                309
+              ],
+              "text": "withholding"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            307,
+            1593,
+            306,
+            1594,
+            333,
+            144,
+            334
+          ],
+          "text": "requirements, if the payee fails to provide R. J. Reynolds Tobacco Company with sufficient correct information to issue a Form 1099 to such payee for",
+          "words": [
+            {
+              "boundingBox": [
+                145,
+                308,
+                281,
+                307,
+                280,
+                334,
+                144,
+                334
+              ],
+              "text": "requirements,"
+            },
+            {
+              "boundingBox": [
+                286,
+                307,
+                298,
+                307,
+                298,
+                333,
+                286,
+                334
+              ],
+              "text": "if"
+            },
+            {
+              "boundingBox": [
+                304,
+                307,
+                334,
+                307,
+                333,
+                333,
+                303,
+                333
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                339,
+                307,
+                401,
+                307,
+                401,
+                333,
+                339,
+                333
+              ],
+              "text": "payee"
+            },
+            {
+              "boundingBox": [
+                406,
+                307,
+                447,
+                307,
+                447,
+                333,
+                406,
+                333
+              ],
+              "text": "fails"
+            },
+            {
+              "boundingBox": [
+                452,
+                307,
+                470,
+                307,
+                470,
+                333,
+                452,
+                333
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                475,
+                307,
+                551,
+                307,
+                551,
+                332,
+                475,
+                333
+              ],
+              "text": "provide"
+            },
+            {
+              "boundingBox": [
+                556,
+                307,
+                581,
+                307,
+                581,
+                332,
+                556,
+                332
+              ],
+              "text": "R."
+            },
+            {
+              "boundingBox": [
+                586,
+                307,
+                602,
+                307,
+                602,
+                332,
+                586,
+                332
+              ],
+              "text": "J."
+            },
+            {
+              "boundingBox": [
+                608,
+                307,
+                707,
+                307,
+                706,
+                332,
+                607,
+                332
+              ],
+              "text": "Reynolds",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                712,
+                307,
+                795,
+                307,
+                795,
+                332,
+                712,
+                332
+              ],
+              "text": "Tobacco",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                800,
+                307,
+                894,
+                307,
+                894,
+                331,
+                800,
+                332
+              ],
+              "text": "Company"
+            },
+            {
+              "boundingBox": [
+                899,
+                307,
+                940,
+                307,
+                939,
+                331,
+                899,
+                331
+              ],
+              "text": "with"
+            },
+            {
+              "boundingBox": [
+                945,
+                307,
+                1032,
+                307,
+                1031,
+                331,
+                945,
+                331
+              ],
+              "text": "sufficient"
+            },
+            {
+              "boundingBox": [
+                1037,
+                307,
+                1102,
+                307,
+                1102,
+                331,
+                1037,
+                331
+              ],
+              "text": "correct"
+            },
+            {
+              "boundingBox": [
+                1108,
+                307,
+                1215,
+                307,
+                1215,
+                332,
+                1107,
+                331
+              ],
+              "text": "information"
+            },
+            {
+              "boundingBox": [
+                1221,
+                307,
+                1240,
+                307,
+                1240,
+                332,
+                1220,
+                332
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                1245,
+                307,
+                1298,
+                307,
+                1298,
+                332,
+                1245,
+                332
+              ],
+              "text": "issue"
+            },
+            {
+              "boundingBox": [
+                1304,
+                307,
+                1316,
+                307,
+                1316,
+                332,
+                1303,
+                332
+              ],
+              "text": "a"
+            },
+            {
+              "boundingBox": [
+                1321,
+                308,
+                1371,
+                308,
+                1371,
+                332,
+                1321,
+                332
+              ],
+              "text": "Form"
+            },
+            {
+              "boundingBox": [
+                1378,
+                308,
+                1424,
+                308,
+                1424,
+                332,
+                1378,
+                332
+              ],
+              "text": "1099"
+            },
+            {
+              "boundingBox": [
+                1429,
+                308,
+                1449,
+                308,
+                1448,
+                332,
+                1429,
+                332
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                1454,
+                308,
+                1496,
+                308,
+                1496,
+                332,
+                1454,
+                332
+              ],
+              "text": "such"
+            },
+            {
+              "boundingBox": [
+                1502,
+                308,
+                1560,
+                308,
+                1560,
+                333,
+                1501,
+                332
+              ],
+              "text": "payee"
+            },
+            {
+              "boundingBox": [
+                1565,
+                308,
+                1593,
+                309,
+                1593,
+                333,
+                1565,
+                333
+              ],
+              "text": "for"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            138,
+            330,
+            1595,
+            329,
+            1596,
+            357,
+            139,
+            358
+          ],
+          "text": "any calendar year. With individual proprietorship, this information is the person's individual name and either his/her social security number (S.S. No.)",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                331,
+                182,
+                331,
+                183,
+                359,
+                145,
+                359
+              ],
+              "text": "any"
+            },
+            {
+              "boundingBox": [
+                188,
+                331,
+                273,
+                331,
+                274,
+                358,
+                188,
+                359
+              ],
+              "text": "calendar",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                279,
+                331,
+                335,
+                331,
+                335,
+                358,
+                279,
+                358
+              ],
+              "text": "year."
+            },
+            {
+              "boundingBox": [
+                340,
+                331,
+                386,
+                331,
+                386,
+                358,
+                341,
+                358
+              ],
+              "text": "With"
+            },
+            {
+              "boundingBox": [
+                391,
+                331,
+                484,
+                330,
+                484,
+                358,
+                392,
+                358
+              ],
+              "text": "individual"
+            },
+            {
+              "boundingBox": [
+                489,
+                330,
+                636,
+                330,
+                637,
+                358,
+                490,
+                358
+              ],
+              "text": "proprietorship,"
+            },
+            {
+              "boundingBox": [
+                642,
+                330,
+                678,
+                330,
+                679,
+                357,
+                642,
+                358
+              ],
+              "text": "this"
+            },
+            {
+              "boundingBox": [
+                684,
+                330,
+                795,
+                330,
+                795,
+                357,
+                684,
+                357
+              ],
+              "text": "information"
+            },
+            {
+              "boundingBox": [
+                800,
+                330,
+                818,
+                330,
+                818,
+                357,
+                800,
+                357
+              ],
+              "text": "is"
+            },
+            {
+              "boundingBox": [
+                824,
+                330,
+                855,
+                330,
+                855,
+                357,
+                824,
+                357
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                860,
+                330,
+                944,
+                330,
+                944,
+                357,
+                860,
+                357
+              ],
+              "text": "person's"
+            },
+            {
+              "boundingBox": [
+                949,
+                330,
+                1040,
+                330,
+                1040,
+                357,
+                949,
+                357
+              ],
+              "text": "individual"
+            },
+            {
+              "boundingBox": [
+                1045,
+                330,
+                1102,
+                330,
+                1102,
+                357,
+                1045,
+                357
+              ],
+              "text": "name"
+            },
+            {
+              "boundingBox": [
+                1107,
+                330,
+                1143,
+                330,
+                1144,
+                357,
+                1107,
+                357
+              ],
+              "text": "and"
+            },
+            {
+              "boundingBox": [
+                1149,
+                330,
+                1203,
+                331,
+                1203,
+                357,
+                1149,
+                357
+              ],
+              "text": "either",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1209,
+                331,
+                1276,
+                331,
+                1276,
+                357,
+                1209,
+                357
+              ],
+              "text": "his/her"
+            },
+            {
+              "boundingBox": [
+                1282,
+                331,
+                1338,
+                331,
+                1338,
+                357,
+                1282,
+                357
+              ],
+              "text": "social"
+            },
+            {
+              "boundingBox": [
+                1343,
+                331,
+                1416,
+                331,
+                1416,
+                358,
+                1343,
+                357
+              ],
+              "text": "security"
+            },
+            {
+              "boundingBox": [
+                1421,
+                331,
+                1494,
+                331,
+                1494,
+                358,
+                1421,
+                358
+              ],
+              "text": "number"
+            },
+            {
+              "boundingBox": [
+                1500,
+                331,
+                1547,
+                331,
+                1547,
+                358,
+                1500,
+                358
+              ],
+              "text": "(S.S."
+            },
+            {
+              "boundingBox": [
+                1552,
+                331,
+                1596,
+                331,
+                1596,
+                358,
+                1552,
+                358
+              ],
+              "text": "No.)"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            144,
+            356,
+            1601,
+            355,
+            1602,
+            385,
+            145,
+            386
+          ],
+          "text": "or the employer identification number (EIN) for the proprietorship. In addition to the payee's individual name, the payee may also provide the business",
+          "words": [
+            {
+              "boundingBox": [
+                145,
+                357,
+                164,
+                357,
+                164,
+                386,
+                145,
+                386
+              ],
+              "text": "or"
+            },
+            {
+              "boundingBox": [
+                169,
+                357,
+                202,
+                357,
+                202,
+                386,
+                169,
+                386
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                208,
+                357,
+                297,
+                357,
+                297,
+                386,
+                208,
+                386
+              ],
+              "text": "employer"
+            },
+            {
+              "boundingBox": [
+                303,
+                357,
+                427,
+                357,
+                427,
+                386,
+                303,
+                386
+              ],
+              "text": "identification"
+            },
+            {
+              "boundingBox": [
+                433,
+                357,
+                507,
+                357,
+                507,
+                385,
+                433,
+                386
+              ],
+              "text": "number"
+            },
+            {
+              "boundingBox": [
+                513,
+                357,
+                566,
+                357,
+                566,
+                385,
+                513,
+                385
+              ],
+              "text": "(EIN)"
+            },
+            {
+              "boundingBox": [
+                572,
+                357,
+                599,
+                356,
+                598,
+                385,
+                572,
+                385
+              ],
+              "text": "for"
+            },
+            {
+              "boundingBox": [
+                604,
+                356,
+                637,
+                356,
+                637,
+                385,
+                604,
+                385
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                642,
+                356,
+                791,
+                356,
+                791,
+                385,
+                642,
+                385
+              ],
+              "text": "proprietorship."
+            },
+            {
+              "boundingBox": [
+                797,
+                356,
+                818,
+                356,
+                818,
+                385,
+                797,
+                385
+              ],
+              "text": "In"
+            },
+            {
+              "boundingBox": [
+                824,
+                356,
+                900,
+                357,
+                900,
+                385,
+                823,
+                385
+              ],
+              "text": "addition"
+            },
+            {
+              "boundingBox": [
+                906,
+                357,
+                925,
+                357,
+                924,
+                385,
+                905,
+                385
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                930,
+                357,
+                961,
+                357,
+                961,
+                385,
+                930,
+                385
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                967,
+                357,
+                1039,
+                357,
+                1039,
+                384,
+                966,
+                385
+              ],
+              "text": "payee's"
+            },
+            {
+              "boundingBox": [
+                1045,
+                357,
+                1132,
+                357,
+                1132,
+                384,
+                1045,
+                384
+              ],
+              "text": "individual"
+            },
+            {
+              "boundingBox": [
+                1138,
+                357,
+                1201,
+                357,
+                1201,
+                384,
+                1138,
+                384
+              ],
+              "text": "name,"
+            },
+            {
+              "boundingBox": [
+                1207,
+                357,
+                1237,
+                357,
+                1237,
+                384,
+                1207,
+                384
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                1243,
+                357,
+                1302,
+                357,
+                1302,
+                384,
+                1243,
+                384
+              ],
+              "text": "payee"
+            },
+            {
+              "boundingBox": [
+                1308,
+                357,
+                1350,
+                357,
+                1350,
+                384,
+                1308,
+                384
+              ],
+              "text": "may"
+            },
+            {
+              "boundingBox": [
+                1356,
+                357,
+                1394,
+                358,
+                1393,
+                384,
+                1355,
+                384
+              ],
+              "text": "also"
+            },
+            {
+              "boundingBox": [
+                1399,
+                358,
+                1468,
+                358,
+                1468,
+                384,
+                1399,
+                384
+              ],
+              "text": "provide"
+            },
+            {
+              "boundingBox": [
+                1474,
+                358,
+                1502,
+                358,
+                1502,
+                384,
+                1473,
+                384
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                1508,
+                358,
+                1602,
+                358,
+                1601,
+                384,
+                1508,
+                384
+              ],
+              "text": "business"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            145,
+            381,
+            1598,
+            382,
+            1597,
+            409,
+            144,
+            408
+          ],
+          "text": "name for the sole proprietorship, provided the individual name is listed before the business name. (Sole proprietors may not fumish only the business",
+          "words": [
+            {
+              "boundingBox": [
+                145,
+                383,
+                202,
+                383,
+                203,
+                410,
+                146,
+                410
+              ],
+              "text": "name"
+            },
+            {
+              "boundingBox": [
+                208,
+                383,
+                235,
+                383,
+                235,
+                410,
+                208,
+                410
+              ],
+              "text": "for"
+            },
+            {
+              "boundingBox": [
+                240,
+                383,
+                273,
+                383,
+                273,
+                410,
+                241,
+                410
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                278,
+                383,
+                318,
+                383,
+                318,
+                410,
+                278,
+                410
+              ],
+              "text": "sole"
+            },
+            {
+              "boundingBox": [
+                323,
+                383,
+                463,
+                382,
+                463,
+                409,
+                323,
+                410
+              ],
+              "text": "proprietorship,"
+            },
+            {
+              "boundingBox": [
+                468,
+                382,
+                556,
+                382,
+                556,
+                409,
+                468,
+                409
+              ],
+              "text": "provided"
+            },
+            {
+              "boundingBox": [
+                561,
+                382,
+                594,
+                382,
+                594,
+                409,
+                561,
+                409
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                599,
+                382,
+                694,
+                382,
+                694,
+                409,
+                599,
+                409
+              ],
+              "text": "individual"
+            },
+            {
+              "boundingBox": [
+                699,
+                382,
+                756,
+                382,
+                756,
+                409,
+                699,
+                409
+              ],
+              "text": "name"
+            },
+            {
+              "boundingBox": [
+                762,
+                382,
+                781,
+                382,
+                780,
+                409,
+                761,
+                409
+              ],
+              "text": "is"
+            },
+            {
+              "boundingBox": [
+                786,
+                382,
+                839,
+                382,
+                839,
+                409,
+                786,
+                409
+              ],
+              "text": "listed"
+            },
+            {
+              "boundingBox": [
+                844,
+                382,
+                906,
+                382,
+                906,
+                409,
+                844,
+                409
+              ],
+              "text": "before"
+            },
+            {
+              "boundingBox": [
+                912,
+                382,
+                943,
+                382,
+                943,
+                409,
+                912,
+                409
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                948,
+                382,
+                1034,
+                382,
+                1034,
+                409,
+                948,
+                409
+              ],
+              "text": "business"
+            },
+            {
+              "boundingBox": [
+                1039,
+                382,
+                1108,
+                382,
+                1108,
+                409,
+                1039,
+                409
+              ],
+              "text": "name."
+            },
+            {
+              "boundingBox": [
+                1114,
+                382,
+                1164,
+                382,
+                1163,
+                409,
+                1113,
+                409
+              ],
+              "text": "(Sole"
+            },
+            {
+              "boundingBox": [
+                1169,
+                382,
+                1272,
+                383,
+                1272,
+                409,
+                1169,
+                409
+              ],
+              "text": "proprietors"
+            },
+            {
+              "boundingBox": [
+                1278,
+                383,
+                1321,
+                383,
+                1320,
+                409,
+                1277,
+                409
+              ],
+              "text": "may"
+            },
+            {
+              "boundingBox": [
+                1326,
+                383,
+                1355,
+                383,
+                1355,
+                409,
+                1326,
+                409
+              ],
+              "text": "not"
+            },
+            {
+              "boundingBox": [
+                1360,
+                383,
+                1426,
+                383,
+                1426,
+                409,
+                1360,
+                409
+              ],
+              "text": "fumish"
+            },
+            {
+              "boundingBox": [
+                1431,
+                383,
+                1472,
+                384,
+                1472,
+                409,
+                1431,
+                409
+              ],
+              "text": "only"
+            },
+            {
+              "boundingBox": [
+                1478,
+                384,
+                1505,
+                384,
+                1505,
+                409,
+                1477,
+                409
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                1510,
+                384,
+                1598,
+                384,
+                1598,
+                409,
+                1510,
+                409
+              ],
+              "text": "business"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            407,
+            1593,
+            406,
+            1594,
+            435,
+            144,
+            436
+          ],
+          "text": "name.) With respect to corporations, partnerships, estates, trusts, and similar entities, the necessary information is the entity's name and employer",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                409,
+                222,
+                409,
+                223,
+                436,
+                144,
+                436
+              ],
+              "text": "name.)"
+            },
+            {
+              "boundingBox": [
+                228,
+                409,
+                273,
+                409,
+                273,
+                436,
+                228,
+                436
+              ],
+              "text": "With"
+            },
+            {
+              "boundingBox": [
+                278,
+                409,
+                352,
+                408,
+                352,
+                436,
+                279,
+                436
+              ],
+              "text": "respect"
+            },
+            {
+              "boundingBox": [
+                357,
+                408,
+                378,
+                408,
+                378,
+                436,
+                357,
+                436
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                383,
+                408,
+                513,
+                408,
+                513,
+                436,
+                383,
+                436
+              ],
+              "text": "corporations,",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                518,
+                408,
+                654,
+                408,
+                654,
+                436,
+                518,
+                436
+              ],
+              "text": "partnerships,",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                659,
+                407,
+                741,
+                407,
+                741,
+                436,
+                659,
+                436
+              ],
+              "text": "estates,",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                747,
+                407,
+                811,
+                407,
+                811,
+                436,
+                746,
+                436
+              ],
+              "text": "trusts,"
+            },
+            {
+              "boundingBox": [
+                817,
+                407,
+                855,
+                407,
+                855,
+                436,
+                816,
+                436
+              ],
+              "text": "and"
+            },
+            {
+              "boundingBox": [
+                860,
+                407,
+                927,
+                407,
+                926,
+                436,
+                860,
+                436
+              ],
+              "text": "similar"
+            },
+            {
+              "boundingBox": [
+                932,
+                407,
+                1007,
+                407,
+                1007,
+                436,
+                931,
+                436
+              ],
+              "text": "entities,"
+            },
+            {
+              "boundingBox": [
+                1012,
+                407,
+                1042,
+                407,
+                1041,
+                436,
+                1012,
+                436
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                1047,
+                407,
+                1148,
+                407,
+                1148,
+                436,
+                1047,
+                436
+              ],
+              "text": "necessary"
+            },
+            {
+              "boundingBox": [
+                1154,
+                407,
+                1264,
+                408,
+                1263,
+                435,
+                1153,
+                436
+              ],
+              "text": "information",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1269,
+                408,
+                1288,
+                408,
+                1288,
+                435,
+                1268,
+                435
+              ],
+              "text": "is"
+            },
+            {
+              "boundingBox": [
+                1293,
+                408,
+                1325,
+                408,
+                1324,
+                435,
+                1293,
+                435
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                1330,
+                408,
+                1397,
+                408,
+                1396,
+                435,
+                1329,
+                435
+              ],
+              "text": "entity's"
+            },
+            {
+              "boundingBox": [
+                1402,
+                408,
+                1458,
+                408,
+                1457,
+                435,
+                1401,
+                435
+              ],
+              "text": "name"
+            },
+            {
+              "boundingBox": [
+                1463,
+                408,
+                1498,
+                408,
+                1497,
+                435,
+                1462,
+                435
+              ],
+              "text": "and"
+            },
+            {
+              "boundingBox": [
+                1503,
+                408,
+                1594,
+                409,
+                1593,
+                435,
+                1502,
+                435
+              ],
+              "text": "employer"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            430,
+            1174,
+            428,
+            1175,
+            461,
+            144,
+            463
+          ],
+          "text": "identification number (EIN) as it appears on IRS Form 575 (Assignment of Employer Identification Number",
+          "words": [
+            {
+              "boundingBox": [
+                145,
+                434,
+                269,
+                433,
+                268,
+                462,
+                144,
+                462
+              ],
+              "text": "identification"
+            },
+            {
+              "boundingBox": [
+                275,
+                433,
+                347,
+                432,
+                346,
+                462,
+                274,
+                462
+              ],
+              "text": "number"
+            },
+            {
+              "boundingBox": [
+                353,
+                432,
+                407,
+                431,
+                406,
+                462,
+                352,
+                462
+              ],
+              "text": "(EIN)"
+            },
+            {
+              "boundingBox": [
+                412,
+                431,
+                433,
+                431,
+                432,
+                462,
+                411,
+                462
+              ],
+              "text": "as"
+            },
+            {
+              "boundingBox": [
+                438,
+                431,
+                453,
+                431,
+                452,
+                462,
+                437,
+                462
+              ],
+              "text": "it"
+            },
+            {
+              "boundingBox": [
+                459,
+                431,
+                539,
+                431,
+                537,
+                462,
+                458,
+                462
+              ],
+              "text": "appears"
+            },
+            {
+              "boundingBox": [
+                544,
+                431,
+                568,
+                430,
+                567,
+                462,
+                543,
+                462
+              ],
+              "text": "on"
+            },
+            {
+              "boundingBox": [
+                574,
+                430,
+                613,
+                430,
+                612,
+                462,
+                573,
+                462
+              ],
+              "text": "IRS"
+            },
+            {
+              "boundingBox": [
+                619,
+                430,
+                671,
+                430,
+                669,
+                462,
+                617,
+                462
+              ],
+              "text": "Form"
+            },
+            {
+              "boundingBox": [
+                678,
+                430,
+                715,
+                430,
+                714,
+                462,
+                677,
+                462
+              ],
+              "text": "575"
+            },
+            {
+              "boundingBox": [
+                721,
+                430,
+                843,
+                430,
+                842,
+                462,
+                719,
+                462
+              ],
+              "text": "(Assignment"
+            },
+            {
+              "boundingBox": [
+                849,
+                430,
+                868,
+                430,
+                866,
+                462,
+                847,
+                462
+              ],
+              "text": "of"
+            },
+            {
+              "boundingBox": [
+                873,
+                430,
+                964,
+                430,
+                962,
+                462,
+                872,
+                462
+              ],
+              "text": "Employer"
+            },
+            {
+              "boundingBox": [
+                970,
+                430,
+                1091,
+                430,
+                1089,
+                462,
+                968,
+                462
+              ],
+              "text": "Identification"
+            },
+            {
+              "boundingBox": [
+                1096,
+                430,
+                1174,
+                430,
+                1172,
+                462,
+                1094,
+                462
+              ],
+              "text": "Number"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            139,
+            476,
+            571,
+            471,
+            571,
+            521,
+            140,
+            527
+          ],
+          "text": "Type of Organization: Corporation",
+          "words": [
+            {
+              "boundingBox": [
+                142,
+                486,
+                191,
+                484,
+                192,
+                517,
+                144,
+                516
+              ],
+              "text": "Type"
+            },
+            {
+              "boundingBox": [
+                197,
+                484,
+                217,
+                483,
+                217,
+                517,
+                198,
+                517
+              ],
+              "text": "of"
+            },
+            {
+              "boundingBox": [
+                223,
+                483,
+                366,
+                477,
+                363,
+                520,
+                223,
+                518
+              ],
+              "text": "Organization:"
+            },
+            {
+              "boundingBox": [
+                423,
+                475,
+                542,
+                472,
+                537,
+                523,
+                419,
+                521
+              ],
+              "text": "Corporation"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            528,
+            464,
+            775,
+            471,
+            773,
+            525,
+            527,
+            519
+          ],
+          "text": "sole Proprietor",
+          "words": [
+            {
+              "boundingBox": [
+                623,
+                471,
+                659,
+                472,
+                657,
+                520,
+                621,
+                520
+              ],
+              "text": "sole",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                670,
+                473,
+                774,
+                478,
+                772,
+                519,
+                667,
+                520
+              ],
+              "text": "Proprietor"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            139,
+            529,
+            893,
+            515,
+            894,
+            562,
+            140,
+            577
+          ],
+          "text": "Is this a corporation exempt from backup withholding? Yes No",
+          "words": [
+            {
+              "boundingBox": [
+                141,
+                540,
+                161,
+                540,
+                162,
+                566,
+                142,
+                565
+              ],
+              "text": "Is"
+            },
+            {
+              "boundingBox": [
+                166,
+                540,
+                203,
+                540,
+                204,
+                566,
+                167,
+                566
+              ],
+              "text": "this"
+            },
+            {
+              "boundingBox": [
+                208,
+                540,
+                221,
+                539,
+                222,
+                566,
+                209,
+                566
+              ],
+              "text": "a"
+            },
+            {
+              "boundingBox": [
+                226,
+                539,
+                336,
+                537,
+                337,
+                567,
+                227,
+                566
+              ],
+              "text": "corporation"
+            },
+            {
+              "boundingBox": [
+                341,
+                537,
+                414,
+                535,
+                415,
+                568,
+                342,
+                567
+              ],
+              "text": "exempt"
+            },
+            {
+              "boundingBox": [
+                419,
+                535,
+                460,
+                534,
+                460,
+                568,
+                420,
+                568
+              ],
+              "text": "from"
+            },
+            {
+              "boundingBox": [
+                468,
+                534,
+                541,
+                531,
+                541,
+                568,
+                468,
+                568
+              ],
+              "text": "backup"
+            },
+            {
+              "boundingBox": [
+                546,
+                531,
+                676,
+                526,
+                676,
+                567,
+                546,
+                568
+              ],
+              "text": "withholding?"
+            },
+            {
+              "boundingBox": [
+                743,
+                523,
+                785,
+                521,
+                785,
+                565,
+                742,
+                566
+              ],
+              "text": "Yes",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                869,
+                516,
+                894,
+                515,
+                893,
+                563,
+                869,
+                564
+              ],
+              "text": "No",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            813,
+            470,
+            1165,
+            474,
+            1164,
+            525,
+            813,
+            522
+          ],
+          "text": "Partnership, Estate, Trust, etc.",
+          "words": [
+            {
+              "boundingBox": [
+                868,
+                475,
+                980,
+                480,
+                977,
+                517,
+                864,
+                520
+              ],
+              "text": "Partnership,",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                990,
+                481,
+                1054,
+                482,
+                1052,
+                517,
+                987,
+                516
+              ],
+              "text": "Estate,"
+            },
+            {
+              "boundingBox": [
+                1064,
+                482,
+                1112,
+                482,
+                1110,
+                518,
+                1062,
+                517
+              ],
+              "text": "Trust,",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1122,
+                482,
+                1163,
+                481,
+                1161,
+                521,
+                1120,
+                519
+              ],
+              "text": "etc."
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            140,
+            588,
+            980,
+            585,
+            981,
+            616,
+            141,
+            619
+          ],
+          "text": "Please use the appropriate line to fill in the name and Taxpayer Identification Number:",
+          "words": [
+            {
+              "boundingBox": [
+                141,
+                592,
+                211,
+                591,
+                211,
+                617,
+                141,
+                616
+              ],
+              "text": "Please"
+            },
+            {
+              "boundingBox": [
+                215,
+                590,
+                253,
+                590,
+                254,
+                617,
+                216,
+                617
+              ],
+              "text": "use"
+            },
+            {
+              "boundingBox": [
+                258,
+                590,
+                290,
+                589,
+                290,
+                618,
+                258,
+                617
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                295,
+                589,
+                406,
+                588,
+                406,
+                618,
+                295,
+                618
+              ],
+              "text": "appropriate"
+            },
+            {
+              "boundingBox": [
+                410,
+                588,
+                445,
+                588,
+                445,
+                618,
+                410,
+                618
+              ],
+              "text": "line"
+            },
+            {
+              "boundingBox": [
+                450,
+                588,
+                469,
+                587,
+                469,
+                618,
+                450,
+                618
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                474,
+                587,
+                496,
+                587,
+                496,
+                618,
+                474,
+                618
+              ],
+              "text": "fill"
+            },
+            {
+              "boundingBox": [
+                501,
+                587,
+                520,
+                587,
+                520,
+                618,
+                501,
+                618
+              ],
+              "text": "in"
+            },
+            {
+              "boundingBox": [
+                524,
+                587,
+                558,
+                587,
+                558,
+                618,
+                525,
+                618
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                562,
+                587,
+                621,
+                587,
+                621,
+                618,
+                563,
+                618
+              ],
+              "text": "name"
+            },
+            {
+              "boundingBox": [
+                626,
+                587,
+                665,
+                587,
+                666,
+                618,
+                626,
+                618
+              ],
+              "text": "and"
+            },
+            {
+              "boundingBox": [
+                670,
+                587,
+                762,
+                587,
+                762,
+                617,
+                670,
+                618
+              ],
+              "text": "Taxpayer"
+            },
+            {
+              "boundingBox": [
+                767,
+                587,
+                892,
+                588,
+                892,
+                616,
+                767,
+                617
+              ],
+              "text": "Identification"
+            },
+            {
+              "boundingBox": [
+                897,
+                588,
+                981,
+                589,
+                981,
+                615,
+                897,
+                616
+              ],
+              "text": "Number:",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            139,
+            642,
+            328,
+            640,
+            329,
+            667,
+            140,
+            670
+          ],
+          "text": "Corporation Name",
+          "words": [
+            {
+              "boundingBox": [
+                142,
+                643,
+                260,
+                642,
+                259,
+                669,
+                142,
+                670
+              ],
+              "text": "Corporation"
+            },
+            {
+              "boundingBox": [
+                265,
+                642,
+                328,
+                641,
+                327,
+                668,
+                265,
+                669
+              ],
+              "text": "Name"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            361,
+            614,
+            752,
+            616,
+            751,
+            671,
+            361,
+            669
+          ],
+          "text": "USA PETROLEUM",
+          "words": [
+            {
+              "boundingBox": [
+                362,
+                616,
+                440,
+                615,
+                439,
+                669,
+                361,
+                670
+              ],
+              "text": "USA",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                490,
+                615,
+                744,
+                621,
+                742,
+                669,
+                488,
+                668
+              ],
+              "text": "PETROLEUM",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            144,
+            690,
+            375,
+            691,
+            374,
+            716,
+            143,
+            715
+          ],
+          "text": "Sole Proprietor's Name",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                691,
+                187,
+                691,
+                188,
+                717,
+                145,
+                716
+              ],
+              "text": "Sole"
+            },
+            {
+              "boundingBox": [
+                192,
+                691,
+                305,
+                692,
+                306,
+                717,
+                193,
+                717
+              ],
+              "text": "Proprietor's"
+            },
+            {
+              "boundingBox": [
+                310,
+                692,
+                373,
+                692,
+                374,
+                716,
+                311,
+                717
+              ],
+              "text": "Name"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1096,
+            679,
+            1609,
+            682,
+            1608,
+            721,
+            1095,
+            718
+          ],
+          "text": "S. S. No. WILTQUILLLY",
+          "words": [
+            {
+              "boundingBox": [
+                1102,
+                682,
+                1117,
+                683,
+                1119,
+                715,
+                1104,
+                715
+              ],
+              "text": "S."
+            },
+            {
+              "boundingBox": [
+                1124,
+                683,
+                1139,
+                683,
+                1140,
+                715,
+                1125,
+                715
+              ],
+              "text": "S.",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1145,
+                683,
+                1186,
+                683,
+                1187,
+                715,
+                1146,
+                715
+              ],
+              "text": "No."
+            },
+            {
+              "boundingBox": [
+                1193,
+                683,
+                1578,
+                682,
+                1577,
+                721,
+                1193,
+                715
+              ],
+              "text": "WILTQUILLLY",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            142,
+            758,
+            469,
+            760,
+            468,
+            788,
+            141,
+            787
+          ],
+          "text": "Sole Proprietor's Business Name",
+          "words": [
+            {
+              "boundingBox": [
+                145,
+                760,
+                188,
+                761,
+                188,
+                787,
+                146,
+                786
+              ],
+              "text": "Sole"
+            },
+            {
+              "boundingBox": [
+                193,
+                761,
+                307,
+                761,
+                308,
+                788,
+                193,
+                787
+              ],
+              "text": "Proprietor's"
+            },
+            {
+              "boundingBox": [
+                312,
+                761,
+                401,
+                761,
+                402,
+                788,
+                313,
+                788
+              ],
+              "text": "Business"
+            },
+            {
+              "boundingBox": [
+                407,
+                761,
+                469,
+                760,
+                470,
+                788,
+                407,
+                788
+              ],
+              "text": "Name"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1140,
+            749,
+            1447,
+            747,
+            1448,
+            782,
+            1141,
+            785
+          ],
+          "text": "EIN LUGLLLL",
+          "words": [
+            {
+              "boundingBox": [
+                1145,
+                751,
+                1188,
+                750,
+                1189,
+                785,
+                1146,
+                786
+              ],
+              "text": "EIN",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1195,
+                750,
+                1439,
+                748,
+                1438,
+                784,
+                1195,
+                785
+              ],
+              "text": "LUGLLLL",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            144,
+            787,
+            171,
+            789,
+            170,
+            812,
+            143,
+            810
+          ],
+          "text": "or",
+          "words": [
+            {
+              "boundingBox": [
+                143,
+                786,
+                169,
+                788,
+                168,
+                811,
+                142,
+                809
+              ],
+              "text": "or"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            140,
+            806,
+            442,
+            807,
+            441,
+            839,
+            139,
+            837
+          ],
+          "text": "Partnership, Estate, Trust, etc.",
+          "words": [
+            {
+              "boundingBox": [
+                142,
+                806,
+                263,
+                809,
+                264,
+                838,
+                143,
+                837
+              ],
+              "text": "Partnership,"
+            },
+            {
+              "boundingBox": [
+                269,
+                809,
+                338,
+                810,
+                339,
+                838,
+                270,
+                838
+              ],
+              "text": "Estate,"
+            },
+            {
+              "boundingBox": [
+                344,
+                810,
+                399,
+                810,
+                399,
+                837,
+                345,
+                838
+              ],
+              "text": "Trust,"
+            },
+            {
+              "boundingBox": [
+                405,
+                810,
+                442,
+                810,
+                442,
+                836,
+                406,
+                837
+              ],
+              "text": "etc."
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            858,
+            612,
+            857,
+            612,
+            888,
+            144,
+            890
+          ],
+          "text": "Address (Number, Street and Apt or Suite No.)",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                861,
+                226,
+                862,
+                226,
+                888,
+                144,
+                889
+              ],
+              "text": "Address"
+            },
+            {
+              "boundingBox": [
+                231,
+                862,
+                324,
+                863,
+                324,
+                888,
+                231,
+                888
+              ],
+              "text": "(Number,"
+            },
+            {
+              "boundingBox": [
+                329,
+                863,
+                389,
+                862,
+                389,
+                888,
+                329,
+                888
+              ],
+              "text": "Street"
+            },
+            {
+              "boundingBox": [
+                395,
+                862,
+                431,
+                862,
+                431,
+                888,
+                394,
+                888
+              ],
+              "text": "and"
+            },
+            {
+              "boundingBox": [
+                436,
+                862,
+                476,
+                861,
+                476,
+                889,
+                436,
+                888
+              ],
+              "text": "Apt"
+            },
+            {
+              "boundingBox": [
+                482,
+                861,
+                503,
+                860,
+                503,
+                889,
+                481,
+                889
+              ],
+              "text": "or"
+            },
+            {
+              "boundingBox": [
+                509,
+                860,
+                558,
+                859,
+                557,
+                889,
+                509,
+                889
+              ],
+              "text": "Suite"
+            },
+            {
+              "boundingBox": [
+                563,
+                859,
+                612,
+                857,
+                612,
+                889,
+                563,
+                889
+              ],
+              "text": "No.)"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            142,
+            912,
+            482,
+            910,
+            483,
+            937,
+            142,
+            939
+          ],
+          "text": "Address (City, State and Zip Code)",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                912,
+                225,
+                912,
+                226,
+                939,
+                144,
+                939
+              ],
+              "text": "Address"
+            },
+            {
+              "boundingBox": [
+                231,
+                912,
+                285,
+                912,
+                286,
+                938,
+                231,
+                938
+              ],
+              "text": "(City,"
+            },
+            {
+              "boundingBox": [
+                291,
+                912,
+                341,
+                912,
+                342,
+                937,
+                291,
+                938
+              ],
+              "text": "State"
+            },
+            {
+              "boundingBox": [
+                347,
+                912,
+                383,
+                912,
+                384,
+                937,
+                347,
+                937
+              ],
+              "text": "and"
+            },
+            {
+              "boundingBox": [
+                388,
+                912,
+                419,
+                912,
+                420,
+                937,
+                389,
+                937
+              ],
+              "text": "Zip"
+            },
+            {
+              "boundingBox": [
+                425,
+                912,
+                483,
+                911,
+                483,
+                936,
+                425,
+                937
+              ],
+              "text": "Code)"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            951,
+            293,
+            950,
+            293,
+            976,
+            144,
+            977
+          ],
+          "text": "Certification:",
+          "words": [
+            {
+              "boundingBox": [
+                148,
+                951,
+                292,
+                952,
+                292,
+                976,
+                148,
+                978
+              ],
+              "text": "Certification:"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            145,
+            975,
+            531,
+            972,
+            531,
+            998,
+            146,
+            1002
+          ],
+          "text": "Under penalties of perjury, I certify that",
+          "words": [
+            {
+              "boundingBox": [
+                147,
+                977,
+                207,
+                977,
+                207,
+                1001,
+                146,
+                1002
+              ],
+              "text": "Under"
+            },
+            {
+              "boundingBox": [
+                212,
+                977,
+                303,
+                977,
+                302,
+                1000,
+                211,
+                1001
+              ],
+              "text": "penalties"
+            },
+            {
+              "boundingBox": [
+                308,
+                977,
+                326,
+                977,
+                325,
+                1000,
+                307,
+                1000
+              ],
+              "text": "of"
+            },
+            {
+              "boundingBox": [
+                331,
+                977,
+                405,
+                976,
+                405,
+                1000,
+                330,
+                1000
+              ],
+              "text": "perjury,"
+            },
+            {
+              "boundingBox": [
+                410,
+                975,
+                418,
+                975,
+                418,
+                1000,
+                410,
+                1000
+              ],
+              "text": "I"
+            },
+            {
+              "boundingBox": [
+                423,
+                975,
+                481,
+                973,
+                481,
+                999,
+                423,
+                1000
+              ],
+              "text": "certify"
+            },
+            {
+              "boundingBox": [
+                486,
+                973,
+                532,
+                972,
+                532,
+                999,
+                486,
+                999
+              ],
+              "text": "that"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            139,
+            1002,
+            1380,
+            996,
+            1381,
+            1023,
+            140,
+            1029
+          ],
+          "text": "1. The number shown above is my correct taxpayer identification number (or I am waiting for a number to be issued to me) and",
+          "words": [
+            {
+              "boundingBox": [
+                148,
+                1002,
+                177,
+                1002,
+                176,
+                1030,
+                147,
+                1030
+              ],
+              "text": "1."
+            },
+            {
+              "boundingBox": [
+                187,
+                1002,
+                225,
+                1002,
+                224,
+                1029,
+                187,
+                1030
+              ],
+              "text": "The"
+            },
+            {
+              "boundingBox": [
+                230,
+                1002,
+                305,
+                1002,
+                305,
+                1029,
+                230,
+                1029
+              ],
+              "text": "number"
+            },
+            {
+              "boundingBox": [
+                311,
+                1002,
+                373,
+                1001,
+                373,
+                1028,
+                310,
+                1029
+              ],
+              "text": "shown"
+            },
+            {
+              "boundingBox": [
+                379,
+                1001,
+                438,
+                1001,
+                437,
+                1028,
+                378,
+                1028
+              ],
+              "text": "above"
+            },
+            {
+              "boundingBox": [
+                443,
+                1001,
+                461,
+                1001,
+                460,
+                1028,
+                442,
+                1028
+              ],
+              "text": "is"
+            },
+            {
+              "boundingBox": [
+                466,
+                1001,
+                496,
+                1001,
+                496,
+                1028,
+                466,
+                1028
+              ],
+              "text": "my"
+            },
+            {
+              "boundingBox": [
+                502,
+                1001,
+                570,
+                1000,
+                569,
+                1027,
+                501,
+                1028
+              ],
+              "text": "correct"
+            },
+            {
+              "boundingBox": [
+                575,
+                1000,
+                663,
+                1000,
+                662,
+                1027,
+                575,
+                1027
+              ],
+              "text": "taxpayer"
+            },
+            {
+              "boundingBox": [
+                668,
+                1000,
+                793,
+                999,
+                793,
+                1026,
+                668,
+                1027
+              ],
+              "text": "identification"
+            },
+            {
+              "boundingBox": [
+                798,
+                999,
+                873,
+                999,
+                873,
+                1026,
+                798,
+                1026
+              ],
+              "text": "number"
+            },
+            {
+              "boundingBox": [
+                879,
+                999,
+                904,
+                999,
+                904,
+                1026,
+                879,
+                1026
+              ],
+              "text": "(or"
+            },
+            {
+              "boundingBox": [
+                909,
+                999,
+                918,
+                999,
+                918,
+                1026,
+                909,
+                1026
+              ],
+              "text": "I"
+            },
+            {
+              "boundingBox": [
+                923,
+                999,
+                952,
+                999,
+                952,
+                1026,
+                923,
+                1026
+              ],
+              "text": "am"
+            },
+            {
+              "boundingBox": [
+                959,
+                999,
+                1025,
+                999,
+                1025,
+                1025,
+                959,
+                1026
+              ],
+              "text": "waiting"
+            },
+            {
+              "boundingBox": [
+                1031,
+                999,
+                1056,
+                999,
+                1056,
+                1025,
+                1030,
+                1025
+              ],
+              "text": "for"
+            },
+            {
+              "boundingBox": [
+                1061,
+                998,
+                1072,
+                998,
+                1072,
+                1025,
+                1061,
+                1025
+              ],
+              "text": "a"
+            },
+            {
+              "boundingBox": [
+                1077,
+                998,
+                1150,
+                998,
+                1150,
+                1025,
+                1077,
+                1025
+              ],
+              "text": "number"
+            },
+            {
+              "boundingBox": [
+                1156,
+                998,
+                1174,
+                998,
+                1173,
+                1025,
+                1156,
+                1025
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                1179,
+                998,
+                1204,
+                998,
+                1204,
+                1024,
+                1179,
+                1025
+              ],
+              "text": "be"
+            },
+            {
+              "boundingBox": [
+                1209,
+                998,
+                1274,
+                998,
+                1274,
+                1024,
+                1209,
+                1024
+              ],
+              "text": "issued"
+            },
+            {
+              "boundingBox": [
+                1279,
+                998,
+                1297,
+                998,
+                1297,
+                1024,
+                1279,
+                1024
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                1302,
+                998,
+                1340,
+                998,
+                1340,
+                1024,
+                1302,
+                1024
+              ],
+              "text": "me)"
+            },
+            {
+              "boundingBox": [
+                1345,
+                998,
+                1381,
+                998,
+                1381,
+                1024,
+                1345,
+                1024
+              ],
+              "text": "and"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            146,
+            1029,
+            170,
+            1027,
+            172,
+            1049,
+            147,
+            1051
+          ],
+          "text": "2.",
+          "words": [
+            {
+              "boundingBox": [
+                148,
+                1027,
+                169,
+                1026,
+                171,
+                1048,
+                149,
+                1050
+              ],
+              "text": "2."
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            184,
+            1026,
+            1571,
+            1022,
+            1571,
+            1050,
+            185,
+            1055
+          ],
+          "text": "I am not subject to backup withholding because: (a) I am exempt from backup withholding, or (b) I have not been notified by the Internal Revenue",
+          "words": [
+            {
+              "boundingBox": [
+                186,
+                1027,
+                193,
+                1027,
+                192,
+                1054,
+                185,
+                1054
+              ],
+              "text": "I"
+            },
+            {
+              "boundingBox": [
+                198,
+                1027,
+                228,
+                1027,
+                227,
+                1054,
+                197,
+                1054
+              ],
+              "text": "am"
+            },
+            {
+              "boundingBox": [
+                235,
+                1027,
+                268,
+                1027,
+                268,
+                1054,
+                234,
+                1054
+              ],
+              "text": "not"
+            },
+            {
+              "boundingBox": [
+                273,
+                1027,
+                342,
+                1027,
+                341,
+                1054,
+                273,
+                1054
+              ],
+              "text": "subject"
+            },
+            {
+              "boundingBox": [
+                347,
+                1027,
+                365,
+                1027,
+                364,
+                1054,
+                347,
+                1054
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                370,
+                1027,
+                442,
+                1027,
+                442,
+                1054,
+                370,
+                1054
+              ],
+              "text": "backup"
+            },
+            {
+              "boundingBox": [
+                447,
+                1027,
+                558,
+                1027,
+                557,
+                1054,
+                447,
+                1054
+              ],
+              "text": "withholding"
+            },
+            {
+              "boundingBox": [
+                563,
+                1027,
+                656,
+                1027,
+                656,
+                1053,
+                563,
+                1054
+              ],
+              "text": "because:"
+            },
+            {
+              "boundingBox": [
+                662,
+                1027,
+                690,
+                1027,
+                689,
+                1053,
+                661,
+                1053
+              ],
+              "text": "(a)"
+            },
+            {
+              "boundingBox": [
+                695,
+                1027,
+                704,
+                1027,
+                703,
+                1053,
+                694,
+                1053
+              ],
+              "text": "I"
+            },
+            {
+              "boundingBox": [
+                709,
+                1027,
+                737,
+                1027,
+                737,
+                1053,
+                709,
+                1053
+              ],
+              "text": "am"
+            },
+            {
+              "boundingBox": [
+                746,
+                1027,
+                818,
+                1027,
+                817,
+                1053,
+                745,
+                1053
+              ],
+              "text": "exempt"
+            },
+            {
+              "boundingBox": [
+                823,
+                1027,
+                865,
+                1026,
+                865,
+                1053,
+                823,
+                1053
+              ],
+              "text": "from"
+            },
+            {
+              "boundingBox": [
+                872,
+                1026,
+                943,
+                1026,
+                942,
+                1053,
+                872,
+                1053
+              ],
+              "text": "backup"
+            },
+            {
+              "boundingBox": [
+                948,
+                1026,
+                1062,
+                1026,
+                1062,
+                1052,
+                947,
+                1053
+              ],
+              "text": "withholding,"
+            },
+            {
+              "boundingBox": [
+                1067,
+                1025,
+                1085,
+                1025,
+                1084,
+                1052,
+                1067,
+                1052
+              ],
+              "text": "or"
+            },
+            {
+              "boundingBox": [
+                1090,
+                1025,
+                1118,
+                1025,
+                1118,
+                1052,
+                1090,
+                1052
+              ],
+              "text": "(b)"
+            },
+            {
+              "boundingBox": [
+                1124,
+                1025,
+                1127,
+                1025,
+                1127,
+                1052,
+                1123,
+                1052
+              ],
+              "text": "I"
+            },
+            {
+              "boundingBox": [
+                1132,
+                1025,
+                1182,
+                1025,
+                1181,
+                1052,
+                1132,
+                1052
+              ],
+              "text": "have"
+            },
+            {
+              "boundingBox": [
+                1187,
+                1025,
+                1217,
+                1025,
+                1216,
+                1052,
+                1186,
+                1052
+              ],
+              "text": "not"
+            },
+            {
+              "boundingBox": [
+                1222,
+                1025,
+                1271,
+                1024,
+                1271,
+                1051,
+                1221,
+                1052
+              ],
+              "text": "been"
+            },
+            {
+              "boundingBox": [
+                1277,
+                1024,
+                1345,
+                1024,
+                1344,
+                1051,
+                1276,
+                1051
+              ],
+              "text": "notified"
+            },
+            {
+              "boundingBox": [
+                1350,
+                1024,
+                1375,
+                1024,
+                1374,
+                1051,
+                1350,
+                1051
+              ],
+              "text": "by"
+            },
+            {
+              "boundingBox": [
+                1380,
+                1023,
+                1408,
+                1023,
+                1407,
+                1051,
+                1379,
+                1051
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                1414,
+                1023,
+                1484,
+                1023,
+                1483,
+                1050,
+                1413,
+                1051
+              ],
+              "text": "Internal",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1489,
+                1023,
+                1572,
+                1022,
+                1571,
+                1050,
+                1488,
+                1050
+              ],
+              "text": "Revenue"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            187,
+            1052,
+            1580,
+            1049,
+            1580,
+            1076,
+            188,
+            1080
+          ],
+          "text": "Service that I am subject to backup withholding as a result of a failure to report all interest or dividends, or (c) the IRS has notified me that I am no",
+          "words": [
+            {
+              "boundingBox": [
+                188,
+                1055,
+                263,
+                1055,
+                263,
+                1079,
+                188,
+                1079
+              ],
+              "text": "Service"
+            },
+            {
+              "boundingBox": [
+                268,
+                1055,
+                304,
+                1055,
+                304,
+                1079,
+                268,
+                1079
+              ],
+              "text": "that"
+            },
+            {
+              "boundingBox": [
+                308,
+                1055,
+                316,
+                1055,
+                316,
+                1079,
+                308,
+                1079
+              ],
+              "text": "I"
+            },
+            {
+              "boundingBox": [
+                321,
+                1055,
+                347,
+                1054,
+                347,
+                1079,
+                321,
+                1079
+              ],
+              "text": "am"
+            },
+            {
+              "boundingBox": [
+                357,
+                1054,
+                427,
+                1054,
+                427,
+                1079,
+                356,
+                1079
+              ],
+              "text": "subject"
+            },
+            {
+              "boundingBox": [
+                432,
+                1054,
+                452,
+                1054,
+                451,
+                1079,
+                431,
+                1079
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                456,
+                1054,
+                528,
+                1054,
+                528,
+                1079,
+                456,
+                1079
+              ],
+              "text": "backup"
+            },
+            {
+              "boundingBox": [
+                533,
+                1054,
+                648,
+                1054,
+                648,
+                1078,
+                532,
+                1079
+              ],
+              "text": "withholding"
+            },
+            {
+              "boundingBox": [
+                653,
+                1054,
+                678,
+                1054,
+                677,
+                1078,
+                652,
+                1078
+              ],
+              "text": "as"
+            },
+            {
+              "boundingBox": [
+                683,
+                1054,
+                695,
+                1054,
+                694,
+                1078,
+                682,
+                1078
+              ],
+              "text": "a"
+            },
+            {
+              "boundingBox": [
+                700,
+                1053,
+                757,
+                1053,
+                757,
+                1078,
+                699,
+                1078
+              ],
+              "text": "result"
+            },
+            {
+              "boundingBox": [
+                762,
+                1053,
+                782,
+                1053,
+                782,
+                1078,
+                761,
+                1078
+              ],
+              "text": "of"
+            },
+            {
+              "boundingBox": [
+                787,
+                1053,
+                798,
+                1053,
+                797,
+                1078,
+                786,
+                1078
+              ],
+              "text": "a"
+            },
+            {
+              "boundingBox": [
+                803,
+                1053,
+                865,
+                1053,
+                864,
+                1078,
+                802,
+                1078
+              ],
+              "text": "failure"
+            },
+            {
+              "boundingBox": [
+                870,
+                1053,
+                887,
+                1053,
+                886,
+                1078,
+                869,
+                1078
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                892,
+                1053,
+                951,
+                1053,
+                950,
+                1078,
+                890,
+                1078
+              ],
+              "text": "report"
+            },
+            {
+              "boundingBox": [
+                956,
+                1053,
+                977,
+                1052,
+                976,
+                1078,
+                954,
+                1078
+              ],
+              "text": "all"
+            },
+            {
+              "boundingBox": [
+                982,
+                1052,
+                1054,
+                1052,
+                1052,
+                1078,
+                981,
+                1078
+              ],
+              "text": "interest"
+            },
+            {
+              "boundingBox": [
+                1058,
+                1052,
+                1080,
+                1052,
+                1079,
+                1078,
+                1057,
+                1078
+              ],
+              "text": "or"
+            },
+            {
+              "boundingBox": [
+                1085,
+                1052,
+                1180,
+                1051,
+                1179,
+                1078,
+                1084,
+                1078
+              ],
+              "text": "dividends,"
+            },
+            {
+              "boundingBox": [
+                1185,
+                1051,
+                1207,
+                1051,
+                1205,
+                1078,
+                1183,
+                1078
+              ],
+              "text": "or"
+            },
+            {
+              "boundingBox": [
+                1211,
+                1051,
+                1236,
+                1051,
+                1235,
+                1078,
+                1210,
+                1078
+              ],
+              "text": "(c)"
+            },
+            {
+              "boundingBox": [
+                1241,
+                1051,
+                1271,
+                1051,
+                1269,
+                1078,
+                1239,
+                1078
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                1275,
+                1051,
+                1313,
+                1051,
+                1311,
+                1078,
+                1273,
+                1078
+              ],
+              "text": "IRS"
+            },
+            {
+              "boundingBox": [
+                1317,
+                1051,
+                1353,
+                1050,
+                1351,
+                1078,
+                1316,
+                1078
+              ],
+              "text": "has"
+            },
+            {
+              "boundingBox": [
+                1358,
+                1050,
+                1426,
+                1050,
+                1424,
+                1077,
+                1356,
+                1078
+              ],
+              "text": "notified"
+            },
+            {
+              "boundingBox": [
+                1431,
+                1050,
+                1462,
+                1050,
+                1460,
+                1077,
+                1429,
+                1077
+              ],
+              "text": "me"
+            },
+            {
+              "boundingBox": [
+                1467,
+                1050,
+                1503,
+                1049,
+                1501,
+                1077,
+                1465,
+                1077
+              ],
+              "text": "that"
+            },
+            {
+              "boundingBox": [
+                1508,
+                1049,
+                1514,
+                1049,
+                1512,
+                1077,
+                1505,
+                1077
+              ],
+              "text": "I"
+            },
+            {
+              "boundingBox": [
+                1518,
+                1049,
+                1547,
+                1049,
+                1544,
+                1077,
+                1516,
+                1077
+              ],
+              "text": "am"
+            },
+            {
+              "boundingBox": [
+                1554,
+                1049,
+                1579,
+                1049,
+                1577,
+                1077,
+                1552,
+                1077
+              ],
+              "text": "no"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            193,
+            1079,
+            541,
+            1080,
+            540,
+            1106,
+            192,
+            1105
+          ],
+          "text": "onger subject to backup withholding.",
+          "words": [
+            {
+              "boundingBox": [
+                194,
+                1081,
+                250,
+                1081,
+                249,
+                1105,
+                193,
+                1105
+              ],
+              "text": "onger"
+            },
+            {
+              "boundingBox": [
+                255,
+                1080,
+                324,
+                1080,
+                323,
+                1105,
+                254,
+                1105
+              ],
+              "text": "subject"
+            },
+            {
+              "boundingBox": [
+                328,
+                1080,
+                347,
+                1080,
+                346,
+                1105,
+                328,
+                1105
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                352,
+                1080,
+                424,
+                1080,
+                424,
+                1106,
+                351,
+                1105
+              ],
+              "text": "backup"
+            },
+            {
+              "boundingBox": [
+                429,
+                1080,
+                539,
+                1081,
+                540,
+                1107,
+                428,
+                1106
+              ],
+              "text": "withholding.",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            145,
+            1103,
+            1587,
+            1095,
+            1588,
+            1126,
+            146,
+            1134
+          ],
+          "text": "Certification Instructions: You must cross out Item 2 above if you have been notified by the IRS that you are currently subject to backup withholding",
+          "words": [
+            {
+              "boundingBox": [
+                148,
+                1107,
+                274,
+                1106,
+                273,
+                1132,
+                148,
+                1132
+              ],
+              "text": "Certification",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                279,
+                1106,
+                419,
+                1104,
+                418,
+                1132,
+                278,
+                1132
+              ],
+              "text": "Instructions:"
+            },
+            {
+              "boundingBox": [
+                424,
+                1104,
+                463,
+                1103,
+                462,
+                1132,
+                423,
+                1132
+              ],
+              "text": "You"
+            },
+            {
+              "boundingBox": [
+                468,
+                1103,
+                517,
+                1103,
+                516,
+                1132,
+                467,
+                1132
+              ],
+              "text": "must"
+            },
+            {
+              "boundingBox": [
+                522,
+                1103,
+                577,
+                1102,
+                576,
+                1132,
+                521,
+                1132
+              ],
+              "text": "cross"
+            },
+            {
+              "boundingBox": [
+                582,
+                1102,
+                615,
+                1102,
+                614,
+                1132,
+                581,
+                1132
+              ],
+              "text": "out"
+            },
+            {
+              "boundingBox": [
+                620,
+                1102,
+                662,
+                1101,
+                661,
+                1132,
+                619,
+                1132
+              ],
+              "text": "Item",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                670,
+                1101,
+                685,
+                1101,
+                684,
+                1132,
+                669,
+                1132
+              ],
+              "text": "2"
+            },
+            {
+              "boundingBox": [
+                690,
+                1101,
+                750,
+                1101,
+                749,
+                1132,
+                689,
+                1132
+              ],
+              "text": "above"
+            },
+            {
+              "boundingBox": [
+                755,
+                1101,
+                768,
+                1100,
+                767,
+                1132,
+                754,
+                1132
+              ],
+              "text": "if"
+            },
+            {
+              "boundingBox": [
+                773,
+                1100,
+                807,
+                1100,
+                806,
+                1131,
+                772,
+                1131
+              ],
+              "text": "you"
+            },
+            {
+              "boundingBox": [
+                812,
+                1100,
+                861,
+                1100,
+                860,
+                1131,
+                811,
+                1131
+              ],
+              "text": "have"
+            },
+            {
+              "boundingBox": [
+                866,
+                1100,
+                916,
+                1099,
+                915,
+                1131,
+                865,
+                1131
+              ],
+              "text": "been"
+            },
+            {
+              "boundingBox": [
+                921,
+                1099,
+                990,
+                1099,
+                989,
+                1131,
+                920,
+                1131
+              ],
+              "text": "notified"
+            },
+            {
+              "boundingBox": [
+                995,
+                1099,
+                1019,
+                1099,
+                1018,
+                1131,
+                993,
+                1131
+              ],
+              "text": "by"
+            },
+            {
+              "boundingBox": [
+                1024,
+                1099,
+                1053,
+                1099,
+                1052,
+                1131,
+                1023,
+                1131
+              ],
+              "text": "the"
+            },
+            {
+              "boundingBox": [
+                1058,
+                1098,
+                1096,
+                1098,
+                1094,
+                1130,
+                1057,
+                1130
+              ],
+              "text": "IRS"
+            },
+            {
+              "boundingBox": [
+                1101,
+                1098,
+                1137,
+                1098,
+                1135,
+                1130,
+                1099,
+                1130
+              ],
+              "text": "that"
+            },
+            {
+              "boundingBox": [
+                1142,
+                1098,
+                1179,
+                1098,
+                1178,
+                1130,
+                1140,
+                1130
+              ],
+              "text": "you"
+            },
+            {
+              "boundingBox": [
+                1184,
+                1098,
+                1217,
+                1098,
+                1215,
+                1130,
+                1182,
+                1130
+              ],
+              "text": "are"
+            },
+            {
+              "boundingBox": [
+                1221,
+                1098,
+                1305,
+                1097,
+                1303,
+                1129,
+                1220,
+                1130
+              ],
+              "text": "currently"
+            },
+            {
+              "boundingBox": [
+                1310,
+                1097,
+                1376,
+                1097,
+                1375,
+                1129,
+                1308,
+                1129
+              ],
+              "text": "subject"
+            },
+            {
+              "boundingBox": [
+                1381,
+                1097,
+                1401,
+                1097,
+                1399,
+                1129,
+                1380,
+                1129
+              ],
+              "text": "to"
+            },
+            {
+              "boundingBox": [
+                1406,
+                1097,
+                1473,
+                1097,
+                1471,
+                1128,
+                1404,
+                1129
+              ],
+              "text": "backup"
+            },
+            {
+              "boundingBox": [
+                1478,
+                1097,
+                1588,
+                1097,
+                1586,
+                1128,
+                1476,
+                1128
+              ],
+              "text": "withholding"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            144,
+            1132,
+            680,
+            1130,
+            681,
+            1158,
+            145,
+            1160
+          ],
+          "text": "because of under reporting interest on your tax return.",
+          "words": [
+            {
+              "boundingBox": [
+                147,
+                1133,
+                232,
+                1133,
+                231,
+                1159,
+                145,
+                1157
+              ],
+              "text": "because"
+            },
+            {
+              "boundingBox": [
+                237,
+                1133,
+                256,
+                1133,
+                255,
+                1159,
+                235,
+                1159
+              ],
+              "text": "of"
+            },
+            {
+              "boundingBox": [
+                261,
+                1133,
+                317,
+                1132,
+                316,
+                1160,
+                260,
+                1159
+              ],
+              "text": "under"
+            },
+            {
+              "boundingBox": [
+                322,
+                1132,
+                409,
+                1132,
+                408,
+                1160,
+                321,
+                1160
+              ],
+              "text": "reporting"
+            },
+            {
+              "boundingBox": [
+                414,
+                1132,
+                488,
+                1132,
+                487,
+                1160,
+                413,
+                1160
+              ],
+              "text": "interest"
+            },
+            {
+              "boundingBox": [
+                493,
+                1132,
+                517,
+                1132,
+                516,
+                1159,
+                491,
+                1160
+              ],
+              "text": "on"
+            },
+            {
+              "boundingBox": [
+                522,
+                1132,
+                567,
+                1132,
+                566,
+                1159,
+                520,
+                1159
+              ],
+              "text": "your"
+            },
+            {
+              "boundingBox": [
+                571,
+                1132,
+                604,
+                1131,
+                603,
+                1158,
+                570,
+                1159
+              ],
+              "text": "tax"
+            },
+            {
+              "boundingBox": [
+                608,
+                1131,
+                681,
+                1131,
+                680,
+                1157,
+                607,
+                1158
+              ],
+              "text": "return.",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            1181,
+            408,
+            1179,
+            408,
+            1211,
+            144,
+            1213
+          ],
+          "text": "Store Name (Please Print).",
+          "words": [
+            {
+              "boundingBox": [
+                147,
+                1184,
+                196,
+                1183,
+                196,
+                1212,
+                146,
+                1212
+              ],
+              "text": "Store"
+            },
+            {
+              "boundingBox": [
+                202,
+                1183,
+                263,
+                1181,
+                262,
+                1212,
+                201,
+                1212
+              ],
+              "text": "Name"
+            },
+            {
+              "boundingBox": [
+                268,
+                1181,
+                342,
+                1180,
+                341,
+                1212,
+                268,
+                1212
+              ],
+              "text": "(Please"
+            },
+            {
+              "boundingBox": [
+                347,
+                1180,
+                408,
+                1179,
+                407,
+                1211,
+                347,
+                1212
+              ],
+              "text": "Print).",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            416,
+            1158,
+            837,
+            1152,
+            838,
+            1206,
+            417,
+            1212
+          ],
+          "text": "USA PETROLEUM",
+          "words": [
+            {
+              "boundingBox": [
+                433,
+                1163,
+                511,
+                1159,
+                511,
+                1209,
+                432,
+                1210
+              ],
+              "text": "USA"
+            },
+            {
+              "boundingBox": [
+                571,
+                1157,
+                819,
+                1153,
+                822,
+                1207,
+                571,
+                1209
+              ],
+              "text": "PETROLEUM",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1103,
+            1177,
+            1281,
+            1181,
+            1280,
+            1208,
+            1102,
+            1205
+          ],
+          "text": "RJR Account No.",
+          "words": [
+            {
+              "boundingBox": [
+                1108,
+                1180,
+                1149,
+                1180,
+                1150,
+                1205,
+                1108,
+                1204
+              ],
+              "text": "RJR"
+            },
+            {
+              "boundingBox": [
+                1156,
+                1180,
+                1235,
+                1181,
+                1235,
+                1208,
+                1156,
+                1206
+              ],
+              "text": "Account"
+            },
+            {
+              "boundingBox": [
+                1239,
+                1181,
+                1280,
+                1181,
+                1280,
+                1209,
+                1240,
+                1208
+              ],
+              "text": "No."
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            141,
+            1233,
+            299,
+            1232,
+            300,
+            1259,
+            142,
+            1260
+          ],
+          "text": "Street Address .",
+          "words": [
+            {
+              "boundingBox": [
+                145,
+                1235,
+                204,
+                1235,
+                204,
+                1260,
+                145,
+                1259
+              ],
+              "text": "Street"
+            },
+            {
+              "boundingBox": [
+                208,
+                1235,
+                290,
+                1233,
+                291,
+                1260,
+                209,
+                1260
+              ],
+              "text": "Address"
+            },
+            {
+              "boundingBox": [
+                295,
+                1233,
+                298,
+                1233,
+                299,
+                1260,
+                296,
+                1260
+              ],
+              "text": "."
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            325,
+            1213,
+            1010,
+            1214,
+            1010,
+            1261,
+            324,
+            1260
+          ],
+          "text": "30101 DECOR OF STE 240",
+          "words": [
+            {
+              "boundingBox": [
+                328,
+                1217,
+                452,
+                1215,
+                452,
+                1260,
+                328,
+                1260
+              ],
+              "text": "30101",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                498,
+                1214,
+                636,
+                1214,
+                636,
+                1260,
+                498,
+                1260
+              ],
+              "text": "DECOR",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                687,
+                1214,
+                753,
+                1214,
+                755,
+                1261,
+                688,
+                1260
+              ],
+              "text": "OF",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                831,
+                1215,
+                906,
+                1216,
+                907,
+                1261,
+                832,
+                1261
+              ],
+              "text": "STE",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                926,
+                1216,
+                1006,
+                1218,
+                1008,
+                1261,
+                928,
+                1261
+              ],
+              "text": "240",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1105,
+            1228,
+            1277,
+            1234,
+            1277,
+            1262,
+            1104,
+            1256
+          ],
+          "text": "RJR Territory No.",
+          "words": [
+            {
+              "boundingBox": [
+                1109,
+                1230,
+                1151,
+                1231,
+                1151,
+                1257,
+                1108,
+                1257
+              ],
+              "text": "RJR"
+            },
+            {
+              "boundingBox": [
+                1158,
+                1231,
+                1237,
+                1232,
+                1237,
+                1260,
+                1158,
+                1257
+              ],
+              "text": "Territory"
+            },
+            {
+              "boundingBox": [
+                1242,
+                1233,
+                1275,
+                1234,
+                1276,
+                1262,
+                1243,
+                1260
+              ],
+              "text": "No."
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            141,
+            1284,
+            249,
+            1286,
+            249,
+            1313,
+            140,
+            1311
+          ],
+          "text": "City/State",
+          "words": [
+            {
+              "boundingBox": [
+                143,
+                1286,
+                246,
+                1286,
+                247,
+                1313,
+                143,
+                1312
+              ],
+              "text": "City/State"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            295,
+            1263,
+            687,
+            1265,
+            686,
+            1313,
+            294,
+            1312
+          ],
+          "text": "PLOVEA HILLS",
+          "words": [
+            {
+              "boundingBox": [
+                298,
+                1264,
+                465,
+                1266,
+                466,
+                1313,
+                299,
+                1311
+              ],
+              "text": "PLOVEA",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                507,
+                1266,
+                641,
+                1265,
+                642,
+                1313,
+                508,
+                1313
+              ],
+              "text": "HILLS",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            724,
+            1261,
+            833,
+            1265,
+            833,
+            1302,
+            726,
+            1305
+          ],
+          "text": "CA .",
+          "words": [
+            {
+              "boundingBox": [
+                741,
+                1260,
+                803,
+                1260,
+                803,
+                1304,
+                741,
+                1304
+              ],
+              "text": "CA"
+            },
+            {
+              "boundingBox": [
+                817,
+                1260,
+                832,
+                1260,
+                832,
+                1304,
+                817,
+                1304
+              ],
+              "text": ".",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1102,
+            1275,
+            1206,
+            1279,
+            1205,
+            1311,
+            1101,
+            1308
+          ],
+          "text": "Zip Code",
+          "words": [
+            {
+              "boundingBox": [
+                1108,
+                1277,
+                1137,
+                1278,
+                1138,
+                1310,
+                1109,
+                1309
+              ],
+              "text": "Zip"
+            },
+            {
+              "boundingBox": [
+                1143,
+                1279,
+                1203,
+                1279,
+                1203,
+                1311,
+                1144,
+                1310
+              ],
+              "text": "Code"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            1334,
+            331,
+            1335,
+            331,
+            1365,
+            142,
+            1364
+          ],
+          "text": "Call Classification .",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                1336,
+                181,
+                1336,
+                181,
+                1363,
+                145,
+                1363
+              ],
+              "text": "Call"
+            },
+            {
+              "boundingBox": [
+                186,
+                1336,
+                320,
+                1335,
+                319,
+                1365,
+                187,
+                1363
+              ],
+              "text": "Classification"
+            },
+            {
+              "boundingBox": [
+                325,
+                1335,
+                330,
+                1335,
+                330,
+                1365,
+                325,
+                1365
+              ],
+              "text": "."
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1103,
+            1326,
+            1552,
+            1315,
+            1553,
+            1354,
+            1104,
+            1366
+          ],
+          "text": "Brand (if Chain) (2520) . XXXX",
+          "words": [
+            {
+              "boundingBox": [
+                1108,
+                1334,
+                1167,
+                1331,
+                1167,
+                1359,
+                1109,
+                1358
+              ],
+              "text": "Brand"
+            },
+            {
+              "boundingBox": [
+                1171,
+                1330,
+                1191,
+                1329,
+                1192,
+                1359,
+                1172,
+                1359
+              ],
+              "text": "(if"
+            },
+            {
+              "boundingBox": [
+                1196,
+                1329,
+                1268,
+                1325,
+                1269,
+                1359,
+                1196,
+                1359
+              ],
+              "text": "Chain)",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1282,
+                1324,
+                1396,
+                1320,
+                1397,
+                1358,
+                1283,
+                1359
+              ],
+              "text": "(2520)",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1407,
+                1319,
+                1421,
+                1319,
+                1422,
+                1358,
+                1408,
+                1358
+              ],
+              "text": ".",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1426,
+                1319,
+                1535,
+                1316,
+                1536,
+                1356,
+                1426,
+                1358
+              ],
+              "text": "XXXX",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            201,
+            1372,
+            285,
+            1379,
+            283,
+            1403,
+            199,
+            1396
+          ],
+          "text": "Current",
+          "words": [
+            {
+              "boundingBox": [
+                202,
+                1374,
+                285,
+                1379,
+                283,
+                1402,
+                202,
+                1395
+              ],
+              "text": "Current"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            943,
+            1374,
+            985,
+            1378,
+            985,
+            1398,
+            943,
+            1394
+          ],
+          "text": "No.",
+          "words": [
+            {
+              "boundingBox": [
+                952,
+                1374,
+                986,
+                1378,
+                984,
+                1397,
+                950,
+                1394
+              ],
+              "text": "No."
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1404,
+            1366,
+            1550,
+            1369,
+            1549,
+            1396,
+            1403,
+            1393
+          ],
+          "text": "Total Quartert",
+          "words": [
+            {
+              "boundingBox": [
+                1412,
+                1368,
+                1462,
+                1369,
+                1462,
+                1395,
+                1412,
+                1394
+              ],
+              "text": "Total"
+            },
+            {
+              "boundingBox": [
+                1467,
+                1369,
+                1550,
+                1369,
+                1550,
+                1396,
+                1467,
+                1395
+              ],
+              "text": "Quartert",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            170,
+            1402,
+            311,
+            1404,
+            310,
+            1428,
+            169,
+            1427
+          ],
+          "text": "RJR Volume",
+          "words": [
+            {
+              "boundingBox": [
+                173,
+                1404,
+                217,
+                1404,
+                218,
+                1428,
+                174,
+                1427
+              ],
+              "text": "RJR",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                224,
+                1404,
+                307,
+                1404,
+                308,
+                1429,
+                225,
+                1428
+              ],
+              "text": "Volume",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            590,
+            1381,
+            644,
+            1386,
+            646,
+            1413,
+            592,
+            1408
+          ],
+          "text": "Type",
+          "words": [
+            {
+              "boundingBox": [
+                596,
+                1381,
+                646,
+                1385,
+                644,
+                1411,
+                594,
+                1407
+              ],
+              "text": "Type"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            924,
+            1401,
+            1016,
+            1400,
+            1017,
+            1425,
+            925,
+            1426
+          ],
+          "text": "Stores",
+          "words": [
+            {
+              "boundingBox": [
+                937,
+                1403,
+                1007,
+                1403,
+                1006,
+                1425,
+                936,
+                1425
+              ],
+              "text": "Stores"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1079,
+            1383,
+            1271,
+            1385,
+            1270,
+            1411,
+            1078,
+            1409
+          ],
+          "text": "Monthly Payment",
+          "words": [
+            {
+              "boundingBox": [
+                1085,
+                1384,
+                1168,
+                1386,
+                1167,
+                1411,
+                1084,
+                1410
+              ],
+              "text": "Monthly"
+            },
+            {
+              "boundingBox": [
+                1173,
+                1386,
+                1270,
+                1387,
+                1270,
+                1411,
+                1172,
+                1411
+              ],
+              "text": "Payment"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1410,
+            1397,
+            1563,
+            1398,
+            1562,
+            1424,
+            1409,
+            1423
+          ],
+          "text": "Dollar Amount",
+          "words": [
+            {
+              "boundingBox": [
+                1413,
+                1400,
+                1475,
+                1398,
+                1474,
+                1421,
+                1411,
+                1422
+              ],
+              "text": "Dollar"
+            },
+            {
+              "boundingBox": [
+                1479,
+                1398,
+                1562,
+                1400,
+                1562,
+                1424,
+                1478,
+                1421
+              ],
+              "text": "Amount"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1299,
+            1537,
+            1374,
+            1534,
+            1375,
+            1560,
+            1301,
+            1564
+          ],
+          "text": "TOTAL",
+          "words": [
+            {
+              "boundingBox": [
+                1300,
+                1539,
+                1368,
+                1535,
+                1368,
+                1561,
+                1301,
+                1562
+              ],
+              "text": "TOTAL"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            194,
+            1616,
+            435,
+            1618,
+            435,
+            1668,
+            193,
+            1666
+          ],
+          "text": "7. 36 . 29",
+          "words": [
+            {
+              "boundingBox": [
+                200,
+                1618,
+                259,
+                1619,
+                260,
+                1666,
+                200,
+                1666
+              ],
+              "text": "7."
+            },
+            {
+              "boundingBox": [
+                268,
+                1619,
+                328,
+                1619,
+                328,
+                1667,
+                269,
+                1666
+              ],
+              "text": "36",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                346,
+                1619,
+                368,
+                1619,
+                368,
+                1667,
+                347,
+                1667
+              ],
+              "text": "."
+            },
+            {
+              "boundingBox": [
+                378,
+                1619,
+                434,
+                1618,
+                434,
+                1669,
+                378,
+                1668
+              ],
+              "text": "29",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            541,
+            1624,
+            741,
+            1626,
+            741,
+            1658,
+            540,
+            1656
+          ],
+          "text": "Retailer's Signature",
+          "words": [
+            {
+              "boundingBox": [
+                541,
+                1627,
+                636,
+                1627,
+                635,
+                1654,
+                541,
+                1655
+              ],
+              "text": "Retailer's"
+            },
+            {
+              "boundingBox": [
+                641,
+                1627,
+                741,
+                1626,
+                741,
+                1658,
+                641,
+                1654
+              ],
+              "text": "Signature"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            211,
+            1666,
+            424,
+            1666,
+            423,
+            1694,
+            210,
+            1693
+          ],
+          "text": "Date Contract Signed",
+          "words": [
+            {
+              "boundingBox": [
+                211,
+                1666,
+                259,
+                1668,
+                260,
+                1694,
+                212,
+                1692
+              ],
+              "text": "Date",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                264,
+                1668,
+                348,
+                1669,
+                349,
+                1694,
+                265,
+                1694
+              ],
+              "text": "Contract"
+            },
+            {
+              "boundingBox": [
+                353,
+                1669,
+                421,
+                1667,
+                423,
+                1691,
+                354,
+                1694
+              ],
+              "text": "Signed"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            539,
+            1675,
+            589,
+            1678,
+            590,
+            1702,
+            539,
+            1699
+          ],
+          "text": "Tille",
+          "words": [
+            {
+              "boundingBox": [
+                542,
+                1675,
+                586,
+                1677,
+                585,
+                1701,
+                540,
+                1699
+              ],
+              "text": "Tille"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            709,
+            1639,
+            1412,
+            1630,
+            1413,
+            1688,
+            710,
+            1696
+          ],
+          "text": "RETAIL MENGH . Dilation",
+          "words": [
+            {
+              "boundingBox": [
+                722,
+                1644,
+                892,
+                1645,
+                896,
+                1692,
+                726,
+                1688
+              ],
+              "text": "RETAIL",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                907,
+                1645,
+                1089,
+                1643,
+                1092,
+                1693,
+                910,
+                1693
+              ],
+              "text": "MENGH",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1103,
+                1643,
+                1132,
+                1642,
+                1135,
+                1692,
+                1106,
+                1693
+              ],
+              "text": "."
+            },
+            {
+              "boundingBox": [
+                1164,
+                1641,
+                1389,
+                1632,
+                1392,
+                1685,
+                1167,
+                1692
+              ],
+              "text": "Dilation",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            206,
+            1766,
+            423,
+            1769,
+            423,
+            1798,
+            205,
+            1795
+          ],
+          "text": "Contract Effective Date",
+          "words": [
+            {
+              "boundingBox": [
+                207,
+                1770,
+                287,
+                1768,
+                286,
+                1794,
+                206,
+                1795
+              ],
+              "text": "Contract"
+            },
+            {
+              "boundingBox": [
+                291,
+                1768,
+                376,
+                1769,
+                376,
+                1796,
+                291,
+                1794
+              ],
+              "text": "Effective"
+            },
+            {
+              "boundingBox": [
+                381,
+                1769,
+                422,
+                1771,
+                422,
+                1799,
+                381,
+                1796
+              ],
+              "text": "Date"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            538,
+            1797,
+            564,
+            1798,
+            564,
+            1824,
+            538,
+            1823
+          ],
+          "text": "By",
+          "words": [
+            {
+              "boundingBox": [
+                541,
+                1797,
+                563,
+                1797,
+                562,
+                1823,
+                540,
+                1823
+              ],
+              "text": "By"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1430,
+            1840,
+            1546,
+            1840,
+            1546,
+            1868,
+            1431,
+            1869
+          ],
+          "text": "EFFECTIVE",
+          "words": [
+            {
+              "boundingBox": [
+                1431,
+                1844,
+                1546,
+                1840,
+                1546,
+                1869,
+                1432,
+                1867
+              ],
+              "text": "EFFECTIVE"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            341,
+            1872,
+            460,
+            1871,
+            461,
+            1898,
+            342,
+            1899
+          ],
+          "text": "FUNCTION",
+          "words": [
+            {
+              "boundingBox": [
+                348,
+                1873,
+                460,
+                1872,
+                461,
+                1898,
+                349,
+                1898
+              ],
+              "text": "FUNCTION"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            582,
+            1870,
+            764,
+            1868,
+            765,
+            1900,
+            583,
+            1901
+          ],
+          "text": "CONTRACT TYPE",
+          "words": [
+            {
+              "boundingBox": [
+                583,
+                1871,
+                705,
+                1870,
+                706,
+                1901,
+                583,
+                1901
+              ],
+              "text": "CONTRACT"
+            },
+            {
+              "boundingBox": [
+                711,
+                1870,
+                762,
+                1869,
+                764,
+                1899,
+                712,
+                1901
+              ],
+              "text": "TYPE"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            977,
+            1871,
+            1033,
+            1871,
+            1033,
+            1895,
+            977,
+            1896
+          ],
+          "text": "TYPE",
+          "words": [
+            {
+              "boundingBox": [
+                981,
+                1870,
+                1031,
+                1870,
+                1031,
+                1895,
+                981,
+                1895
+              ],
+              "text": "TYPE"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1146,
+            1870,
+            1215,
+            1871,
+            1214,
+            1894,
+            1145,
+            1893
+          ],
+          "text": "UNITS",
+          "words": [
+            {
+              "boundingBox": [
+                1146,
+                1870,
+                1214,
+                1871,
+                1215,
+                1894,
+                1146,
+                1893
+              ],
+              "text": "UNITS"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1281,
+            1869,
+            1350,
+            1867,
+            1351,
+            1895,
+            1282,
+            1896
+          ],
+          "text": "RATE",
+          "words": [
+            {
+              "boundingBox": [
+                1285,
+                1867,
+                1347,
+                1866,
+                1348,
+                1894,
+                1286,
+                1895
+              ],
+              "text": "RATE"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1449,
+            1867,
+            1528,
+            1868,
+            1526,
+            1896,
+            1449,
+            1894
+          ],
+          "text": "MONYR",
+          "words": [
+            {
+              "boundingBox": [
+                1450,
+                1866,
+                1523,
+                1867,
+                1523,
+                1895,
+                1450,
+                1894
+              ],
+              "text": "MONYR",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            139,
+            1912,
+            267,
+            1913,
+            267,
+            1941,
+            138,
+            1940
+          ],
+          "text": "FUNCTION:",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                1916,
+                266,
+                1913,
+                266,
+                1941,
+                145,
+                1938
+              ],
+              "text": "FUNCTION:"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            477,
+            1904,
+            780,
+            1902,
+            781,
+            1954,
+            478,
+            1957
+          ],
+          "text": "NO PACK",
+          "words": [
+            {
+              "boundingBox": [
+                482,
+                1906,
+                548,
+                1905,
+                548,
+                1957,
+                481,
+                1957
+              ],
+              "text": "NO",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                595,
+                1904,
+                754,
+                1903,
+                754,
+                1956,
+                594,
+                1956
+              ],
+              "text": "PACK",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            915,
+            1903,
+            1105,
+            1901,
+            1106,
+            1950,
+            916,
+            1953
+          ],
+          "text": "7 5 4 2 3",
+          "words": [
+            {
+              "boundingBox": [
+                925,
+                1904,
+                948,
+                1904,
+                949,
+                1953,
+                927,
+                1954
+              ],
+              "text": "7",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                958,
+                1904,
+                984,
+                1903,
+                985,
+                1952,
+                959,
+                1952
+              ],
+              "text": "5"
+            },
+            {
+              "boundingBox": [
+                993,
+                1903,
+                1023,
+                1903,
+                1023,
+                1951,
+                994,
+                1952
+              ],
+              "text": "4",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1032,
+                1903,
+                1065,
+                1902,
+                1065,
+                1951,
+                1033,
+                1951
+              ],
+              "text": "2"
+            },
+            {
+              "boundingBox": [
+                1078,
+                1902,
+                1104,
+                1902,
+                1104,
+                1952,
+                1078,
+                1952
+              ],
+              "text": "3",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            138,
+            1967,
+            228,
+            1965,
+            229,
+            1991,
+            139,
+            1994
+          ],
+          "text": "A = ADD",
+          "words": [
+            {
+              "boundingBox": [
+                143,
+                1970,
+                158,
+                1968,
+                160,
+                1992,
+                145,
+                1993
+              ],
+              "text": "A"
+            },
+            {
+              "boundingBox": [
+                164,
+                1968,
+                181,
+                1967,
+                182,
+                1991,
+                166,
+                1991
+              ],
+              "text": "="
+            },
+            {
+              "boundingBox": [
+                186,
+                1967,
+                228,
+                1967,
+                228,
+                1993,
+                186,
+                1991
+              ],
+              "text": "ADD",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1407,
+            1953,
+            1558,
+            1946,
+            1560,
+            1995,
+            1410,
+            2003
+          ],
+          "text": "47 9 7",
+          "words": [
+            {
+              "boundingBox": [
+                1418,
+                1953,
+                1488,
+                1950,
+                1490,
+                2000,
+                1420,
+                2002
+              ],
+              "text": "47",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                1497,
+                1949,
+                1523,
+                1948,
+                1525,
+                1999,
+                1499,
+                2000
+              ],
+              "text": "9"
+            },
+            {
+              "boundingBox": [
+                1532,
+                1947,
+                1558,
+                1946,
+                1559,
+                1997,
+                1534,
+                1998
+              ],
+              "text": "7",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            141,
+            2002,
+            232,
+            2003,
+            231,
+            2028,
+            140,
+            2027
+          ],
+          "text": "E = END",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                2004,
+                159,
+                2004,
+                160,
+                2027,
+                145,
+                2028
+              ],
+              "text": "E"
+            },
+            {
+              "boundingBox": [
+                164,
+                2004,
+                180,
+                2004,
+                181,
+                2027,
+                165,
+                2027
+              ],
+              "text": "="
+            },
+            {
+              "boundingBox": [
+                184,
+                2003,
+                231,
+                2004,
+                232,
+                2028,
+                185,
+                2027
+              ],
+              "text": "END"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            587,
+            1956,
+            876,
+            1948,
+            878,
+            2004,
+            589,
+            2011
+          ],
+          "text": "PACK EM",
+          "words": [
+            {
+              "boundingBox": [
+                599,
+                1959,
+                753,
+                1955,
+                754,
+                2007,
+                599,
+                2009
+              ],
+              "text": "PACK"
+            },
+            {
+              "boundingBox": [
+                803,
+                1953,
+                873,
+                1949,
+                875,
+                2005,
+                804,
+                2006
+              ],
+              "text": "EM",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            912,
+            1961,
+            992,
+            1957,
+            994,
+            2001,
+            914,
+            2004
+          ],
+          "text": "MC",
+          "words": [
+            {
+              "boundingBox": [
+                916,
+                1959,
+                990,
+                1956,
+                992,
+                2000,
+                918,
+                2003
+              ],
+              "text": "MC"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            143,
+            2035,
+            276,
+            2036,
+            276,
+            2062,
+            142,
+            2061
+          ],
+          "text": "D = DELETE",
+          "words": [
+            {
+              "boundingBox": [
+                145,
+                2037,
+                160,
+                2037,
+                161,
+                2061,
+                146,
+                2060
+              ],
+              "text": "D"
+            },
+            {
+              "boundingBox": [
+                166,
+                2037,
+                181,
+                2037,
+                183,
+                2061,
+                167,
+                2061
+              ],
+              "text": "="
+            },
+            {
+              "boundingBox": [
+                186,
+                2037,
+                274,
+                2036,
+                276,
+                2062,
+                187,
+                2061
+              ],
+              "text": "DELETE"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            137,
+            2071,
+            292,
+            2070,
+            293,
+            2096,
+            138,
+            2096
+          ],
+          "text": "C = CHANGE",
+          "words": [
+            {
+              "boundingBox": [
+                143,
+                2072,
+                159,
+                2072,
+                161,
+                2096,
+                145,
+                2096
+              ],
+              "text": "C"
+            },
+            {
+              "boundingBox": [
+                166,
+                2072,
+                182,
+                2072,
+                183,
+                2096,
+                167,
+                2096
+              ],
+              "text": "="
+            },
+            {
+              "boundingBox": [
+                187,
+                2072,
+                285,
+                2071,
+                286,
+                2097,
+                188,
+                2097
+              ],
+              "text": "CHANGE"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            1622,
+            1915,
+            1621,
+            2119,
+            1591,
+            2118,
+            1592,
+            1914
+          ],
+          "text": "52079 1063",
+          "words": [
+            {
+              "boundingBox": [
+                1622,
+                1917,
+                1620,
+                2017,
+                1592,
+                2017,
+                1593,
+                1917
+              ],
+              "text": "52079"
+            },
+            {
+              "boundingBox": [
+                1620,
+                2041,
+                1620,
+                2119,
+                1594,
+                2118,
+                1592,
+                2041
+              ],
+              "text": "1063"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            140,
+            2143,
+            407,
+            2142,
+            408,
+            2163,
+            141,
+            2165
+          ],
+          "text": "RJRT Form 3804 . WML 8/21/1998",
+          "words": [
+            {
+              "boundingBox": [
+                144,
+                2145,
+                186,
+                2144,
+                187,
+                2165,
+                145,
+                2166
+              ],
+              "text": "RJRT"
+            },
+            {
+              "boundingBox": [
+                190,
+                2144,
+                230,
+                2143,
+                231,
+                2164,
+                191,
+                2165
+              ],
+              "text": "Form"
+            },
+            {
+              "boundingBox": [
+                236,
+                2143,
+                273,
+                2143,
+                273,
+                2164,
+                236,
+                2164
+              ],
+              "text": "3804",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                277,
+                2143,
+                281,
+                2143,
+                282,
+                2164,
+                278,
+                2164
+              ],
+              "text": ".",
+              "confidence": "Low"
+            },
+            {
+              "boundingBox": [
+                285,
+                2143,
+                323,
+                2143,
+                324,
+                2164,
+                286,
+                2164
+              ],
+              "text": "WML"
+            },
+            {
+              "boundingBox": [
+                328,
+                2143,
+                407,
+                2143,
+                408,
+                2164,
+                328,
+                2164
+              ],
+              "text": "8/21/1998",
+              "confidence": "Low"
+            }
+          ]
+        },
+        {
+          "boundingBox": [
+            387,
+            2201,
+            1306,
+            2200,
+            1307,
+            2236,
+            388,
+            2237
+          ],
+          "text": "Source: https://www.industrydocuments.ucsf.edu/docs/ffbf0023",
+          "words": [
+            {
+              "boundingBox": [
+                388,
+                2204,
+                498,
+                2205,
+                500,
+                2236,
+                389,
+                2234
+              ],
+              "text": "Source:"
+            },
+            {
+              "boundingBox": [
+                504,
+                2205,
+                1305,
+                2201,
+                1307,
+                2236,
+                506,
+                2236
+              ],
+              "text": "https://www.industrydocuments.ucsf.edu/docs/ffbf0023"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

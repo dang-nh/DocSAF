@@ -1,0 +1,628 @@
+{
+    "dontcare": [],
+    "valid_line": [
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 244,
+                        "y3": 264,
+                        "x3": 244,
+                        "y4": 264,
+                        "x1": 94,
+                        "y1": 244,
+                        "x4": 94,
+                        "y2": 244
+                    },
+                    "is_key": 0,
+                    "row_id": 2132855,
+                    "text": "ORIGINAL COMBO"
+                }
+            ],
+            "category": "menu.nm",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 108,
+                        "y3": 288,
+                        "x3": 108,
+                        "y4": 288,
+                        "x1": 98,
+                        "y1": 272,
+                        "x4": 98,
+                        "y2": 272
+                    },
+                    "is_key": 0,
+                    "row_id": 2132856,
+                    "text": "1"
+                }
+            ],
+            "category": "menu.cnt",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 212,
+                        "y3": 288,
+                        "x3": 212,
+                        "y4": 288,
+                        "x1": 156,
+                        "y1": 268,
+                        "x4": 156,
+                        "y2": 268
+                    },
+                    "is_key": 0,
+                    "row_id": 2132856,
+                    "text": "20,000"
+                }
+            ],
+            "category": "menu.unitprice",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 446,
+                        "y3": 284,
+                        "x3": 446,
+                        "y4": 284,
+                        "x1": 390,
+                        "y1": 264,
+                        "x4": 390,
+                        "y2": 264
+                    },
+                    "is_key": 0,
+                    "row_id": 2132856,
+                    "text": "20,000"
+                }
+            ],
+            "category": "menu.price",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 264,
+                        "y3": 310,
+                        "x3": 264,
+                        "y4": 310,
+                        "x1": 94,
+                        "y1": 290,
+                        "x4": 94,
+                        "y2": 290
+                    },
+                    "is_key": 0,
+                    "row_id": 2132857,
+                    "text": "*ORIGINAL NO SALT*"
+                }
+            ],
+            "category": "menu.sub_nm",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 110,
+                        "y3": 334,
+                        "x3": 110,
+                        "y4": 334,
+                        "x1": 100,
+                        "y1": 320,
+                        "x4": 100,
+                        "y2": 320
+                    },
+                    "is_key": 0,
+                    "row_id": 2132858,
+                    "text": "1"
+                }
+            ],
+            "category": "menu.sub_cnt",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 174,
+                        "y3": 334,
+                        "x3": 174,
+                        "y4": 334,
+                        "x1": 160,
+                        "y1": 318,
+                        "x4": 160,
+                        "y2": 318
+                    },
+                    "is_key": 0,
+                    "row_id": 2132858,
+                    "text": "0"
+                }
+            ],
+            "category": "menu.sub_unitprice",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 446,
+                        "y3": 328,
+                        "x3": 446,
+                        "y4": 328,
+                        "x1": 434,
+                        "y1": 312,
+                        "x4": 434,
+                        "y2": 312
+                    },
+                    "is_key": 0,
+                    "row_id": 2132858,
+                    "text": "0"
+                }
+            ],
+            "category": "menu.sub_price",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 172,
+                        "y3": 356,
+                        "x3": 172,
+                        "y4": 356,
+                        "x1": 98,
+                        "y1": 338,
+                        "x4": 98,
+                        "y2": 338
+                    },
+                    "is_key": 0,
+                    "row_id": 2132859,
+                    "text": "*MILOR*"
+                }
+            ],
+            "category": "menu.sub_nm",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 114,
+                        "y3": 380,
+                        "x3": 114,
+                        "y4": 380,
+                        "x1": 104,
+                        "y1": 366,
+                        "x4": 104,
+                        "y2": 366
+                    },
+                    "is_key": 0,
+                    "row_id": 2132860,
+                    "text": "1"
+                }
+            ],
+            "category": "menu.sub_cnt",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 208,
+                        "y3": 380,
+                        "x3": 208,
+                        "y4": 380,
+                        "x1": 162,
+                        "y1": 360,
+                        "x4": 162,
+                        "y2": 360
+                    },
+                    "is_key": 0,
+                    "row_id": 2132860,
+                    "text": "4,000"
+                }
+            ],
+            "category": "menu.sub_unitprice",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 446,
+                        "y3": 374,
+                        "x3": 446,
+                        "y4": 374,
+                        "x1": 400,
+                        "y1": 354,
+                        "x4": 400,
+                        "y2": 354
+                    },
+                    "is_key": 0,
+                    "row_id": 2132860,
+                    "text": "4,000"
+                }
+            ],
+            "category": "menu.sub_price",
+            "group_id": 3
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 448,
+                        "y3": 538,
+                        "x3": 448,
+                        "y4": 538,
+                        "x1": 396,
+                        "y1": 518,
+                        "x4": 396,
+                        "y2": 518
+                    },
+                    "is_key": 0,
+                    "row_id": 2132867,
+                    "text": "49,000"
+                },
+                {
+                    "quad": {
+                        "x2": 181,
+                        "y3": 548,
+                        "x3": 182,
+                        "y4": 552,
+                        "x1": 83,
+                        "y1": 531,
+                        "x4": 84,
+                        "y2": 527
+                    },
+                    "is_key": 1,
+                    "row_id": 2132868,
+                    "text": "SUB TOTAL"
+                }
+            ],
+            "category": "sub_total.subtotal_price",
+            "group_id": 4
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 452,
+                        "y3": 588,
+                        "x3": 452,
+                        "y4": 588,
+                        "x1": 398,
+                        "y1": 568,
+                        "x4": 398,
+                        "y2": 568
+                    },
+                    "is_key": 0,
+                    "row_id": 2132869,
+                    "text": "49,000"
+                },
+                {
+                    "quad": {
+                        "x2": 207,
+                        "y3": 599,
+                        "x3": 208,
+                        "y4": 605,
+                        "x1": 81,
+                        "y1": 584,
+                        "x4": 82,
+                        "y2": 578
+                    },
+                    "is_key": 1,
+                    "row_id": 2132870,
+                    "text": "GRAND TOTAL"
+                }
+            ],
+            "category": "total.total_price",
+            "group_id": 5
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 454,
+                        "y3": 624,
+                        "x3": 454,
+                        "y4": 624,
+                        "x1": 400,
+                        "y1": 604,
+                        "x4": 400,
+                        "y2": 604
+                    },
+                    "is_key": 0,
+                    "row_id": 2132871,
+                    "text": "49,000"
+                },
+                {
+                    "quad": {
+                        "x2": 215,
+                        "y3": 637,
+                        "x3": 216,
+                        "y4": 644,
+                        "x1": 81,
+                        "y1": 622,
+                        "x4": 82,
+                        "y2": 615
+                    },
+                    "is_key": 1,
+                    "row_id": 2132872,
+                    "text": "DEBITBCA2704"
+                }
+            ],
+            "category": "total.creditcardprice",
+            "group_id": 5
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 247,
+                        "y3": 398,
+                        "x3": 248,
+                        "y4": 401,
+                        "x1": 101,
+                        "y1": 382,
+                        "x4": 102,
+                        "y2": 379
+                    },
+                    "is_key": 0,
+                    "row_id": 2132861,
+                    "text": "ORIGINAL COMBO"
+                }
+            ],
+            "category": "menu.nm",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 118,
+                        "y3": 424,
+                        "x3": 118,
+                        "y4": 424,
+                        "x1": 106,
+                        "y1": 410,
+                        "x4": 106,
+                        "y2": 410
+                    },
+                    "is_key": 0,
+                    "row_id": 2132862,
+                    "text": "1"
+                }
+            ],
+            "category": "menu.cnt",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 218,
+                        "y3": 422,
+                        "x3": 218,
+                        "y4": 422,
+                        "x1": 164,
+                        "y1": 404,
+                        "x4": 164,
+                        "y2": 404
+                    },
+                    "is_key": 0,
+                    "row_id": 2132862,
+                    "text": "20,000"
+                }
+            ],
+            "category": "menu.unitprice",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 441,
+                        "y3": 413,
+                        "x3": 442,
+                        "y4": 416,
+                        "x1": 387,
+                        "y1": 397,
+                        "x4": 388,
+                        "y2": 394
+                    },
+                    "is_key": 0,
+                    "row_id": 2132862,
+                    "text": "20,000"
+                }
+            ],
+            "category": "menu.price",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 267,
+                        "y3": 441,
+                        "x3": 268,
+                        "y4": 446,
+                        "x1": 103,
+                        "y1": 426,
+                        "x4": 104,
+                        "y2": 421
+                    },
+                    "is_key": 0,
+                    "row_id": 2132863,
+                    "text": "*ORIGINAL NO SALT*"
+                }
+            ],
+            "category": "menu.sub_nm",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 116,
+                        "y3": 468,
+                        "x3": 116,
+                        "y4": 468,
+                        "x1": 106,
+                        "y1": 454,
+                        "x4": 106,
+                        "y2": 454
+                    },
+                    "is_key": 0,
+                    "row_id": 2132864,
+                    "text": "1"
+                }
+            ],
+            "category": "menu.sub_cnt",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 178,
+                        "y3": 466,
+                        "x3": 178,
+                        "y4": 466,
+                        "x1": 166,
+                        "y1": 450,
+                        "x4": 166,
+                        "y2": 450
+                    },
+                    "is_key": 0,
+                    "row_id": 2132864,
+                    "text": "0"
+                }
+            ],
+            "category": "menu.sub_unitprice",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 444,
+                        "y3": 458,
+                        "x3": 444,
+                        "y4": 458,
+                        "x1": 430,
+                        "y1": 442,
+                        "x4": 430,
+                        "y2": 442
+                    },
+                    "is_key": 0,
+                    "row_id": 2132864,
+                    "text": "0"
+                }
+            ],
+            "category": "menu.sub_price",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 225,
+                        "y3": 487,
+                        "x3": 226,
+                        "y4": 491,
+                        "x1": 101,
+                        "y1": 470,
+                        "x4": 102,
+                        "y2": 466
+                    },
+                    "is_key": 0,
+                    "row_id": 2132865,
+                    "text": "*LEMONADER*"
+                }
+            ],
+            "category": "menu.sub_nm",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 116,
+                        "y3": 514,
+                        "x3": 116,
+                        "y4": 514,
+                        "x1": 104,
+                        "y1": 498,
+                        "x4": 104,
+                        "y2": 498
+                    },
+                    "is_key": 0,
+                    "row_id": 2132866,
+                    "text": "1"
+                }
+            ],
+            "category": "menu.sub_cnt",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 210,
+                        "y3": 512,
+                        "x3": 210,
+                        "y4": 512,
+                        "x1": 164,
+                        "y1": 492,
+                        "x4": 164,
+                        "y2": 492
+                    },
+                    "is_key": 0,
+                    "row_id": 2132866,
+                    "text": "5,000"
+                }
+            ],
+            "category": "menu.sub_unitprice",
+            "group_id": 6
+        },
+        {
+            "words": [
+                {
+                    "quad": {
+                        "x2": 446,
+                        "y3": 504,
+                        "x3": 446,
+                        "y4": 504,
+                        "x1": 402,
+                        "y1": 484,
+                        "x4": 402,
+                        "y2": 484
+                    },
+                    "is_key": 0,
+                    "row_id": 2132866,
+                    "text": "5,000"
+                }
+            ],
+            "category": "menu.sub_price",
+            "group_id": 6
+        }
+    ],
+    "meta": {
+        "version": "v0.1",
+        "split": "train",
+        "image_id": 404,
+        "image_size": {
+            "width": 576,
+            "height": 864
+        }
+    },
+    "roi": {},
+    "repeating_symbol": []
+}

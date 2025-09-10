@@ -1,0 +1,2326 @@
+{
+    "metadata": {
+        "page_hash": "0b6c09d6ec8f25db4beabdc9bc615aef8732fe51b3df10d96f5af6274e8d9779",
+        "original_filename": "cug-complete.pdf",
+        "page_no": 59,
+        "num_pages": 131,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "faa_regulations",
+        "doc_category": "laws_and_regulations"
+    },
+    "form": [
+        {
+            "id_box": 47030,
+            "box": [
+                60.294117647058826,
+                42.55335385101023,
+                872.8913231209151,
+                33.196048611110996
+            ],
+            "id_box_line": 0,
+            "box_line": [
+                60.294117647058826,
+                42.55335385101023,
+                872.8913231209151,
+                17.665745580807993
+            ],
+            "text": "Airports marked \"Pvt\" immediately following the airport name are not for public use, but otherwise meet the criteria for ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47030,
+            "box": [
+                60.294117647058826,
+                42.55335385101023,
+                872.8913231209151,
+                33.196048611110996
+            ],
+            "id_box_line": 1,
+            "box_line": [
+                60.294117647058826,
+                58.08365688131323,
+                207.59601348039212,
+                17.665745580807993
+            ],
+            "text": "charting as specified above.",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JNMPFF+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47031,
+            "box": [
+                60.294117647058826,
+                89.14426294191935,
+                902.9043782679738,
+                64.256654671717
+            ],
+            "id_box_line": 2,
+            "box_line": [
+                60.294117647058826,
+                89.14426294191935,
+                884.3471552287582,
+                17.665745580807993
+            ],
+            "text": "Runway length is the length of the longest active runway (including displaced thresholds but excluding overruns) and is ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47031,
+            "box": [
+                60.294117647058826,
+                89.14426294191935,
+                902.9043782679738,
+                64.256654671717
+            ],
+            "id_box_line": 3,
+            "box_line": [
+                60.294117647058826,
+                104.67456597222235,
+                891.1135620915032,
+                17.665745580807993
+            ],
+            "text": "shown to the nearest 100 feet using 70 feet as the division point; e.g., a runway of 8,070' is labeled 81. The following run",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JNMPFF+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47031,
+            "box": [
+                60.294117647058826,
+                89.14426294191935,
+                902.9043782679738,
+                64.256654671717
+            ],
+            "id_box_line": 4,
+            "box_line": [
+                951.4249473039215,
+                104.67456597222235,
+                5.577239379085199,
+                17.665745580807993
+            ],
+            "text": "-",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47031,
+            "box": [
+                60.294117647058826,
+                89.14426294191935,
+                902.9043782679738,
+                64.256654671717
+            ],
+            "id_box_line": 5,
+            "box_line": [
+                60.294117647058826,
+                120.20486900252536,
+                902.9043782679738,
+                17.665745580807993
+            ],
+            "text": "way compositions (materials) constitute a hard-surfaced runway: asphalt, bitumen, chip seal, concrete, and tar macadam. ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47031,
+            "box": [
+                60.294117647058826,
+                89.14426294191935,
+                902.9043782679738,
+                64.256654671717
+            ],
+            "id_box_line": 6,
+            "box_line": [
+                60.294117647058826,
+                135.73517203282836,
+                828.2736593137256,
+                17.665745580807993
+            ],
+            "text": "Runways that are not hard-surfaced have a small letter \"s\" following the runway length, indicating a soft surface.",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47032,
+            "box": [
+                17.525992647058825,
+                409.7952847222223,
+                18.288964460784317,
+                205.41102241161616
+            ],
+            "id_box_line": 76,
+            "box_line": [
+                17.525992647058825,
+                409.7952847222223,
+                18.288964460784317,
+                205.41102241161616
+            ],
+            "text": "FAA Chart Users’ Guide - IFR Enroute Terms",
+            "category": "Page-header",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47033,
+            "box": [
+                60.294117647058826,
+                842.7956505681818,
+                499.07953431372556,
+                18.53282828282829
+            ],
+            "id_box_line": 66,
+            "box_line": [
+                60.294117647058826,
+                842.7956505681818,
+                499.07953431372556,
+                18.53282828282829
+            ],
+            "text": "VOR Minimum Operational Network (MON) Airports Designator",
+            "category": "Section-header",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ZVNMVZ+Arial-BoldMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47034,
+            "box": [
+                60.294117647058826,
+                874.0633143939394,
+                905.8019125816994,
+                48.72633093434342
+            ],
+            "id_box_line": 67,
+            "box_line": [
+                60.294117647058826,
+                874.0633143939394,
+                163.14986968954247,
+                17.66571969696969
+            ],
+            "text": "MON Airports with the",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47034,
+            "box": [
+                60.294117647058826,
+                874.0633143939394,
+                905.8019125816994,
+                48.72633093434342
+            ],
+            "id_box_line": 68,
+            "box_line": [
+                274.4575339052288,
+                874.0633143939394,
+                302.83939869281045,
+                17.66571969696969
+            ],
+            "text": "Airport designator at the top of the Airport",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47034,
+            "box": [
+                60.294117647058826,
+                874.0633143939394,
+                905.8019125816994,
+                48.72633093434342
+            ],
+            "id_box_line": 69,
+            "box_line": [
+                620.5780767973857,
+                874.0633143939394,
+                337.7048741830064,
+                17.66571969696969
+            ],
+            "text": "Data Block. The MON designation is to alert pilots ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47034,
+            "box": [
+                60.294117647058826,
+                874.0633143939394,
+                905.8019125816994,
+                48.72633093434342
+            ],
+            "id_box_line": 70,
+            "box_line": [
+                60.294117647058826,
+                889.5936174242424,
+                11.322525163398694,
+                17.66572487373736
+            ],
+            "text": "to",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47034,
+            "box": [
+                60.294117647058826,
+                874.0633143939394,
+                905.8019125816994,
+                48.72633093434342
+            ],
+            "id_box_line": 71,
+            "box_line": [
+                947.2251772875817,
+                889.5936174242424,
+                18.87085294117651,
+                17.66572487373736
+            ],
+            "text": "those airports that have retained ILS and VOR instrument approach procedures for safe recovery in the event of a GPS ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47034,
+            "box": [
+                60.294117647058826,
+                874.0633143939394,
+                905.8019125816994,
+                48.72633093434342
+            ],
+            "id_box_line": 72,
+            "box_line": [
+                60.294117647058826,
+                905.1239230429293,
+                243.2476237745098,
+                17.66572228535354
+            ],
+            "text": "outage. Refer to the Aeronautical",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47034,
+            "box": [
+                60.294117647058826,
+                874.0633143939394,
+                905.8019125816994,
+                48.72633093434342
+            ],
+            "id_box_line": 73,
+            "box_line": [
+                550.1236633986929,
+                905.1239230429293,
+                24.857020424836605,
+                17.66572228535354
+            ],
+            "text": "Information",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47034,
+            "box": [
+                60.294117647058826,
+                874.0633143939394,
+                905.8019125816994,
+                48.72633093434342
+            ],
+            "id_box_line": 74,
+            "box_line": [
+                622.327477124183,
+                905.1239230429293,
+                152.9359289215687,
+                17.66572228535354
+            ],
+            "text": "Manual (AIM) for expanded MON Airport guidance.",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47035,
+            "box": [
+                60.294117647058826,
+                757.9261682449495,
+                903.4264248366014,
+                71.68165372474746
+            ],
+            "id_box_line": 58,
+            "box_line": [
+                60.294117647058826,
+                757.9261682449495,
+                14.90604910130719,
+                17.66571969696969
+            ],
+            "text": "A ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47035,
+            "box": [
+                60.294117647058826,
+                757.9261682449495,
+                903.4264248366014,
+                71.68165372474746
+            ],
+            "id_box_line": 59,
+            "box_line": [
+                960.000931372549,
+                757.9261682449495,
+                3.7196111111112486,
+                17.66571969696969
+            ],
+            "text": "symbol between the airport elevation and runway length means that runway lights are in operation sunset to sunrise. ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47035,
+            "box": [
+                60.294117647058826,
+                757.9261682449495,
+                903.4264248366014,
+                71.68165372474746
+            ],
+            "id_box_line": 60,
+            "box_line": [
+                60.294117647058826,
+                780.8815091540404,
+                14.90604910130719,
+                17.665706755050508
+            ],
+            "text": "A ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47035,
+            "box": [
+                60.294117647058826,
+                757.9261682449495,
+                903.4264248366014,
+                71.68165372474746
+            ],
+            "id_box_line": 61,
+            "box_line": [
+                95.0943766748366,
+                780.8815091540404,
+                392.8697863153594,
+                17.665706755050508
+            ],
+            "text": " symbol indicates there is Pilot Controlled Lighting. A ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47035,
+            "box": [
+                60.294117647058826,
+                757.9261682449495,
+                903.4264248366014,
+                71.68165372474746
+            ],
+            "id_box_line": 62,
+            "box_line": [
+                914.2657328431374,
+                780.8815091540404,
+                31.584839052287407,
+                17.665706755050508
+            ],
+            "text": "symbol means the lighting is part-time or on request, the ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47035,
+            "box": [
+                60.294117647058826,
+                757.9261682449495,
+                903.4264248366014,
+                71.68165372474746
+            ],
+            "id_box_line": 63,
+            "box_line": [
+                60.294117647058826,
+                796.4118121843435,
+                541.7928754084968,
+                17.665706755050508
+            ],
+            "text": "pilot should consult the Chart Supplement for light operating procedures. ",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47035,
+            "box": [
+                60.294117647058826,
+                757.9261682449495,
+                903.4264248366014,
+                71.68165372474746
+            ],
+            "id_box_line": 64,
+            "box_line": [
+                601.8441584967321,
+                796.4118121843435,
+                358.3883022875816,
+                17.665706755050508
+            ],
+            "text": "The Aeronautical Information Manual (AIM) thor-",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47035,
+            "box": [
+                60.294117647058826,
+                757.9261682449495,
+                903.4264248366014,
+                71.68165372474746
+            ],
+            "id_box_line": 65,
+            "box_line": [
+                60.294117647058826,
+                811.9421152146465,
+                429.1601139705882,
+                17.665706755050508
+            ],
+            "text": "oughly explains the types and uses of airport lighting aids.",
+            "category": "Text",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47036,
+            "box": [
+                502.8531254084968,
+                983.1922948232324,
+                19.294100898692818,
+                20.950378787878783
+            ],
+            "id_box_line": 75,
+            "box_line": [
+                502.8531254084968,
+                983.1922948232324,
+                19.294100898692818,
+                20.950378787878783
+            ],
+            "text": "60",
+            "category": "Page-footer",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CDUPGT+MinionPro-Regular",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47037,
+            "box": [
+                61.33513438877529,
+                189.5813244743964,
+                903.2328718918457,
+                126.95177978196182
+            ],
+            "id_box_line": 8,
+            "box_line": [
+                67.83088235294117,
+                220.98105713383848,
+                90.77332671568628,
+                17.665758522727288
+            ],
+            "text": "Low Altitude",
+            "category": "Picture",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47038,
+            "box": [
+                67.83088235294117,
+                171.48106344696976,
+                219.2796736111111,
+                18.53284122474747
+            ],
+            "id_box_line": 7,
+            "box_line": [
+                67.83088235294117,
+                171.48106344696976,
+                219.2796736111111,
+                18.53284122474747
+            ],
+            "text": "AIRPORT DATA DEPICTION",
+            "category": "Section-header",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/OKBTXV+Arial-BoldMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 9,
+            "box_line": [
+                67.83088235294117,
+                318.8119103535354,
+                12.546509150326798,
+                15.899108901515206
+            ],
+            "text": "1.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 10,
+            "box_line": [
+                84.55956401143791,
+                318.8119103535354,
+                405.5351586192811,
+                15.899108901515206
+            ],
+            "text": "Airport elevation given in feet above or below mean sea level",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 11,
+            "box_line": [
+                67.83088235294117,
+                346.7664169823232,
+                12.571325204248367,
+                15.899108901515206
+            ],
+            "text": "2.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 12,
+            "box_line": [
+                84.59264538398693,
+                346.7664169823232,
+                318.3680163807189,
+                15.899108901515206
+            ],
+            "text": "Pvt - Private use, not available to general public",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 13,
+            "box_line": [
+                67.83088235294117,
+                374.72101420454544,
+                12.497736233660135,
+                15.899108901515206
+            ],
+            "text": "3.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 14,
+            "box_line": [
+                84.49453010620914,
+                374.72101420454544,
+                400.6168669526144,
+                15.899108901515206
+            ],
+            "text": "A solid line box enclosed the airport name indicates FAR 93 ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 15,
+            "box_line": [
+                67.83088235294117,
+                388.698273989899,
+                334.2404244281046,
+                15.899108901515206
+            ],
+            "text": "Special Requirements - see Directory/Supplement",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 16,
+            "box_line": [
+                67.83088235294117,
+                416.6528194444445,
+                11.190516217320265,
+                15.899108901515092
+            ],
+            "text": "4.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JNMPFF+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 17,
+            "box_line": [
+                86.76569730392157,
+                416.6528194444445,
+                393.24784885620915,
+                15.899108901515092
+            ],
+            "text": "“NO SVFR” above the airport name indicates FAR 91 fixed-",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JNMPFF+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 18,
+            "box_line": [
+                67.83088235294117,
+                430.63007922979796,
+                242.09597263071902,
+                15.899108901515206
+            ],
+            "text": "wing special VFR flight is prohibited.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JNMPFF+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 19,
+            "box_line": [
+                67.83088235294117,
+                458.58463762626275,
+                16.76176303104576,
+                15.899108901515092
+            ],
+            "text": "5. ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 20,
+            "box_line": [
+                103.4459493872549,
+                458.58463762626275,
+                21.781244975490196,
+                15.899108901515092
+            ],
+            "text": " or ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 21,
+            "box_line": [
+                143.1985294117647,
+                458.58463762626275,
+                338.4308656045752,
+                15.899108901515092
+            ],
+            "text": " following the airport identifier indicates Class C or ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JNMPFF+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 22,
+            "box_line": [
+                67.83088235294117,
+                472.561884469697,
+                114.75931821895425,
+                15.899121843434273
+            ],
+            "text": "Class D Airspace",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 23,
+            "box_line": [
+                67.83088235294117,
+                500.5164428661616,
+                127.34569852941176,
+                15.899108901515262
+            ],
+            "text": "High Altitude - U.S.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 24,
+            "box_line": [
+                519.1993464052288,
+                318.8119103535354,
+                16.761764705882342,
+                15.899108901515206
+            ],
+            "text": "6. ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 25,
+            "box_line": [
+                535.1260375816994,
+                318.8119103535354,
+                63.929919934640566,
+                15.899108901515206
+            ],
+            "text": "Associated",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 26,
+            "box_line": [
+                874.9640171568628,
+                318.8119103535354,
+                70.65941339869266,
+                15.899108901515206
+            ],
+            "text": "city names for public airports are shown above or ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 27,
+            "box_line": [
+                519.1993464052288,
+                332.78915719696965,
+                56.74076756535953,
+                15.899121843434386
+            ],
+            "text": "preceding",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 28,
+            "box_line": [
+                869.6571633986929,
+                332.78915719696965,
+                63.41614705882341,
+                15.899121843434386
+            ],
+            "text": "the airport name. If airport name and city name are ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 29,
+            "box_line": [
+                519.1993464052288,
+                346.7664169823232,
+                16.855438316993514,
+                15.899108901515206
+            ],
+            "text": "the",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JNMPFF+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 30,
+            "box_line": [
+                778.7730093954249,
+                346.7664169823232,
+                177.4832553104576,
+                15.899108901515206
+            ],
+            "text": "same, only the airport name is shown. The airport identifier in ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JNMPFF+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 31,
+            "box_line": [
+                519.1993464052288,
+                360.7436767676769,
+                69.7020433006536,
+                15.899147727272634
+            ],
+            "text": "parentheses",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 32,
+            "box_line": [
+                880.9862271241831,
+                360.7436767676769,
+                76.34030841503261,
+                15.899147727272634
+            ],
+            "text": "follows the airport name. City names for military and ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 33,
+            "box_line": [
+                519.1993464052288,
+                374.72101420454544,
+                42.50976470588239,
+                15.899108901515206
+            ],
+            "text": "private",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 34,
+            "box_line": [
+                672.8885498366013,
+                374.72101420454544,
+                49.04975040849672,
+                15.899108901515206
+            ],
+            "text": "airports are not shown.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 35,
+            "box_line": [
+                519.1993464052288,
+                402.6755208333333,
+                12.325038807189571,
+                15.899121843434386
+            ],
+            "text": "7.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 36,
+            "box_line": [
+                535.6327593954248,
+                402.6755208333333,
+                43.5218852124184,
+                15.899121843434386
+            ],
+            "text": "Airport",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 37,
+            "box_line": [
+                883.9683071895425,
+                402.6755208333333,
+                55.85454452614374,
+                15.899121843434386
+            ],
+            "text": "Ident ICAO Location Indicator shown outside contigu-",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 38,
+            "box_line": [
+                519.1993464052288,
+                416.6528194444445,
+                57.807002042483646,
+                15.899108901515092
+            ],
+            "text": "ous U.S.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 39,
+            "box_line": [
+                519.1993464052288,
+                444.60737784090907,
+                12.188573120915066,
+                15.899108901515206
+            ],
+            "text": "8.",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 40,
+            "box_line": [
+                535.4508051470589,
+                444.60737784090907,
+                36.55113153594766,
+                15.899108901515206
+            ],
+            "text": "AFIS ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 41,
+            "box_line": [
+                571.9914019607843,
+                444.60737784090907,
+                38.18339379084978,
+                15.899108901515206
+            ],
+            "text": "Alaska",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 42,
+            "box_line": [
+                621.4220269607844,
+                444.60737784090907,
+                27.64488643790844,
+                15.899108901515206
+            ],
+            "text": "only",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 43,
+            "box_line": [
+                519.1993464052288,
+                522.2223967803031,
+                35.181634395424794,
+                15.899108901515149
+            ],
+            "text": "High ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 44,
+            "box_line": [
+                553.556441993464,
+                522.2223967803031,
+                43.41174795751647,
+                15.899108901515149
+            ],
+            "text": "Altitude",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 45,
+            "box_line": [
+                568.0270134803922,
+                522.2223967803031,
+                12.29998325163399,
+                15.899108901515149
+            ],
+            "text": "-",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 46,
+            "box_line": [
+                616.3964452614379,
+                522.2223967803031,
+                45.235678513072,
+                15.899108901515149
+            ],
+            "text": "Alaska",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 47,
+            "box_line": [
+                67.83088235294117,
+                610.3312026515151,
+                188.26838235294122,
+                18.53284122474753
+            ],
+            "text": "LIGHTING CAPABILITY ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/OKBTXV+Arial-BoldMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 48,
+            "box_line": [
+                67.83088235294117,
+                641.5988794191919,
+                130.04268790849676,
+                17.66571969696969
+            ],
+            "text": "Lighting Available",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 49,
+            "box_line": [
+                67.83088235294117,
+                688.189788510101,
+                176.86276184640525,
+                17.66571969696969
+            ],
+            "text": "Pilot Controlled Lighting",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 50,
+            "box_line": [
+                519.1993464052288,
+                641.5988794191919,
+                63.29500612745096,
+                17.66571969696969
+            ],
+            "text": "Part-time",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 51,
+            "box_line": [
+                619.7267071078431,
+                641.5988794191919,
+                85.01103799019609,
+                17.66571969696969
+            ],
+            "text": "or on request ",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 52,
+            "box_line": [
+                519.1993464052288,
+                688.189788510101,
+                10.70458415032681,
+                17.66571969696969
+            ],
+            "text": "No",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 53,
+            "box_line": [
+                651.2227128267974,
+                688.189788510101,
+                17.84097916666667,
+                17.66571969696969
+            ],
+            "text": "lighting available",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 54,
+            "box_line": [
+                519.1993464052288,
+                703.720091540404,
+                9.96397140522879,
+                17.665719696969745
+            ],
+            "text": "At",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 55,
+            "box_line": [
+                794.8685241013072,
+                703.720091540404,
+                16.606574346405296,
+                17.665719696969745
+            ],
+            "text": "private facilities- indicates no lighting",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 56,
+            "box_line": [
+                519.1993464052288,
+                719.2503945707072,
+                74.51974428104575,
+                17.66571969696969
+            ],
+            "text": "information",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        },
+        {
+            "id_box": 47039,
+            "box": [
+                61.33513438877529,
+                316.53310425635823,
+                904.6932322344355,
+                422.04413900847754
+            ],
+            "id_box_line": 57,
+            "box_line": [
+                607.9133476307189,
+                719.2503945707072,
+                81.61689787581702,
+                17.66571969696969
+            ],
+            "text": "is available",
+            "category": "Table",
+            "words": [],
+            "linking": [],
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DMIAZR+ArialMT",
+                "size": 1
+            }
+        }
+    ]
+}

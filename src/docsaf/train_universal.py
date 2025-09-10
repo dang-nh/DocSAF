@@ -286,6 +286,80 @@ class DocumentDataset(Dataset):
             }
 
 
+def save_training_visualization(
+    original: torch.Tensor,
+    adversarial: torch.Tensor, 
+    mask_A: torch.Tensor,
+    output_path: Path,
+    epoch: int,
+    step: int
+) -> None:
+    """Save training visualization grid.
+    
+    Args:
+        original: Original images (B, 3, H, W)
+        adversarial: Adversarial images (B, 3, H, W)
+        mask_A: Attention mask (B, 1, H, W)
+        output_path: Output directory path
+        epoch: Current epoch
+        step: Current step
+    """
+    import matplotlib.pyplot as plt
+    import matplotlib.cm as cm
+    
+    B = original.shape[0]
+    fig, axes = plt.subplots(B, 4, figsize=(16, 4 * B))
+    
+    if B == 1:
+        axes = axes[None, :]
+    
+    for i in range(B):
+        # Original image
+        orig_np = original[i].cpu().permute(1, 2, 0).numpy()
+        if orig_np.max() > 1.1:
+            orig_np = orig_np / 255.0
+        orig_np = np.clip(orig_np, 0, 1)
+        
+        # Adversarial image
+        adv_np = adversarial[i].cpu().permute(1, 2, 0).numpy()
+        if adv_np.max() > 1.1:
+            adv_np = adv_np / 255.0
+        adv_np = np.clip(adv_np, 0, 1)
+        
+        # Difference (amplified for visibility)
+        diff_np = np.abs(adv_np - orig_np)
+        diff_np = np.clip(diff_np * 5, 0, 1)  # Amplify differences
+        
+        # Mask A heatmap
+        mask_np = mask_A[i, 0].cpu().numpy()
+        
+        # Plot
+        axes[i, 0].imshow(orig_np)
+        axes[i, 0].set_title('Original')
+        axes[i, 0].axis('off')
+        
+        axes[i, 1].imshow(adv_np)
+        axes[i, 1].set_title('Adversarial')
+        axes[i, 1].axis('off')
+        
+        axes[i, 2].imshow(diff_np)
+        axes[i, 2].set_title('Difference (5x)')
+        axes[i, 2].axis('off')
+        
+        im = axes[i, 3].imshow(mask_np, cmap='hot', vmin=0, vmax=1)
+        axes[i, 3].set_title('Mask A')
+        axes[i, 3].axis('off')
+        
+        # Add colorbar for mask
+        if i == 0:
+            plt.colorbar(im, ax=axes[i, 3], fraction=0.046, pad=0.04)
+    
+    plt.tight_layout()
+    vis_path = output_path / f'vis_epoch{epoch}_step{step}.png'
+    plt.savefig(vis_path, dpi=150, bbox_inches='tight')
+    plt.close()
+
+
 def collate_documents(batch: list) -> dict:
     """Collate function for document batch."""
     images = torch.stack([item["image"] for item in batch])
@@ -349,7 +423,7 @@ def compute_batch_saliency(
 
 def train_universal_parameters(
     data_dir: str, config: dict, output_dir: str, device: str = "cuda", 
-    dataset_name: str = None, split: str = "train"
+    dataset_name: str = None, split: str = "train", dump_intermediates: bool = False
 ) -> dict:
     """Train universal alpha and radius parameters.
 
@@ -381,17 +455,18 @@ def train_universal_parameters(
     is_normalize = dataset_config.get("is_normalize", True)
     max_size = tuple(dataset_config.get("max_size", [1024, 1024]))
 
-    # Initialize parameters
-    alpha = torch.tensor(config.get("alpha", 1.2), dtype=torch.float32, device=device, requires_grad=True)
-    radius = torch.tensor(config.get("radius", 7.0), dtype=torch.float32, device=device, requires_grad=True)
+    # Initialize parameters (raw versions for reparameterization)
+    alpha_raw = torch.nn.Parameter(torch.tensor(config.get("alpha", 1.2), dtype=torch.float32, device=device))
+    radius_raw = torch.nn.Parameter(torch.tensor(config.get("radius", 7.0), dtype=torch.float32, device=device))
 
-    # Setup optimizer (only optimize alpha and radius)
-    # optimizer = optim.Adam([alpha, radius], lr=lr)
+    # Setup two-group optimizer with higher LR for alpha
     optimizer = optim.Adam(
-                    [{'params':[alpha],  'lr':lr*3},
-                    {'params':[radius], 'lr':lr}],
-                    betas=(0.9,0.999)
-                    )
+        [
+            {"params": [alpha_raw], "lr": train_config.get("lr_alpha", 3e-3)},
+            {"params": [radius_raw], "lr": train_config.get("lr_radius", 1e-3)},
+        ],
+        betas=(0.9, 0.999), weight_decay=0.0
+    )
 
     # Load dataset
     if dataset_name and dataset_name.lower() in ["funsd", "cord", "sroie", "docvqa", "doclaynet"]:
@@ -462,6 +537,8 @@ def train_universal_parameters(
 
     step = 0
     data_iter = iter(dataloader)
+    epoch = 0
+    saved_vis_this_epoch = False
 
     progress_bar = tqdm(total=steps, desc="Training")
 
@@ -472,55 +549,53 @@ def train_universal_parameters(
             # Reset iterator
             data_iter = iter(dataloader)
             batch = next(data_iter)
+            epoch += 1
+            saved_vis_this_epoch = False
 
-        # --- Saliency phase ---
-        images_sal = batch["images"].detach().clone().requires_grad_(True)
+        # Ensure leafs and keep graph clean for saliency step
+        images = batch["images"].detach()  # (B,3,H,W)
         texts = batch["texts"]
 
-        # compute saliency (will raise if graph is broken)
-        _, saliency_maps = compute_batch_saliency(primary_embedder, images_sal, texts)
+        # Compute saliency on a graph that we won't backprop through
+        images_for_sal = images.clone().requires_grad_(True)
+        _, saliency_maps = compute_batch_saliency(primary_embedder, images_for_sal, texts)
         saliency_maps = saliency_maps.detach()
 
-        # --- Loss phase (no grads on images) ---
-        images = batch["images"].detach()
+        # Softplus parameters
+        alpha = F.softplus(alpha_raw) + 1e-3
+        radius = F.softplus(radius_raw) + 1e-3
 
-        # OPTIONAL warmup
-        warmup_steps = 200
-        if step < warmup_steps:
-            radius.requires_grad_(False)
-        else:
-            radius.requires_grad_(True)
-
+        # Compute loss
         total_loss, loss_components = objective.compute_loss(
             alpha=alpha,
             radius=radius,
             images=images,
             texts=texts,
             saliency_maps=saliency_maps,
-            eot_prob=0.0,       # force EOT off in training
-            eot_config=None,
+            eot_prob=eot_prob,
+            eot_config=eot_params,
         )
 
         optimizer.zero_grad()
         total_loss.backward()
-
-        # if radius was frozen, wipe accidental grads
-        if not radius.requires_grad and radius.grad is not None:
-            radius.grad.zero_()
-
         optimizer.step()
 
         # Sanity test block (run once after first batch)
         if step == 1:
-            images = batch["images"].detach()
-            texts = batch["texts"]
-            images_sal = images.clone().requires_grad_(True)
-            _, sal = compute_gradient_saliency(primary_embedder, images_sal, texts[0], normalize=True)
-            sal = sal.detach()
-            alpha.grad = None; radius.grad = None
-            loss_dbg, _ = objective.compute_loss(alpha, radius, images.detach(), texts, sal, eot_prob=0.0)
+            images_test = batch["images"].detach()
+            texts_test = batch["texts"]
+            images_sal_test = images_test.clone().requires_grad_(True)
+            _, sal_test = compute_gradient_saliency(primary_embedder, images_sal_test, texts_test[0], normalize=True)
+            sal_test = sal_test.detach()
+            if alpha_raw.grad is not None:
+                alpha_raw.grad.zero_()
+            if radius_raw.grad is not None:
+                radius_raw.grad.zero_()
+            alpha_test = F.softplus(alpha_raw) + 1e-3
+            radius_test = F.softplus(radius_raw) + 1e-3
+            loss_dbg, _ = objective.compute_loss(alpha_test, radius_test, images_test.detach(), texts_test, sal_test, eot_prob=0.0)
             loss_dbg.backward()
-            logger.info(f"[SANITY] alpha.grad={alpha.grad} radius.grad={radius.grad}")
+            logger.info(f"[SANITY] alpha_raw.grad={alpha_raw.grad} radius_raw.grad={radius_raw.grad}")
 
         # Diagnostics
         if step % 20 == 0:
@@ -529,11 +604,38 @@ def train_universal_parameters(
             logger.info(f"saliency stats: min={stats['min']:.4g} max={stats['max']:.4g} std={stats['std']:.4g}")
 
             with torch.no_grad():
-                x_adv_dbg, A_dbg = apply_field(images[:1], saliency_maps[:1], alpha, F.softplus(radius))
+                x_adv_dbg, A_dbg = apply_field(images[:1], saliency_maps[:1], alpha, radius)
                 logger.info(f"A stats: min={A_dbg.min().item():.4f} max={A_dbg.max().item():.4f} mean={A_dbg.mean().item():.4f}")
 
-            logger.info(f"|grad alpha|={0.0 if alpha.grad is None else alpha.grad.abs().item():.3e} "
-                        f"|grad radius|={0.0 if radius.grad is None else radius.grad.abs().item():.3e}")
+            logger.info(f"|grad alpha_raw|={0.0 if alpha_raw.grad is None else alpha_raw.grad.abs().item():.3e} "
+                        f"|grad radius_raw|={0.0 if radius_raw.grad is None else radius_raw.grad.abs().item():.3e}")
+
+        # Enhanced diagnostics every 100 steps
+        if step % 100 == 0:
+            with torch.no_grad():
+                A = loss_components.get("A", None)
+                if A is not None:
+                    mid_frac = ((A > 0.2) & (A < 0.8)).float().mean().item()
+                    logger.info(f"mid-A ratio={mid_frac:.3f}")
+                if alpha_raw.grad is not None and radius_raw.grad is not None:
+                    logger.info(f"|grad alpha_raw|={alpha_raw.grad.abs().item():.3e} "
+                                f"|grad radius_raw|={radius_raw.grad.abs().item():.3e}")
+
+        # Save visualization for first batch of each epoch
+        if dump_intermediates and not saved_vis_this_epoch and step > 0:
+            saved_vis_this_epoch = True
+            with torch.no_grad():
+                # Generate adversarial examples for visualization
+                vis_images = images[:4]  # Take first 4 images
+                vis_saliency = saliency_maps[:4]
+                vis_x_adv, vis_A = apply_field(vis_images, vis_saliency, alpha, radius)
+                
+                # Save visualizations
+                save_training_visualization(
+                    vis_images, vis_x_adv, vis_A, 
+                    output_path, epoch, step
+                )
+                logger.info(f"Saved visualization for epoch {epoch}, step {step}")
                 
         # Logging
         if step % 100 == 0:
@@ -544,7 +646,7 @@ def train_universal_parameters(
                         images[:1],
                         saliency_maps[:1],
                         alpha,
-                        torch.nn.functional.softplus(radius),
+                        radius,
                     )
                     lpips_score = compute_lpips_score(
                         images[:1], x_adv_sample, device=device
@@ -554,7 +656,7 @@ def train_universal_parameters(
 
             logger.info(
                 f"Step {step:>5}: Loss={total_loss.item():.4f}, "
-                f"Alpha={alpha.item():.3f}, Radius={torch.nn.functional.softplus(radius).item():.3f}, "
+                f"Alpha={alpha.item():.3f}, Radius={radius.item():.3f}, "
                 f"LPIPS={lpips_score:.4f}"
             )
 
@@ -562,9 +664,7 @@ def train_universal_parameters(
         history["steps"].append(step)
         history["losses"].append(float(total_loss.item()))
         history["alpha_values"].append(float(alpha.item()))
-        history["radius_values"].append(
-            float(torch.nn.functional.softplus(radius).item())
-        )
+        history["radius_values"].append(float(radius.item()))
         history["alignment_losses"].append(
             float(loss_components["alignment_loss"].item())
         )
@@ -576,8 +676,8 @@ def train_universal_parameters(
     progress_bar.close()
 
     # Final parameters
-    final_alpha = float(alpha.item())
-    final_radius = float(torch.nn.functional.softplus(radius).item())
+    final_alpha = float((F.softplus(alpha_raw) + 1e-3).item())
+    final_radius = float((F.softplus(radius_raw) + 1e-3).item())
 
     logger.info(f"Training completed!")
     logger.info(f"Final parameters: alpha={final_alpha:.3f}, radius={final_radius:.3f}")
@@ -629,6 +729,10 @@ def main():
     )
     parser.add_argument("--log-level", type=str, default="INFO", help="Logging level")
     parser.add_argument("--seed", type=int, help="Random seed (overrides config)")
+    parser.add_argument(
+        "--dump-intermediates", action="store_true",
+        help="Save intermediate visualizations (original, adv, A heatmap)"
+    )
 
     args = parser.parse_args()
 
@@ -660,7 +764,8 @@ def main():
             output_dir=str(output_dir), 
             device=device,
             dataset_name=args.dataset,
-            split=args.split
+            split=args.split,
+            dump_intermediates=args.dump_intermediates
         )
 
         print(f"\n=== Training Completed ===")

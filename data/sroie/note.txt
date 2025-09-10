@@ -1,0 +1,17 @@
+0: 'O': Đây là nhãn "Outside", được gắn cho những từ không thuộc bất kỳ thực thể nào.
+
+1: 'B-COMPANY': Đây là nhãn đánh dấu phần bắt đầu của tên công ty (B là viết tắt của "Begin").
+
+2: 'I-COMPANY': Nhãn này gắn cho những phần tiếp theo của tên công ty (I là viết tắt của "Inside").
+
+3: 'B-DATE': Nhãn này đánh dấu phần bắt đầu của một ngày tháng.
+
+4: 'I-DATE': Nhãn này gắn cho những phần tiếp theo của ngày tháng.
+
+5: 'B-ADDRESS': Nhãn này đánh dấu phần bắt đầu của địa chỉ.
+
+6: 'I-ADDRESS': Nhãn này gắn cho những phần tiếp theo của địa chỉ.
+
+7: 'B-TOTAL': Nhãn này đánh dấu phần bắt đầu của tổng số (có thể là số tiền hoặc số lượng).
+
+8: 'I-TOTAL': Nhãn này gắn cho những phần tiếp theo của tổng số.

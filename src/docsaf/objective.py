@@ -159,31 +159,35 @@ def docsaf_objective(
     Returns:
         (total_loss, loss_components_dict)
     """
+    # positive radius
     radius_pos = F.softplus(radius) + 1e-3
+
+    # apply field (returns x_adv and final mask A)
     x_adv, A = apply_field(images, saliency_maps, alpha, radius_pos)
 
-    # keep EOT off (or ensure EOT is differentiable before enabling)
+    # EOT (optional)
     if eot_prob > 0 and eot_config is not None:
-        x_adv_eot = x_adv  # disable nondiff EOT in training path
+        x_adv_eot = eot_light_tensor(x_adv, eot_prob=eot_prob, **eot_config)
     else:
         x_adv_eot = x_adv
 
+    # alignment loss (keep autograd; DO NOT wrap with torch.no_grad)
     if targeted_texts is not None:
-        alignment_loss = targeted_alignment_loss(
-            embedders, x_adv_eot, texts, targeted_texts
-        )
+        alignment_loss = targeted_alignment_loss(embedders, x_adv_eot, texts, targeted_texts)
     else:
         alignment_loss = alignment_collapse_loss(embedders, x_adv_eot, texts)
 
+    # TV on the final mask A (not on a temporary mask)
     tv_loss = compute_tv_loss(A, reduction="mean")
-    total_loss = alignment_loss + tv_lambda * tv_loss
 
+    total_loss = alignment_loss + tv_lambda * tv_loss
     loss_components = {
         "total_loss": total_loss,
         "alignment_loss": alignment_loss,
         "tv_loss": tv_loss,
         "alpha": alpha,
         "radius_pos": radius_pos,
+        "A": A.detach(),  # for logging
     }
     return total_loss, loss_components
 
